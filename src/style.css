@@ -532,6 +532,10 @@ input:focus-visible {
     border-bottom: 0;
 }
 
+.timetable>div>strong {
+    text-align: center;
+}
+
 .timetable span {
     color: var(--muted);
     font-size: 0.86rem;
@@ -557,6 +561,12 @@ input:focus-visible {
     color: var(--success) !important;
     background: var(--success-bg);
     border: 1px solid color-mix(in srgb, var(--success) 28%, transparent);
+}
+
+.timetable-status--soon {
+    color: var(--warning) !important;
+    background: var(--warning-bg);
+    border: 1px solid var(--warning-line);
 }
 
 .empty-inline {
