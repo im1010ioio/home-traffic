@@ -178,7 +178,7 @@ function tabPanel(): string {
 
 function schedulesPage(): string {
     const isTra = scheduleTab === "tra";
-    const routeTitle = isTra ? "新竹 → 台北" : "高鐵新竹 → 台北";
+    const routeTitle = isTra ? "今日台鐵・新竹 → 台北" : "今日高鐵・新竹 → 台北";
     return `<main class="shell">
         <a class="back-link" href="#">← 返回可搭組合</a>
         <header class="page-heading"><div><p class="eyebrow">今日固定班表</p><h1>台鐵、高鐵固定班表</h1><p>查詢新竹至台北的台鐵與高鐵班次。</p></div></header>
