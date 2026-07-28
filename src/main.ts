@@ -1,21 +1,12 @@
 import { registerSW } from "virtual:pwa-register";
-import { addIcon } from "iconify-icon";
 import "./style.css";
 import { loadDailyData } from "./data-loader.ts";
 import type { Journey } from "./domain/journey-planner.ts";
 import type { DailyData } from "./domain/daily-data.ts";
 import { buildRouteJourneys, type TabId } from "./domain/route-journeys.ts";
 
-addIcon("local:status-ready", {
-    width: 24,
-    height: 24,
-    body: '<path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z"/>',
-});
-addIcon("local:status-warning", {
-    width: 24,
-    height: 24,
-    body: '<path fill="currentColor" d="M13 13h-2V7h2m0 10h-2v-2h2M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"/>',
-});
+const STATUS_READY_ICON = '<svg class="status__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg>';
+const STATUS_WARNING_ICON = '<svg class="status__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13 13h-2V7h2m0 10h-2v-2h2M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>';
 const OFFICIAL_LINKS = {
     "1820": "https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=18200&lan=C",
     "1820A": "https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=1820A&rn=1730352355334&lan=C",
@@ -37,7 +28,7 @@ let offline = false;
 let showingAll = false;
 let scheduleTab: "tra" | "thsr" = "tra";
 let showPastSchedules = false;
-let scheduleOpenedAt: number | null = null;
+let schedulePageActive = false;
 
 const taipeiDate = (date = new Date()): string =>
     new Intl.DateTimeFormat("sv-SE", {
@@ -85,7 +76,7 @@ function statusBanner(): string {
         const generatedAt = new Date(dailyData.generatedAt!);
         const generatedDate = taipeiDate(generatedAt).replaceAll("-", "/");
         return `<div class="status status--ok">
-            <iconify-icon class="status__icon" icon="local:status-ready" width="1em" height="1em" aria-hidden="true"></iconify-icon>
+            ${STATUS_READY_ICON}
             <span>今日班表已更新 · ${generatedDate} ${time(dailyData.generatedAt!)}</span>
         </div>`;
     }
@@ -94,7 +85,7 @@ function statusBanner(): string {
         ? `最後更新：${taipeiDate(new Date(dailyData.generatedAt)).replaceAll("-", "/")} ${time(dailyData.generatedAt)}`
         : "尚無成功更新紀錄";
     return `<div class="status status--warning" role="alert">
-        <iconify-icon class="status__icon" icon="local:status-warning" width="1em" height="1em" aria-hidden="true"></iconify-icon>
+        ${STATUS_WARNING_ICON}
         <div class="status__copy">
             <strong>${offline ? "離線資料 · " : ""}${title}</strong>
             <span>${detail}，請以官方資訊為準。</span>
@@ -203,12 +194,12 @@ function schedulesPage(): string {
 }
 
 function simpleTimetable(route: "tra" | "thsr"): string {
-    const openedAt = scheduleOpenedAt ?? Date.now();
+    const currentTime = Date.now();
     const legs = dailyData.legs.filter((leg) =>
         leg.route === route
         && (leg.origin === "新竹" || leg.origin === "高鐵新竹")
         && leg.destination === "台北"
-        && (showPastSchedules || Date.parse(leg.departure) >= openedAt)
+        && (showPastSchedules || Date.parse(leg.departure) >= currentTime)
         && (route === "thsr" || !reservedOnly || leg.reserved),
     );
     if (!legs.length) {
@@ -216,8 +207,8 @@ function simpleTimetable(route: "tra" | "thsr"): string {
     }
     return `<div class="timetable">${legs.map((leg) => {
         const departureAt = Date.parse(leg.departure);
-        const isPast = departureAt < openedAt;
-        const isSoon = !isPast && departureAt - openedAt <= 60 * 60_000;
+        const isPast = departureAt < currentTime;
+        const isSoon = !isPast && departureAt - currentTime <= 60 * 60_000;
         const statusClass = isPast
             ? "timetable-status--past"
             : isSoon
@@ -287,13 +278,11 @@ function bindEvents(): void {
 
 function render(): void {
     const isSchedulesPage = location.hash === "#schedules";
-    if (isSchedulesPage && scheduleOpenedAt === null) {
-        scheduleOpenedAt = Date.now();
+    if (isSchedulesPage && !schedulePageActive) {
         scheduleTab = "tra";
         showPastSchedules = false;
-    } else if (!isSchedulesPage) {
-        scheduleOpenedAt = null;
     }
+    schedulePageActive = isSchedulesPage;
     appElement.innerHTML = isSchedulesPage ? schedulesPage() : homePage();
     bindEvents();
 }
