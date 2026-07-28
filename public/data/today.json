@@ -1,7 +1,7 @@
 {
     "schemaVersion": 1,
     "serviceDate": "2026-07-29",
-    "generatedAt": "2026-07-28T16:22:04.359Z",
+    "generatedAt": "2026-07-28T21:37:41.455Z",
     "status": "ready",
     "legs": [
         {
@@ -22,6 +22,16 @@
             "destination": "台北",
             "departure": "2026-07-29T05:29:00+08:00",
             "arrival": "2026-07-29T07:09:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-05:38",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T05:38:00+08:00",
+            "arrival": "2026-07-29T07:21:00+08:00",
             "reserved": false
         },
         {
@@ -75,6 +85,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-06:02",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T06:02:00+08:00",
+            "arrival": "2026-07-29T07:47:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "tra-1702-1193-1194-2026-07-29",
             "route": "tra",
             "service": "區間 1702",
@@ -95,6 +115,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-06:13",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T06:13:00+08:00",
+            "arrival": "2026-07-29T07:58:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "tra-1132-1210-1000-2026-07-29",
             "route": "tra",
             "service": "區間 1132",
@@ -102,6 +132,16 @@
             "destination": "台北",
             "departure": "2026-07-29T06:18:00+08:00",
             "arrival": "2026-07-29T07:58:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-06:23",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T06:23:00+08:00",
+            "arrival": "2026-07-29T08:21:00+08:00",
             "reserved": false
         },
         {
@@ -143,6 +183,16 @@
             "departure": "2026-07-29T06:37:00+08:00",
             "arrival": "2026-07-29T07:09:00+08:00",
             "reserved": true
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-06:38",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T06:38:00+08:00",
+            "arrival": "2026-07-29T08:33:00+08:00",
+            "reserved": false
         },
         {
             "id": "tra-1134-1210-1000-2026-07-29",
@@ -223,6 +273,16 @@
             "departure": "2026-07-29T07:03:00+08:00",
             "arrival": "2026-07-29T08:16:00+08:00",
             "reserved": true
+        },
+        {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-07:04",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T07:04:00+08:00",
+            "arrival": "2026-07-29T09:06:00+08:00",
+            "reserved": false
         },
         {
             "id": "tra-1706-1193-1194-2026-07-29",
@@ -375,6 +435,16 @@
             "reserved": true
         },
         {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-07:45",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T07:45:00+08:00",
+            "arrival": "2026-07-29T09:33:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "tra-1708-1193-1194-2026-07-29",
             "route": "tra",
             "service": "區間 1708",
@@ -452,6 +522,16 @@
             "destination": "高鐵新竹",
             "departure": "2026-07-29T08:07:00+08:00",
             "arrival": "2026-07-29T00:17:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-08:14",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T08:14:00+08:00",
+            "arrival": "2026-07-29T10:13:00+08:00",
             "reserved": false
         },
         {
@@ -735,6 +815,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-09:44",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T09:44:00+08:00",
+            "arrival": "2026-07-29T11:25:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "tra-1168-1210-1000-2026-07-29",
             "route": "tra",
             "service": "區間 1168",
@@ -825,6 +915,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-10:19",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T10:19:00+08:00",
+            "arrival": "2026-07-29T12:06:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "thsr-0618-1030-1000-2026-07-29",
             "route": "thsr",
             "service": "高鐵 0618",
@@ -872,6 +972,16 @@
             "destination": "高鐵新竹",
             "departure": "2026-07-29T10:48:00+08:00",
             "arrival": "2026-07-29T02:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-10:48",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T10:48:00+08:00",
+            "arrival": "2026-07-29T12:30:00+08:00",
             "reserved": false
         },
         {
@@ -955,6 +1065,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-11:15",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T11:15:00+08:00",
+            "arrival": "2026-07-29T13:04:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "tra-1813-1202-1193-2026-07-29",
             "route": "tra",
             "service": "區間 1813",
@@ -1012,6 +1132,16 @@
             "destination": "六家",
             "departure": "2026-07-29T11:43:00+08:00",
             "arrival": "2026-07-29T11:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-11:45",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T11:45:00+08:00",
+            "arrival": "2026-07-29T13:29:00+08:00",
             "reserved": false
         },
         {
@@ -1092,6 +1222,16 @@
             "destination": "六家",
             "departure": "2026-07-29T12:10:00+08:00",
             "arrival": "2026-07-29T12:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-12:14",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T12:14:00+08:00",
+            "arrival": "2026-07-29T14:04:00+08:00",
             "reserved": false
         },
         {
@@ -1185,6 +1325,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-12:45",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T12:45:00+08:00",
+            "arrival": "2026-07-29T14:28:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "walk-tra-1734-1193-1194-2026-07-29",
             "route": "walk",
             "service": "步行轉乘",
@@ -1242,6 +1392,16 @@
             "destination": "六家",
             "departure": "2026-07-29T13:10:00+08:00",
             "arrival": "2026-07-29T13:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-13:14",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T13:14:00+08:00",
+            "arrival": "2026-07-29T15:04:00+08:00",
             "reserved": false
         },
         {
@@ -1335,6 +1495,16 @@
             "reserved": true
         },
         {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-13:54",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T13:54:00+08:00",
+            "arrival": "2026-07-29T15:38:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "tra-1208-1210-1000-2026-07-29",
             "route": "tra",
             "service": "區間 1208",
@@ -1415,6 +1585,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-14:24",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T14:24:00+08:00",
+            "arrival": "2026-07-29T16:17:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "thsr-0642-1030-1000-2026-07-29",
             "route": "thsr",
             "service": "高鐵 0642",
@@ -1485,6 +1665,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-14:54",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T14:54:00+08:00",
+            "arrival": "2026-07-29T16:47:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "thsr-0646-1030-1000-2026-07-29",
             "route": "thsr",
             "service": "高鐵 0646",
@@ -1532,6 +1722,16 @@
             "destination": "六家",
             "departure": "2026-07-29T15:10:00+08:00",
             "arrival": "2026-07-29T15:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-15:14",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T15:14:00+08:00",
+            "arrival": "2026-07-29T17:03:00+08:00",
             "reserved": false
         },
         {
@@ -1595,6 +1795,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-15:34",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T15:34:00+08:00",
+            "arrival": "2026-07-29T17:30:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "tra-1748-1193-1194-2026-07-29",
             "route": "tra",
             "service": "區間 1748",
@@ -1643,6 +1853,16 @@
             "departure": "2026-07-29T15:54:00+08:00",
             "arrival": "2026-07-29T17:07:00+08:00",
             "reserved": true
+        },
+        {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-15:54",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T15:54:00+08:00",
+            "arrival": "2026-07-29T17:52:00+08:00",
+            "reserved": false
         },
         {
             "id": "thsr-0652-1030-1000-2026-07-29",
@@ -1705,6 +1925,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-16:15",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T16:15:00+08:00",
+            "arrival": "2026-07-29T18:10:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "tra-1825-1202-1193-2026-07-29",
             "route": "tra",
             "service": "區間 1825",
@@ -1745,6 +1975,16 @@
             "reserved": true
         },
         {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-16:35",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T16:35:00+08:00",
+            "arrival": "2026-07-29T18:34:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "tra-1751-1193-1210-2026-07-29",
             "route": "tra",
             "service": "區間 1751",
@@ -1782,6 +2022,16 @@
             "destination": "台北",
             "departure": "2026-07-29T16:52:00+08:00",
             "arrival": "2026-07-29T18:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-16:55",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T16:55:00+08:00",
+            "arrival": "2026-07-29T18:56:00+08:00",
             "reserved": false
         },
         {
@@ -1843,6 +2093,16 @@
             "departure": "2026-07-29T17:09:00+08:00",
             "arrival": "2026-07-29T18:25:00+08:00",
             "reserved": true
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-17:15",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T17:15:00+08:00",
+            "arrival": "2026-07-29T19:14:00+08:00",
+            "reserved": false
         },
         {
             "id": "tra-1831-1202-1193-2026-07-29",
@@ -2005,6 +2265,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-17:55",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T17:55:00+08:00",
+            "arrival": "2026-07-29T19:49:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "thsr-0664-1030-1000-2026-07-29",
             "route": "thsr",
             "service": "高鐵 0664",
@@ -2115,6 +2385,16 @@
             "reserved": true
         },
         {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-18:25",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T18:25:00+08:00",
+            "arrival": "2026-07-29T20:07:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "tra-134-1210-1000-2026-07-29",
             "route": "tra",
             "service": "自強(推拉式自強號且無自行車車廂) 134",
@@ -2212,6 +2492,16 @@
             "destination": "高鐵新竹",
             "departure": "2026-07-29T19:04:00+08:00",
             "arrival": "2026-07-29T11:14:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-19:05",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T19:05:00+08:00",
+            "arrival": "2026-07-29T20:47:00+08:00",
             "reserved": false
         },
         {
@@ -2345,6 +2635,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-19:44",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T19:44:00+08:00",
+            "arrival": "2026-07-29T21:23:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "walk-tra-1768-1193-1194-2026-07-29",
             "route": "walk",
             "service": "步行轉乘",
@@ -2412,6 +2712,16 @@
             "destination": "六家",
             "departure": "2026-07-29T20:10:00+08:00",
             "arrival": "2026-07-29T20:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-20:13",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T20:13:00+08:00",
+            "arrival": "2026-07-29T21:51:00+08:00",
             "reserved": false
         },
         {
@@ -2545,6 +2855,16 @@
             "reserved": false
         },
         {
+            "id": "bus-1820A-朝陽路口-台北-2026-07-29-21:11",
+            "route": "bus",
+            "service": "國光客運 1820A（繞駛關西市區）",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T21:11:00+08:00",
+            "arrival": "2026-07-29T22:42:00+08:00",
+            "reserved": false
+        },
+        {
             "id": "tra-146-1210-1000-2026-07-29",
             "route": "tra",
             "service": "自強(3000)(EMU3000 型電車) 146",
@@ -2672,6 +2992,16 @@
             "destination": "台北",
             "departure": "2026-07-29T21:52:00+08:00",
             "arrival": "2026-07-29T23:14:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-29-22:02",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路口",
+            "destination": "台北",
+            "departure": "2026-07-29T22:02:00+08:00",
+            "arrival": "2026-07-29T23:27:00+08:00",
             "reserved": false
         },
         {
