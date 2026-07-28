@@ -586,6 +586,20 @@ input:focus-visible {
     font-size: 0.86rem;
 }
 
+.timetable__service {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-width: 0;
+}
+
+.timetable__service .badge--danger {
+    margin: 0;
+    color: var(--danger);
+    font-size: 0.72rem;
+}
+
 .timetable-status {
     justify-self: start;
     padding: 4px 9px;

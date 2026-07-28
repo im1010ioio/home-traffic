@@ -52,6 +52,9 @@ const duration = (minutes: number): string => {
     return hours > 0 ? `${hours} 小時 ${remainder} 分` : `${remainder} 分`;
 };
 
+const hasNoStandingTickets = (service: string): boolean =>
+    /(3000|普悠瑪|太魯閣)/.test(service);
+
 const countdown = (iso: string): string => {
     const minutes = Math.max(0, Math.ceil((Date.parse(iso) - Date.now()) / 60_000));
     return minutes >= 60
@@ -123,7 +126,7 @@ function journeyCard(journey: Journey, fresh: boolean): string {
         const direct = index === 0 && leg.origin === "榮華" && leg.destination === "新竹";
         const noStandingTickets = leg.route === "tra"
             && leg.reserved
-            && /(3000|普悠瑪|太魯閣)/.test(leg.service);
+            && hasNoStandingTickets(leg.service);
         const service = leg.route === "bus" && leg.service.includes("1820A") && !leg.service.includes("繞駛關西市區")
             ? `${leg.service}（繞駛關西市區）`
             : leg.service;
@@ -213,6 +216,7 @@ function simpleTimetable(route: "tra" | "thsr"): string {
         const departureAt = Date.parse(leg.departure);
         const isPast = departureAt < currentTime;
         const isSoon = !isPast && departureAt - currentTime <= 60 * 60_000;
+        const noStandingTickets = route === "tra" && hasNoStandingTickets(leg.service);
         const statusClass = isPast
             ? "timetable-status--past"
             : isSoon
@@ -221,7 +225,7 @@ function simpleTimetable(route: "tra" | "thsr"): string {
         return `<div>
             <span class="timetable-status ${statusClass}">${isPast ? "已過班次" : "即將到來"}</span>
             <strong>${time(leg.departure)}</strong>
-            <span>${leg.service}</span>
+            <span class="timetable__service"><span>${leg.service}</span>${noStandingTickets ? '<span class="badge badge--danger">無售站票</span>' : ""}</span>
             <span class="timetable__arrival">${time(leg.arrival)} 抵達</span>
         </div>`;
     }).join("")}</div>`;
