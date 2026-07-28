@@ -90,7 +90,7 @@ function statusBanner(): string {
             <strong>${offline ? "離線資料 · " : ""}${title}</strong>
             <span>${detail}，請以官方資訊為準。</span>
         </div>
-        <a href="https://github.com/im1010ioio/home-traffic/actions" target="_blank" rel="noreferrer">手動更新</a>
+        <a href="hhttps://github.com/im1010ioio/home-traffic/actions/workflows/daily-data.yml" target="_blank" rel="noreferrer">手動更新</a>
     </div>`;
 }
 
