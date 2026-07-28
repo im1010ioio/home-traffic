@@ -169,7 +169,6 @@ function tabPanel(): string {
         <div class="journeys">
             ${visible.length ? visible.map((journey) => journeyCard(journey, fresh)).join("") : `<div class="empty-state">
                 <strong>${dailyData.status === "unavailable" ? "等待今日班表" : "今日已無符合條件的行程"}</strong>
-                <span>請查看列車班表或官方資訊。</span>
             </div>`}
         </div>
         ${journeys.length > 3 ? `<button class="secondary-button" id="show-all">${showingAll ? "只顯示最近 3 組" : "顯示今日全部"}</button>` : ""}

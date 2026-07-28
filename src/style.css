@@ -623,7 +623,6 @@ input:focus-visible {
     }
 
     .status {
-        align-items: flex-start;
         flex-wrap: wrap;
     }
 
@@ -631,18 +630,6 @@ input:focus-visible {
         flex-basis: 100%;
         margin-left: 34px;
         margin-top: 5px;
-    }
-
-    .tabs {
-        top: 6px;
-        border-radius: 18px;
-    }
-
-    .tabs button {
-        min-height: 54px;
-        padding-inline: 7px;
-        border-radius: 14px;
-        font-size: 0.82rem;
     }
 
     .panel__toolbar {
