@@ -8,7 +8,7 @@ test("家人可以在手機上切換三種台北行程與台鐵、高鐵固定�
     await page.getByRole("link", { name: "查看行程顯示規則" }).click();
     await expect(page.getByRole("heading", { name: "行程顯示規則" })).toBeVisible();
     await expect(page.getByText("竹中轉乘：至少 5 分鐘、未滿 20 分鐘。")).toHaveCount(2);
-    await page.getByRole("link", { name: "← 返回可搭組合" }).click();
+    await page.getByRole("link", { name: "返回上一頁" }).click();
     await expect(page.getByRole("tab").allTextContents()).resolves.toEqual([
         "🚌國光客運",
         "🚃台鐵",
@@ -21,6 +21,7 @@ test("家人可以在手機上切換三種台北行程與台鐵、高鐵固定�
     await page.getByRole("link", { name: "台鐵、高鐵固定班表" }).click();
     await expect(page.getByRole("heading", { name: "台鐵、高鐵固定班表" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "新竹 → 台北" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "查看行程顯示規則" })).toBeVisible();
     await expect(page.getByLabel("僅顯示對號列車")).toBeChecked();
     await expect(page.getByLabel("顯示已過班次")).not.toBeChecked();
     await page.getByRole("tab", { name: "高鐵" }).click();

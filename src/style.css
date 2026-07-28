@@ -481,6 +481,16 @@ input:focus-visible {
     font-weight: 650;
 }
 
+.schedule-section__heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.schedule-section__heading h2 {
+    margin: 0;
+}
+
 .schedule-sticky {
     position: sticky;
     top: 10px;

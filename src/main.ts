@@ -190,7 +190,7 @@ function schedulesPage(): string {
             </div>
         </div>
         <section class="schedule-section" role="tabpanel">
-            <h2>${routeTitle}</h2>
+            <div class="schedule-section__heading"><h2>${routeTitle}</h2><a class="help-link" href="#guide" aria-label="查看行程顯示規則">?</a></div>
             ${simpleTimetable(scheduleTab)}
         </section>
         ${footer()}
@@ -236,7 +236,7 @@ function guidePage(): string {
         ? `${taipeiDate(new Date(dailyData.generatedAt)).replaceAll("-", "/")} ${time(dailyData.generatedAt)}`
         : "尚無成功更新紀錄";
     return `<main class="shell">
-        <a class="back-link" href="#">← 返回可搭組合</a>
+        <a class="back-link" href="#" data-guide-back>← 返回上一頁</a>
         <header class="page-heading"><div><p class="eyebrow">使用說明</p><h1>行程顯示規則</h1><p>這個網頁以今日坐車需求而設計，只整理今天可搭的班次組合。</p></div></header>
         <section class="guide-intro">
             <strong>每日班表更新</strong>
@@ -268,6 +268,12 @@ function guidePage(): string {
                     <li>六家抵達至高鐵新竹發車：至少 10 分鐘、未滿 40 分鐘，間隔包含步行時間。</li>
                 </ul>
             </section>
+            <section class="guide-card">
+                <h2><span aria-hidden="true">🕒</span> 台鐵、高鐵固定班表</h2>
+                <ul>
+                    <li>距離發車 1 小時內的「即將到來」班次會以黃色 warning 標示。</li>
+                </ul>
+            </section>
         </div>
         <p class="guide-note">首頁預設顯示最近 3 組，可使用「顯示今日全部」查看當天其餘符合條件的組合。</p>
         ${footer()}
@@ -289,6 +295,14 @@ function homePage(): string {
 }
 
 function bindEvents(): void {
+    document.querySelector<HTMLAnchorElement>("[data-guide-back]")?.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (window.history.length > 1) {
+            window.history.back();
+        } else {
+            window.location.hash = "";
+        }
+    });
     document.querySelectorAll<HTMLButtonElement>("[data-tab]").forEach((button) => {
         button.addEventListener("click", () => {
             activeTab = button.dataset.tab as TabId;
