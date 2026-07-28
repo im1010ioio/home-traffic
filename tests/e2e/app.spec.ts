@@ -15,18 +15,18 @@ test("家人可以在手機上切換三種台北行程與台鐵、高鐵固定�
         "🚄高鐵",
     ]);
     await page.getByRole("tab", { name: "台鐵" }).click();
-    await expect(page.getByLabel("僅顯示對號列車")).toBeChecked();
+    await expect(page.getByLabel("對號列車")).toBeChecked();
     await expect(page.getByLabel("直達新竹")).not.toBeChecked();
 
     await page.getByRole("link", { name: "台鐵、高鐵固定班表" }).click();
     await expect(page.getByRole("heading", { name: "台鐵、高鐵固定班表" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "新竹 → 台北" })).toBeVisible();
     await expect(page.getByRole("link", { name: "查看行程顯示規則" })).toBeVisible();
-    await expect(page.getByLabel("僅顯示對號列車")).toBeChecked();
+    await expect(page.getByLabel("對號列車")).toBeChecked();
     await expect(page.getByLabel("顯示已過班次")).not.toBeChecked();
     await page.getByRole("tab", { name: "高鐵" }).click();
     await expect(page.getByRole("heading", { name: "今日高鐵・新竹 → 台北" })).toBeVisible();
-    await expect(page.getByLabel("僅顯示對號列車")).toHaveCount(0);
+    await expect(page.getByLabel("對號列車")).toHaveCount(0);
     await expect(page.getByText("5608")).toHaveCount(0);
     await expect(page.getByText("9003")).toHaveCount(0);
 });

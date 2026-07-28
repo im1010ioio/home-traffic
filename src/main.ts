@@ -154,7 +154,7 @@ function tabPanel(): string {
     const traFilters = activeTab === "tra" ? `<div class="filter-group">
         <label class="filter">
             <input id="reserved-filter" type="checkbox" ${reservedOnly ? "checked" : ""}>
-            <span>僅顯示對號列車</span>
+            <span>對號列車</span>
         </label>
         <label class="filter">
             <input id="direct-filter" type="checkbox" ${directToHsinchuOnly ? "checked" : ""}>
@@ -188,7 +188,7 @@ function schedulesPage(): string {
                 <button role="tab" aria-selected="${!isTra}" data-schedule-tab="thsr"><span aria-hidden="true">🚄</span><span>高鐵</span></button>
             </nav>
             <div class="schedule-filters">
-                ${isTra ? `<label class="filter"><input id="reserved-filter" type="checkbox" ${reservedOnly ? "checked" : ""}><span>僅顯示對號列車</span></label>` : ""}
+                ${isTra ? `<label class="filter"><input id="reserved-filter" type="checkbox" ${reservedOnly ? "checked" : ""}><span>對號列車</span></label>` : ""}
                 <label class="filter"><input id="past-filter" type="checkbox" ${showPastSchedules ? "checked" : ""}><span>顯示已過班次</span></label>
             </div>
         </div>
