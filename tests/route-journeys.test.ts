@@ -40,7 +40,7 @@ describe("台鐵直達新竹組合", () => {
             data,
             now: "2026-07-29T00:00:00+08:00",
             reservedOnly: true,
-            directToHsinchuOnly: true,
+            directToHsinchuOnly: false,
             toHsinchu: true,
             fresh: false,
         });
@@ -50,5 +50,19 @@ describe("台鐵直達新竹組合", () => {
             ["to-zhuzhong", "to-hsinchu"],
         ]);
         expect(journeys.every((journey) => journey.legs.at(-1)?.destination === "新竹")).toBe(true);
+    });
+
+    it("僅前往新竹與直達新竹同時開啟時只保留直達組合", () => {
+        const journeys = buildRouteJourneys({
+            tab: "tra",
+            data,
+            now: "2026-07-29T00:00:00+08:00",
+            reservedOnly: true,
+            directToHsinchuOnly: true,
+            toHsinchu: true,
+            fresh: false,
+        });
+
+        expect(journeys.map((journey) => journey.legs.map((leg) => leg.id))).toEqual([["direct"]]);
     });
 });

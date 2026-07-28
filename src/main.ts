@@ -159,11 +159,11 @@ function tabPanel(): string {
         ${toHsinchu ? "" : `<label class="filter">
             <input id="reserved-filter" type="checkbox" ${reservedOnly ? "checked" : ""}>
             <span>對號列車</span>
-        </label>
+        </label>`}
         <label class="filter">
             <input id="direct-filter" type="checkbox" ${directToHsinchuOnly ? "checked" : ""}>
             <span>直達新竹</span>
-        </label>`}
+        </label>
         <label class="filter">
             <input id="to-hsinchu-filter" type="checkbox" ${toHsinchu ? "checked" : ""}>
             <span>僅前往新竹</span>
@@ -270,7 +270,7 @@ function guidePage(): string {
                     <li>竹中轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>新竹轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>榮華直達新竹的班次不需在竹中轉乘，仍依新竹轉乘條件銜接台北。</li>
-                    <li>開啟「僅前往新竹」後，會列出榮華直達新竹及在竹中轉乘的全部組合，不再銜接台北班次。</li>
+                    <li>開啟「僅前往新竹」後，會列出榮華直達新竹及在竹中轉乘的全部組合，不再銜接台北班次；可再開啟「直達新竹」只看免於竹中換車的組合。</li>
                 </ul>
             </section>
             <section class="guide-card">

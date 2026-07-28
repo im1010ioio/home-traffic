@@ -18,6 +18,9 @@ test("家人可以在手機上切換三種台北行程與台鐵、高鐵固定�
     await expect(page.getByLabel("對號列車")).toBeChecked();
     await expect(page.getByLabel("直達新竹")).not.toBeChecked();
     await expect(page.getByLabel("僅前往新竹")).not.toBeChecked();
+    await page.getByLabel("僅前往新竹").check();
+    await expect(page.getByLabel("直達新竹")).toBeVisible();
+    await expect(page.getByLabel("對號列車")).toHaveCount(0);
 
     await page.getByRole("link", { name: "台鐵、高鐵固定班表" }).click();
     await expect(page.getByRole("heading", { name: "台鐵、高鐵固定班表" })).toBeVisible();

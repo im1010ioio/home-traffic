@@ -40,7 +40,7 @@ export function buildRouteJourneys(input: RouteJourneyInput): Journey[] {
             maximumTransferMinutes: 20,
             reservedOnlyFrom: !input.toHsinchu && input.reservedOnly ? "新竹" : undefined,
         }).filter((journey) => journey.legs.every((leg) => leg.route === "tra"));
-        return !input.toHsinchu && input.directToHsinchuOnly
+        return input.directToHsinchuOnly
             ? journeys.filter((journey) =>
                 journey.legs[0]?.origin === "榮華"
                 && journey.legs[0]?.destination === "新竹")
