@@ -116,7 +116,7 @@ interface TransformBusInput {
     response: unknown;
     date: string;
     routeName: string;
-    subRouteName?: string;
+    subRouteNames?: string[];
     originName: string;
     canonicalOrigin?: string;
     destinationNames: string[];
@@ -155,8 +155,8 @@ export function transformBusStopTimetables(input: TransformBusInput): TimetableL
 
     return busTimetablesFrom(input.response).flatMap((timetable) => {
         if (
-            input.subRouteName
-            && timetable.SubRouteName?.Zh_tw !== input.subRouteName
+            input.subRouteNames
+            && !input.subRouteNames.includes(timetable.SubRouteName?.Zh_tw ?? "")
         ) {
             return [];
         }

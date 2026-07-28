@@ -77,7 +77,7 @@ describe("公路客運今日營運班次", () => {
             },
             date: "2026-07-28",
             routeName: "1820A",
-            subRouteName: "1820A",
+            subRouteNames: ["1820A"],
             originName: "朝陽路",
             destinationNames: ["臺北轉運站"],
             canonicalDestination: "台北",
@@ -112,7 +112,7 @@ describe("公路客運今日營運班次", () => {
             response: [timetable("1820", "07:00"), timetable("1820A", "07:30")],
             date: "2026-07-28",
             routeName: "1820A",
-            subRouteName: "1820A",
+            subRouteNames: ["1820A"],
             originName: "朝陽路口",
             canonicalOrigin: "朝陽路",
             destinationNames: ["臺北轉運站"],
@@ -122,6 +122,19 @@ describe("公路客運今日營運班次", () => {
         expect(legs).toHaveLength(1);
         expect(legs[0]?.service).toBe("公車 1820A");
         expect(legs[0]?.departure).toContain("07:30");
+
+        const mainLine = transformBusStopTimetables({
+            response: [timetable("18200", "07:00"), timetable("1820A", "07:30")],
+            date: "2026-07-28",
+            routeName: "1820",
+            subRouteNames: ["1820", "18200"],
+            originName: "朝陽路口",
+            destinationNames: ["臺北轉運站"],
+            canonicalDestination: "台北",
+        });
+        expect(mainLine).toHaveLength(1);
+        expect(mainLine[0]?.service).toBe("公車 1820");
+        expect(mainLine[0]?.departure).toContain("07:00");
     });
 
     it("使用正式站名查詢時可轉為看板慣用站名，並排除反向班次", () => {

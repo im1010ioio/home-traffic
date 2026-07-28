@@ -116,8 +116,8 @@ async function main(): Promise<void> {
         }));
 
     const busDefinitions = [
-        { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820", subRouteName: "1820", operatorName: "國光客運", originName: "朝陽路口", canonicalOrigin: "朝陽路", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
-        { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820A", subRouteName: "1820A", operatorName: "國光客運", originName: "朝陽路口", canonicalOrigin: "朝陽路", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
+        { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820", subRouteNames: ["1820", "18200"], operatorName: "國光客運", originName: "朝陽路口", canonicalOrigin: "朝陽路", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
+        { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820A", subRouteNames: ["1820A"], operatorName: "國光客運", originName: "朝陽路口", canonicalOrigin: "朝陽路", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
         { path: "/v2/Bus/DailyTimeTable/InterCity/9003", routeName: "9003", originName: "馬偕醫院", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
         { path: "/v2/Bus/DailyTimeTable/InterCity/5608", routeName: "5608", operatorName: "新竹客運", originName: "新光大樓", destinationNames: ["馬偕醫院"], canonicalDestination: "馬偕醫院" },
     ];
