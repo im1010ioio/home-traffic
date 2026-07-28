@@ -162,7 +162,7 @@ function tabPanel(): string {
         ${(["1820", "1820A"] as const).map((route) => `<a href="${OFFICIAL_LINKS[route]}" target="_blank" rel="noreferrer">${route} 即時動態 ↗</a>`).join("")}
     </div>` : "";
     return `<section class="panel" role="tabpanel">
-        <div class="panel__toolbar"><span>${journeys.length} 組可搭行程</span>${traFilters}${busLinks}</div>
+        <div class="panel__toolbar"><div class="journey-summary"><span>${journeys.length} 組可搭行程</span><a class="help-link" href="#guide" aria-label="查看行程顯示規則">?</a></div>${traFilters}${busLinks}</div>
         <div class="journeys">
             ${visible.length ? visible.map((journey) => journeyCard(journey, fresh)).join("") : `<div class="empty-state">
                 <strong>${dailyData.status === "unavailable" ? "等待今日班表" : "今日已無符合條件的行程"}</strong>
@@ -231,6 +231,49 @@ function footer(): string {
     return `<footer class="site-footer"><p>資料來源：交通部 TDX 運輸資料流通服務</p><p>班表僅供參考，實際營運以官方資訊為準。</p></footer>`;
 }
 
+function guidePage(): string {
+    const updatedAt = dailyData.generatedAt
+        ? `${taipeiDate(new Date(dailyData.generatedAt)).replaceAll("-", "/")} ${time(dailyData.generatedAt)}`
+        : "尚無成功更新紀錄";
+    return `<main class="shell">
+        <a class="back-link" href="#">← 返回可搭組合</a>
+        <header class="page-heading"><div><p class="eyebrow">使用說明</p><h1>行程顯示規則</h1><p>這個網頁以今日坐車需求而設計，只整理今天可搭的班次組合。</p></div></header>
+        <section class="guide-intro">
+            <strong>每日班表更新</strong>
+            <p>GitHub Actions 每日約 04:30 開始抓取，完成時間會受 TDX 與 GitHub 執行狀況影響。</p>
+            <p>目前資料最後更新：<time>${updatedAt}</time></p>
+        </section>
+        <div class="guide-grid">
+            <section class="guide-card">
+                <h2><span aria-hidden="true">🚌</span> 國光客運</h2>
+                <ul>
+                    <li>顯示最早在現在 15 分鐘後發車的今日組合，預留前往朝陽路口的時間。</li>
+                    <li>朝陽路口直達台北，沒有轉乘間隔條件。</li>
+                </ul>
+            </section>
+            <section class="guide-card">
+                <h2><span aria-hidden="true">🚃</span> 台鐵</h2>
+                <ul>
+                    <li>顯示最早在現在 25 分鐘後從榮華發車的今日組合。</li>
+                    <li>竹中轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
+                    <li>新竹轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
+                    <li>榮華直達新竹的班次不需在竹中轉乘，仍依新竹轉乘條件銜接台北。</li>
+                </ul>
+            </section>
+            <section class="guide-card">
+                <h2><span aria-hidden="true">🚄</span> 高鐵</h2>
+                <ul>
+                    <li>顯示最早在現在 25 分鐘後從榮華發車的今日組合。</li>
+                    <li>竹中轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
+                    <li>六家抵達至高鐵新竹發車：至少 10 分鐘、未滿 40 分鐘，間隔包含步行時間。</li>
+                </ul>
+            </section>
+        </div>
+        <p class="guide-note">首頁預設顯示最近 3 組，可使用「顯示今日全部」查看當天其餘符合條件的組合。</p>
+        ${footer()}
+    </main>`;
+}
+
 function homePage(): string {
     const labels: Record<TabId, string> = { bus: "國光客運", tra: "台鐵", thsr: "高鐵" };
     const emojis: Record<TabId, string> = { bus: "🚌", tra: "🚃", thsr: "🚄" };
@@ -287,7 +330,11 @@ function render(): void {
         showPastSchedules = false;
     }
     schedulePageActive = isSchedulesPage;
-    appElement.innerHTML = isSchedulesPage ? schedulesPage() : homePage();
+    appElement.innerHTML = isSchedulesPage
+        ? schedulesPage()
+        : location.hash === "#guide"
+            ? guidePage()
+            : homePage();
     bindEvents();
 }
 
