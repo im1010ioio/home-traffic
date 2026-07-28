@@ -10,6 +10,28 @@
         <meta name="apple-mobile-web-app-title" content="竹東轉乘">
         <link rel="icon" href="/icon.svg" type="image/svg+xml">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+        <script>
+            (() => {
+                const measurementId = "G-XWJMHDXG0N";
+                const localHosts = new Set(["localhost", "127.0.0.1", "::1"]);
+                if (localHosts.has(window.location.hostname)) {
+                    console.log("[GA] 本機開發環境，Google Analytics 已停用。");
+                    return;
+                }
+
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function () {
+                    window.dataLayer.push(arguments);
+                };
+                window.gtag("js", new Date());
+                window.gtag("config", measurementId);
+
+                const script = document.createElement("script");
+                script.async = true;
+                script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+                document.head.append(script);
+            })();
+        </script>
         <title>竹東往台北轉乘攻略</title>
     </head>
     <body>
