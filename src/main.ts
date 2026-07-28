@@ -199,17 +199,26 @@ function schedulesPage(): string {
 }
 
 function simpleTimetable(route: "tra" | "thsr"): string {
+    const openedAt = scheduleOpenedAt ?? Date.now();
     const legs = dailyData.legs.filter((leg) =>
         leg.route === route
         && (leg.origin === "新竹" || leg.origin === "高鐵新竹")
         && leg.destination === "台北"
-        && (showPastSchedules || Date.parse(leg.departure) >= (scheduleOpenedAt ?? Date.now()))
+        && (showPastSchedules || Date.parse(leg.departure) >= openedAt)
         && (route === "thsr" || !reservedOnly || leg.reserved),
     );
     if (!legs.length) {
         return '<p class="empty-inline">目前沒有可顯示的班次。</p>';
     }
-    return `<div class="timetable">${legs.map((leg) => `<div><strong>${time(leg.departure)}</strong><span>${leg.service}</span><span>${time(leg.arrival)} 抵達</span></div>`).join("")}</div>`;
+    return `<div class="timetable">${legs.map((leg) => {
+        const isPast = Date.parse(leg.departure) < openedAt;
+        return `<div>
+            <span class="timetable-status ${isPast ? "timetable-status--past" : "timetable-status--upcoming"}">${isPast ? "已過班次" : "即將到來"}</span>
+            <strong>${time(leg.departure)}</strong>
+            <span>${leg.service}</span>
+            <span class="timetable__arrival">${time(leg.arrival)} 抵達</span>
+        </div>`;
+    }).join("")}</div>`;
 }
 
 function footer(): string {
