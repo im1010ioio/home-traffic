@@ -48,6 +48,7 @@ export function buildRouteJourneys(input: RouteJourneyInput): Journey[] {
         ...common,
         origin: "榮華",
         departureLeadMinutes: input.fresh ? 25 : 0,
-        transferMinutes: { 竹中: 8, 六家: 0, 高鐵新竹: 0 },
+        transferMinutes: { 竹中: 5, 六家: 0, 高鐵新竹: 10 },
+        maximumTransferMinutesByStop: { 竹中: 20, 高鐵新竹: 40 },
     }).filter((journey) => journey.legs.some((leg) => leg.route === "thsr"));
 }

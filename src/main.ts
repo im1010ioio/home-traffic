@@ -82,7 +82,8 @@ function statusBanner(): string {
 }
 
 function journeyCard(journey: Journey, fresh: boolean): string {
-    const transfers = journey.legs.slice(0, -1);
+    const vehicleLegs = journey.legs.filter((leg) => leg.route !== "walk");
+    const transferCount = Math.max(0, vehicleLegs.length - 1);
     return `<article class="journey-card">
         <header class="journey-card__header">
             <div>
@@ -92,9 +93,20 @@ function journeyCard(journey: Journey, fresh: boolean): string {
             <div class="duration"><span>總時數</span><strong>${duration(journey.durationMinutes)}</strong></div>
         </header>
         <ol class="timeline">
-            ${journey.legs.map((leg, index) => {
-        const next = journey.legs[index + 1];
-        const wait = next ? Math.round((Date.parse(next.departure) - Date.parse(leg.arrival)) / 60_000) : null;
+            ${vehicleLegs.map((leg, index) => {
+        const next = vehicleLegs[index + 1];
+        const originalIndex = journey.legs.indexOf(leg);
+        const walkingLeg = journey.legs[originalIndex + 1]?.route === "walk"
+            ? journey.legs[originalIndex + 1]
+            : undefined;
+        const interval = next
+            ? Math.round((Date.parse(next.departure) - Date.parse(leg.arrival)) / 60_000)
+            : null;
+        const transfer = interval === null
+            ? ""
+            : walkingLeg
+                ? `步行至 ${walkingLeg.destination} 轉乘 · 間隔 ${interval} 分鐘`
+                : `於 ${leg.destination} 轉乘 · 間隔 ${interval} 分鐘`;
         const direct = index === 0 && leg.origin === "榮華" && leg.destination === "新竹";
         return `<li>
                     <div class="timeline__dot" aria-hidden="true"></div>
@@ -103,12 +115,12 @@ function journeyCard(journey: Journey, fresh: boolean): string {
                         <div class="timeline__row"><span>${time(leg.departure)} 發車</span><span>${time(leg.arrival)} 抵達</span></div>
                         ${direct ? '<span class="badge">直達新竹</span>' : ""}
                         ${leg.reserved && leg.route === "tra" ? '<span class="badge badge--amber">對號列車</span>' : ""}
-                        ${wait !== null ? `<p class="transfer">於 ${leg.destination} 轉乘 · 等待 ${wait} 分鐘</p>` : ""}
+                        ${transfer ? `<p class="transfer">${transfer}</p>` : ""}
                     </div>
                 </li>`;
     }).join("")}
         </ol>
-        <footer class="arrival">${time(journey.arrival)} 抵達台北 · ${transfers.length} 次轉乘</footer>
+        <footer class="arrival">${time(journey.arrival)} 抵達台北 · ${transferCount} 次轉乘</footer>
     </article>`;
 }
 

@@ -25,6 +25,7 @@ interface BuildJourneysInput {
     departureLeadMinutes: number;
     transferMinutes: Record<string, number>;
     maximumTransferMinutes?: number;
+    maximumTransferMinutesByStop?: Record<string, number>;
     legs: TimetableLeg[];
     reservedOnlyFrom?: string;
 }
@@ -68,13 +69,25 @@ export function buildJourneys(input: BuildJourneysInput): Journey[] {
                     continue;
                 }
                 const minimumTransfer = input.transferMinutes[currentStop] ?? 0;
-                const transferDuration = minutesBetween(previous.arrival, leg.departure);
-                if (transferDuration < minimumTransfer) {
+                const transferStart = previous.route === "walk"
+                    ? path.at(-2)?.arrival ?? previous.arrival
+                    : previous.arrival;
+                const minimumTransferDuration = minutesBetween(previous.arrival, leg.departure);
+                const transferDuration = minutesBetween(transferStart, leg.departure);
+                if (minimumTransferDuration < 0) {
                     continue;
                 }
+                const comparableMinimum = previous.route === "walk"
+                    ? transferDuration
+                    : minimumTransferDuration;
+                if (comparableMinimum < minimumTransfer) {
+                    continue;
+                }
+                const maximumTransfer = input.maximumTransferMinutesByStop?.[currentStop]
+                    ?? input.maximumTransferMinutes;
                 if (
-                    input.maximumTransferMinutes !== undefined
-                    && transferDuration >= input.maximumTransferMinutes
+                    maximumTransfer !== undefined
+                    && transferDuration >= maximumTransfer
                 ) {
                     continue;
                 }

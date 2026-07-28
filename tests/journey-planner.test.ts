@@ -104,6 +104,24 @@ describe("行程組合器", () => {
                 departure: "2026-07-28T09:08:00+08:00",
                 arrival: "2026-07-28T09:42:00+08:00",
             },
+            {
+                id: "thsr-0835",
+                route: "thsr",
+                service: "高鐵 606",
+                origin: "高鐵新竹",
+                destination: "台北",
+                departure: "2026-07-28T08:35:00+08:00",
+                arrival: "2026-07-28T09:10:00+08:00",
+            },
+            {
+                id: "thsr-0930",
+                route: "thsr",
+                service: "高鐵 610",
+                origin: "高鐵新竹",
+                destination: "台北",
+                departure: "2026-07-28T09:30:00+08:00",
+                arrival: "2026-07-28T10:05:00+08:00",
+            },
         ];
 
         const journeys = buildJourneys({
@@ -111,14 +129,16 @@ describe("行程組合器", () => {
             origin: "榮華",
             destination: "台北",
             departureLeadMinutes: 25,
-            transferMinutes: { 六家: 0, 高鐵新竹: 0 },
+            transferMinutes: { 六家: 0, 高鐵新竹: 10 },
+            maximumTransferMinutesByStop: { 高鐵新竹: 40 },
             legs: highSpeedLegs,
         });
 
         expect(journeys).toHaveLength(2);
+        expect(journeys.every((journey) => journey.legs.at(-1)?.id === "thsr-0908")).toBe(true);
     });
 
-    it("接受竹中 7 分鐘轉乘並排除等待 20 分鐘以上的台鐵組合", () => {
+    it("接受竹中 7 分鐘轉乘並排除間隔 20 分鐘以上的台鐵組合", () => {
         const transferLegs: TimetableLeg[] = [
             {
                 id: "ronghua-zhuzhong-1316",
