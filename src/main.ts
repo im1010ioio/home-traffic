@@ -11,6 +11,7 @@ const OFFICIAL_LINKS = {
 } as const;
 
 const RESERVED_FILTER_KEY = "home-traffic:reserved-only";
+const DIRECT_FILTER_KEY = "home-traffic:direct-to-hsinchu-only";
 const app = document.querySelector<HTMLDivElement>("#app");
 if (!app) {
     throw new Error("找不到應用程式容器");
@@ -19,6 +20,7 @@ const appElement = app;
 
 let activeTab: TabId = "bus";
 let reservedOnly = localStorage.getItem(RESERVED_FILTER_KEY) !== "false";
+let directToHsinchuOnly = localStorage.getItem(DIRECT_FILTER_KEY) === "true";
 let dailyData: DailyData;
 let offline = false;
 let showingAll = false;
@@ -58,6 +60,7 @@ function journeysFor(tab: TabId): Journey[] {
         data: dailyData,
         now: new Date().toISOString(),
         reservedOnly,
+        directToHsinchuOnly,
         fresh: dailyData.status === "ready" && dailyData.serviceDate === taipeiDate() && !offline,
     });
 }
@@ -113,12 +116,18 @@ function tabPanel(): string {
     const fresh = dailyData.status === "ready" && dailyData.serviceDate === taipeiDate() && !offline;
     const journeys = journeysFor(activeTab);
     const visible = showingAll ? journeys : journeys.slice(0, 3);
-    const reservedFilter = activeTab === "tra" ? `<label class="filter">
-        <input id="reserved-filter" type="checkbox" ${reservedOnly ? "checked" : ""}>
-        <span>僅顯示對號列車</span>
-    </label>` : "";
+    const traFilters = activeTab === "tra" ? `<div class="filter-group">
+        <label class="filter">
+            <input id="reserved-filter" type="checkbox" ${reservedOnly ? "checked" : ""}>
+            <span>僅顯示對號列車</span>
+        </label>
+        <label class="filter">
+            <input id="direct-filter" type="checkbox" ${directToHsinchuOnly ? "checked" : ""}>
+            <span>直達新竹</span>
+        </label>
+    </div>` : "";
     return `<section class="panel" role="tabpanel">
-        <div class="panel__toolbar">${reservedFilter}<span>${journeys.length} 組可搭行程</span></div>
+        <div class="panel__toolbar">${traFilters}<span>${journeys.length} 組可搭行程</span></div>
         <div class="journeys">
             ${visible.length ? visible.map((journey) => journeyCard(journey, fresh)).join("") : `<div class="empty-state">
                 <strong>${dailyData.status === "unavailable" ? "等待今日班表" : "今日已無符合條件的行程"}</strong>
@@ -185,6 +194,12 @@ function bindEvents(): void {
     document.querySelector<HTMLInputElement>("#reserved-filter")?.addEventListener("change", (event) => {
         reservedOnly = (event.currentTarget as HTMLInputElement).checked;
         localStorage.setItem(RESERVED_FILTER_KEY, String(reservedOnly));
+        render();
+    });
+    document.querySelector<HTMLInputElement>("#direct-filter")?.addEventListener("change", (event) => {
+        directToHsinchuOnly = (event.currentTarget as HTMLInputElement).checked;
+        localStorage.setItem(DIRECT_FILTER_KEY, String(directToHsinchuOnly));
+        showingAll = false;
         render();
     });
     document.querySelector<HTMLButtonElement>("#show-all")?.addEventListener("click", () => {

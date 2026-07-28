@@ -18,8 +18,8 @@ const legs: TimetableLeg[] = [
         service: "區間車 1721",
         origin: "竹中",
         destination: "新竹",
-        departure: "2026-07-28T08:30:00+08:00",
-        arrival: "2026-07-28T08:47:00+08:00",
+        departure: "2026-07-28T08:27:00+08:00",
+        arrival: "2026-07-28T08:44:00+08:00",
         reserved: false,
     },
     {
@@ -28,7 +28,7 @@ const legs: TimetableLeg[] = [
         service: "自強號 112",
         origin: "新竹",
         destination: "台北",
-        departure: "2026-07-28T09:00:00+08:00",
+        departure: "2026-07-28T08:52:00+08:00",
         arrival: "2026-07-28T10:05:00+08:00",
         reserved: true,
     },
@@ -42,8 +42,8 @@ describe("行程組合器", () => {
             destination: "台北",
             departureLeadMinutes: 25,
             transferMinutes: {
-                竹中: 8,
-                新竹: 10,
+                竹中: 5,
+                新竹: 5,
             },
             legs,
         });
@@ -116,5 +116,64 @@ describe("行程組合器", () => {
         });
 
         expect(journeys).toHaveLength(2);
+    });
+
+    it("接受竹中 7 分鐘轉乘並排除等待 20 分鐘以上的台鐵組合", () => {
+        const transferLegs: TimetableLeg[] = [
+            {
+                id: "ronghua-zhuzhong-1316",
+                route: "tra",
+                service: "區間 1804",
+                origin: "榮華",
+                destination: "竹中",
+                departure: "2026-07-29T13:16:00+08:00",
+                arrival: "2026-07-29T13:27:00+08:00",
+            },
+            {
+                id: "zhuzhong-hsinchu-1334",
+                route: "tra",
+                service: "區間 1743",
+                origin: "竹中",
+                destination: "新竹",
+                departure: "2026-07-29T13:34:00+08:00",
+                arrival: "2026-07-29T13:48:00+08:00",
+            },
+            {
+                id: "zhuzhong-hsinchu-1407",
+                route: "tra",
+                service: "區間 1745",
+                origin: "竹中",
+                destination: "新竹",
+                departure: "2026-07-29T14:07:00+08:00",
+                arrival: "2026-07-29T14:21:00+08:00",
+            },
+            {
+                id: "hsinchu-taipei-1400",
+                route: "tra",
+                service: "自強 112",
+                origin: "新竹",
+                destination: "台北",
+                departure: "2026-07-29T14:00:00+08:00",
+                arrival: "2026-07-29T15:05:00+08:00",
+                reserved: true,
+            },
+        ];
+
+        const journeys = buildJourneys({
+            now: "2026-07-29T12:30:00+08:00",
+            origin: "榮華",
+            destination: "台北",
+            departureLeadMinutes: 25,
+            transferMinutes: { 竹中: 5, 新竹: 5 },
+            maximumTransferMinutes: 20,
+            legs: transferLegs,
+        });
+
+        expect(journeys).toHaveLength(1);
+        expect(journeys[0]?.legs.map((leg) => leg.id)).toEqual([
+            "ronghua-zhuzhong-1316",
+            "zhuzhong-hsinchu-1334",
+            "hsinchu-taipei-1400",
+        ]);
     });
 });

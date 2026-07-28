@@ -38,6 +38,7 @@ a { color: inherit; }
 .tabs button[aria-selected="true"] { color: #fff; background: var(--brand); box-shadow: 0 4px 12px rgba(18,55,42,.18); }
 .panel { margin-top: 16px; }
 .panel__toolbar { min-height: 42px; display: flex; justify-content: space-between; align-items: center; gap: 12px; color: var(--muted); font-size: .86rem; }
+.filter-group { display: flex; flex-wrap: wrap; gap: 8px; }
 .filter { display: inline-flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; font-weight: 700; color: var(--ink); }
 .filter input { inline-size: 18px; block-size: 18px; accent-color: var(--brand); }
 .journeys { display: grid; gap: 14px; }

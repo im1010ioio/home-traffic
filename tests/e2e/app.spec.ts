@@ -11,6 +11,7 @@ test("家人可以在手機上切換三種台北行程與各段班表", async ({
     ]);
     await page.getByRole("tab", { name: "台鐵" }).click();
     await expect(page.getByLabel("僅顯示對號列車")).toBeChecked();
+    await expect(page.getByLabel("直達新竹")).not.toBeChecked();
 
     await page.getByRole("link", { name: "各段班表" }).click();
     await expect(page.getByRole("heading", { name: "各段班表" })).toBeVisible();
