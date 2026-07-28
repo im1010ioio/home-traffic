@@ -76,7 +76,7 @@ function statusBanner(): string {
     return `<div class="status status--warning" role="alert">
         <strong>${offline ? "離線資料 · " : ""}${title}</strong>
         <span>${detail}，請以官方資訊為準。</span>
-        <a href="https://github.com/chenyilin/home-traffic/actions" target="_blank" rel="noreferrer">手動更新</a>
+        <a href="https://github.com/im1010ioio/home-traffic/actions" target="_blank" rel="noreferrer">手動更新</a>
     </div>`;
 }
 
@@ -92,10 +92,10 @@ function journeyCard(journey: Journey, fresh: boolean): string {
         </header>
         <ol class="timeline">
             ${journey.legs.map((leg, index) => {
-                const next = journey.legs[index + 1];
-                const wait = next ? Math.round((Date.parse(next.departure) - Date.parse(leg.arrival)) / 60_000) : null;
-                const direct = index === 0 && leg.origin === "榮華" && leg.destination === "新竹";
-                return `<li>
+        const next = journey.legs[index + 1];
+        const wait = next ? Math.round((Date.parse(next.departure) - Date.parse(leg.arrival)) / 60_000) : null;
+        const direct = index === 0 && leg.origin === "榮華" && leg.destination === "新竹";
+        return `<li>
                     <div class="timeline__dot" aria-hidden="true"></div>
                     <div class="timeline__content">
                         <div class="timeline__row"><strong>${leg.origin} → ${leg.destination}</strong><span>${leg.service}</span></div>
@@ -105,7 +105,7 @@ function journeyCard(journey: Journey, fresh: boolean): string {
                         ${wait !== null ? `<p class="transfer">於 ${leg.destination} 轉乘 · 等待 ${wait} 分鐘</p>` : ""}
                     </div>
                 </li>`;
-            }).join("")}
+    }).join("")}
         </ol>
         <footer class="arrival">${time(journey.arrival)} 抵達台北 · ${transfers.length} 次轉乘</footer>
     </article>`;

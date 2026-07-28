@@ -18,18 +18,18 @@ jobs:
     update:
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/checkout@v4
             - name: 檢查手動更新次數
               if: github.event_name == 'workflow_dispatch'
               env:
                   GH_TOKEN: ${{ github.token }}
               run: |
                   today=$(TZ=Asia/Taipei date +%Y-%m-%d)
-                  count=$(gh run list --workflow daily-data.yml --event workflow_dispatch --limit 20 --json createdAt --jq "[.[] | select((.createdAt | fromdateiso8601 + 28800 | strftime(\"%Y-%m-%d\")) == \"$today\")] | length")
+                  count=$(gh run list --repo "${{ github.repository }}" --workflow daily-data.yml --event workflow_dispatch --limit 20 --json createdAt --jq "[.[] | select((.createdAt | fromdateiso8601 + 28800 | strftime(\"%Y-%m-%d\")) == \"$today\")] | length")
                   if [ "$count" -gt 2 ]; then
                       echo "今天已達兩次手動更新上限。"
                       exit 1
                   fi
-            - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
               with:
                   node-version: 22
