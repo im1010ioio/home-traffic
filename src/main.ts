@@ -82,14 +82,16 @@ function journeysFor(tab: TabId): Journey[] {
 function statusBanner(): string {
     const stale = dailyData.status !== "ready" || dailyData.serviceDate !== taipeiDate();
     if (!stale && !offline) {
+        const generatedAt = new Date(dailyData.generatedAt!);
+        const generatedDate = taipeiDate(generatedAt).replaceAll("-", "/");
         return `<div class="status status--ok">
             <iconify-icon class="status__icon" icon="local:status-ready" width="1em" height="1em" aria-hidden="true"></iconify-icon>
-            <span>今日班表已更新 · ${time(dailyData.generatedAt!)}</span>
+            <span>今日班表已更新 · ${generatedDate} ${time(dailyData.generatedAt!)}</span>
         </div>`;
     }
     const title = dailyData.status === "unavailable" ? "今日資料尚未更新" : "目前顯示舊班表";
     const detail = dailyData.generatedAt
-        ? `最後更新：${dailyData.serviceDate} ${time(dailyData.generatedAt)}`
+        ? `最後更新：${taipeiDate(new Date(dailyData.generatedAt)).replaceAll("-", "/")} ${time(dailyData.generatedAt)}`
         : "尚無成功更新紀錄";
     return `<div class="status status--warning" role="alert">
         <iconify-icon class="status__icon" icon="local:status-warning" width="1em" height="1em" aria-hidden="true"></iconify-icon>
