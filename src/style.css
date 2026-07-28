@@ -1,6 +1,8 @@
+@import url("https://font.emtech.cc/css/LINESeedTW");
+
 :root {
     color-scheme: light dark;
-    font-family: Inter, "Noto Sans TC", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "LINESeedTW", sans-serif;
     font-synthesis: none;
     color: #222222;
     background: #ffffff;
@@ -35,6 +37,7 @@ body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
+    font-family: "LINESeedTW", sans-serif;
     color: var(--ink);
     background: #ffffff;
 }
