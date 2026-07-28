@@ -128,10 +128,13 @@ function journeyCard(journey: Journey, fresh: boolean): string {
                 ? `步行至 ${walkingLeg.destination} 轉乘 · 間隔 ${interval} 分鐘`
                 : `於 ${leg.destination} 轉乘 · 間隔 ${interval} 分鐘`;
         const direct = index === 0 && leg.origin === "榮華" && leg.destination === "新竹";
+        const service = leg.route === "bus" && leg.service.includes("1820A") && !leg.service.includes("繞駛關西市區")
+            ? `${leg.service}（繞駛關西市區）`
+            : leg.service;
         return `<li>
                     <div class="timeline__dot" aria-hidden="true"></div>
                     <div class="timeline__content">
-                        <div class="timeline__row"><strong>${leg.origin} → ${leg.destination}</strong><span>${leg.service}</span></div>
+                        <div class="timeline__row"><strong>${leg.origin} → ${leg.destination}</strong><span>${service}</span></div>
                         <div class="timeline__row"><span>${time(leg.departure)} 發車</span><span>${time(leg.arrival)} 抵達</span></div>
                         ${direct ? '<span class="badge">直達新竹</span>' : ""}
                         ${leg.reserved && leg.route === "tra" ? '<span class="badge badge--amber">對號列車</span>' : ""}

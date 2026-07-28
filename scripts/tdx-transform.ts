@@ -141,6 +141,7 @@ interface TransformBusInput {
     destinationNames: string[];
     canonicalDestination: string;
     operatorName?: string;
+    serviceNote?: string;
 }
 
 function busTimetablesFrom(response: unknown): BusStopTimetable[] {
@@ -239,7 +240,7 @@ function busLeg(input: TransformBusInput, departureTime: string, arrivalTime: st
     return {
         id: `bus-${input.routeName}-${input.originName}-${input.canonicalDestination}-${input.date}-${departureTime}`,
         route: "bus",
-        service: `${input.operatorName ?? "公車"} ${input.routeName}`,
+        service: `${input.operatorName ?? "公車"} ${input.routeName}${input.serviceNote ? `（${input.serviceNote}）` : ""}`,
         origin: input.canonicalOrigin ?? input.originName,
         destination: input.canonicalDestination,
         departure: range.departure,

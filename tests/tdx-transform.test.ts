@@ -112,13 +112,14 @@ describe("公路客運今日營運班次", () => {
             destinationNames: ["臺北轉運站"],
             canonicalDestination: "台北",
             operatorName: "國光客運",
+            serviceNote: "繞駛關西市區",
         });
 
         expect(legs).toEqual([
             {
                 id: "bus-1820A-朝陽路口-台北-2026-07-28-07:15",
                 route: "bus",
-                service: "國光客運 1820A",
+                service: "國光客運 1820A（繞駛關西市區）",
                 origin: "朝陽路口",
                 destination: "台北",
                 departure: "2026-07-28T07:15:00+08:00",
