@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [
         VitePWA({
             registerType: "autoUpdate",
-            includeAssets: ["icon.svg", "favicon.svg"],
+            includeAssets: ["icon.svg", "favicon.svg", "apple-touch-icon.png", "icon-192.png", "icon-512.png"],
             manifest: {
                 name: "竹東往台北轉乘攻略",
                 short_name: "竹東轉乘",
@@ -18,10 +18,28 @@ export default defineConfig({
                 start_url: ".",
                 icons: [
                     {
+                        src: "icon-192.png",
+                        sizes: "192x192",
+                        type: "image/png",
+                        purpose: "any",
+                    },
+                    {
+                        src: "icon-512.png",
+                        sizes: "512x512",
+                        type: "image/png",
+                        purpose: "any",
+                    },
+                    {
+                        src: "icon-512.png",
+                        sizes: "512x512",
+                        type: "image/png",
+                        purpose: "maskable",
+                    },
+                    {
                         src: "icon.svg",
                         sizes: "any",
                         type: "image/svg+xml",
-                        purpose: "any maskable",
+                        purpose: "any",
                     },
                 ],
             },
