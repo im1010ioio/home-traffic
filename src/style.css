@@ -415,25 +415,24 @@ input:focus-visible {
     transform: scale(0.99);
 }
 
-.official-links,
 .schedule-section {
     margin-top: 34px;
 }
 
-.official-links h2,
 .schedule-section h2 {
     margin-bottom: 14px;
     font-size: 1rem;
     font-weight: 650;
 }
 
-.official-links div {
+.realtime-links {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-left: auto;
 }
 
-.official-links a {
+.realtime-links a {
     color: var(--ink);
     font-weight: 650;
     text-decoration-color: var(--primary);
@@ -530,6 +529,10 @@ input:focus-visible {
     .panel__toolbar {
         align-items: flex-start;
         flex-direction: column;
+    }
+
+    .realtime-links {
+        margin-left: 0;
     }
 
     .journey-card__header {

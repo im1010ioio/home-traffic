@@ -1,8 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-    <rect width="512" height="512" rx="112" fill="#12372a"/>
-    <path d="M104 140c0-25 20-44 44-44h216c24 0 44 19 44 44v172c0 25-20 44-44 44H148c-24 0-44-19-44-44V140Z" fill="#f5f0e8"/>
-    <path d="M140 163h232v105H140V163Z" fill="#82c8a1"/>
-    <circle cx="176" cy="310" r="23" fill="#e76f51"/>
-    <circle cx="336" cy="310" r="23" fill="#e76f51"/>
-    <path d="m168 394-40 42m216-42 40 42M152 394h208" stroke="#f5f0e8" stroke-width="24" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+    <title id="title">竹東往台北轉乘攻略</title>
+    <desc id="description">粉紅色圓角底上的白色列車與轉乘路線圖示</desc>
+    <rect width="512" height="512" rx="120" fill="#ff385c"/>
+    <path d="M164 104h184c42 0 76 34 76 76v142c0 36-25 66-59 74l27 36c7 10 0 24-12 24h-28a16 16 0 0 1-13-7l-35-47h-96l-35 47a16 16 0 0 1-13 7h-28c-12 0-19-14-12-24l27-36c-34-8-59-38-59-74V180c0-42 34-76 76-76Z" fill="#fff"/>
+    <path d="M144 184c0-18 14-32 32-32h160c18 0 32 14 32 32v78H144v-78Z" fill="#ff385c"/>
+    <path d="M174 210h164" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="176" cy="322" r="22" fill="#ff385c"/>
+    <circle cx="336" cy="322" r="22" fill="#ff385c"/>
+    <path d="M216 322h80" fill="none" stroke="#ff385c" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="176" cy="210" r="9" fill="#fff"/>
+    <circle cx="256" cy="210" r="9" fill="#fff"/>
+    <circle cx="336" cy="210" r="9" fill="#fff"/>
 </svg>

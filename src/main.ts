@@ -138,8 +138,11 @@ function tabPanel(): string {
             <span>直達新竹</span>
         </label>
     </div>` : "";
+    const busLinks = activeTab === "bus" ? `<div class="realtime-links" aria-label="官方即時資訊">
+        ${(["1820", "1820A"] as const).map((route) => `<a href="${OFFICIAL_LINKS[route]}" target="_blank" rel="noreferrer">${route} 即時動態 ↗</a>`).join("")}
+    </div>` : "";
     return `<section class="panel" role="tabpanel">
-        <div class="panel__toolbar"><span>${journeys.length} 組可搭行程</span>${traFilters}</div>
+        <div class="panel__toolbar"><span>${journeys.length} 組可搭行程</span>${traFilters}${busLinks}</div>
         <div class="journeys">
             ${visible.length ? visible.map((journey) => journeyCard(journey, fresh)).join("") : `<div class="empty-state">
                 <strong>${dailyData.status === "unavailable" ? "等待今日班表" : "今日已無符合條件的行程"}</strong>
@@ -190,7 +193,6 @@ function homePage(): string {
             ${(Object.keys(labels) as TabId[]).map((id) => `<button role="tab" aria-selected="${activeTab === id}" data-tab="${id}">${labels[id]}</button>`).join("")}
         </nav>
         ${tabPanel()}
-        <section class="official-links"><h2>官方即時資訊</h2><div>${(["1820", "1820A"] as const).map((route) => `<a href="${OFFICIAL_LINKS[route]}" target="_blank" rel="noreferrer">${route} 即時動態 ↗</a>`).join("")}</div></section>
         ${footer()}
     </main>`;
 }
