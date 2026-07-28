@@ -139,7 +139,7 @@ function tabPanel(): string {
         </label>
     </div>` : "";
     return `<section class="panel" role="tabpanel">
-        <div class="panel__toolbar">${traFilters}<span>${journeys.length} 組可搭行程</span></div>
+        <div class="panel__toolbar"><span>${journeys.length} 組可搭行程</span>${traFilters}</div>
         <div class="journeys">
             ${visible.length ? visible.map((journey) => journeyCard(journey, fresh)).join("") : `<div class="empty-state">
                 <strong>${dailyData.status === "unavailable" ? "等待今日班表" : "今日已無符合條件的行程"}</strong>
