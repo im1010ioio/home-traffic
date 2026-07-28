@@ -8,8 +8,6 @@ import { buildRouteJourneys, type TabId } from "./domain/route-journeys.ts";
 const OFFICIAL_LINKS = {
     "1820": "https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=18200&lan=C",
     "1820A": "https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=1820A&rn=1730352355334&lan=C",
-    "9003": "https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=90030&lan=C",
-    "5608": "https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rn=1611494980221&rno=56080&lan=C",
 } as const;
 
 const RESERVED_FILTER_KEY = "home-traffic:reserved-only";
@@ -124,7 +122,7 @@ function tabPanel(): string {
         <div class="journeys">
             ${visible.length ? visible.map((journey) => journeyCard(journey, fresh)).join("") : `<div class="empty-state">
                 <strong>${dailyData.status === "unavailable" ? "等待今日班表" : "今日已無符合條件的行程"}</strong>
-                <span>請查看各段班表或官方資訊。</span>
+                <span>請查看列車班表或官方資訊。</span>
             </div>`}
         </div>
         ${journeys.length > 3 ? `<button class="secondary-button" id="show-all">${showingAll ? "只顯示最近 3 組" : "顯示今日全部"}</button>` : ""}
@@ -134,12 +132,8 @@ function tabPanel(): string {
 function schedulesPage(): string {
     return `<main class="shell">
         <a class="back-link" href="#">← 返回可搭組合</a>
-        <header class="page-heading"><p class="eyebrow">今日固定班表</p><h1>各段班表</h1><p>公車即時動態請開啟交通部官方頁面確認。</p></header>
+        <header class="page-heading"><p class="eyebrow">今日固定班表</p><h1>各段班表</h1><p>查詢新竹至台北的台鐵與高鐵班次。</p></header>
         ${statusBanner()}
-        <section class="schedule-section"><h2>公車轉乘參考</h2>
-            <article class="segment-card"><div class="segment-card__heading"><div><strong>5608</strong><span>新光大樓 → 馬偕醫院</span></div><a href="${OFFICIAL_LINKS["5608"]}" target="_blank" rel="noreferrer">查看 5608 官方即時資訊</a></div>${segmentTimetable("新光大樓", "馬偕醫院")}</article>
-            <article class="segment-card"><div class="segment-card__heading"><div><strong>9003</strong><span>馬偕醫院 → 台北</span></div><a href="${OFFICIAL_LINKS["9003"]}" target="_blank" rel="noreferrer">查看 9003 官方即時資訊</a></div>${segmentTimetable("馬偕醫院", "台北")}</article>
-        </section>
         <section class="schedule-section"><h2>新竹 → 台北</h2>
             <label class="filter"><input id="reserved-filter" type="checkbox" ${reservedOnly ? "checked" : ""}><span>僅顯示對號列車</span></label>
             ${simpleTimetable("tra")}
@@ -147,16 +141,6 @@ function schedulesPage(): string {
         </section>
         ${footer()}
     </main>`;
-}
-
-function segmentTimetable(origin: string, destination: string): string {
-    const legs = dailyData.legs.filter((leg) =>
-        leg.route === "bus" && leg.origin === origin && leg.destination === destination,
-    );
-    if (!legs.length) {
-        return '<p class="empty-inline">目前沒有可顯示的固定班次。</p>';
-    }
-    return `<div class="mini-timetable">${legs.map((leg) => `<div><strong>${time(leg.departure)}</strong><span>${time(leg.arrival)} 抵達</span></div>`).join("")}</div>`;
 }
 
 function simpleTimetable(route: "tra" | "thsr"): string {

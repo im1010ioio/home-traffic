@@ -15,16 +15,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-05:27",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T05:27:00+08:00",
-            "arrival": "2026-07-28T06:38:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1122-1210-1000-2026-07-28",
             "route": "tra",
             "service": "區間 1122",
@@ -65,16 +55,6 @@
             "reserved": false
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-05:49",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T05:49:00+08:00",
-            "arrival": "2026-07-28T06:18:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-272-1210-1000-2026-07-28",
             "route": "tra",
             "service": "自強(推拉式自強號且無自行車車廂) 272",
@@ -92,16 +72,6 @@
             "destination": "台北",
             "departure": "2026-07-28T05:57:00+08:00",
             "arrival": "2026-07-28T07:39:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-05:57",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T05:57:00+08:00",
-            "arrival": "2026-07-28T07:13:00+08:00",
             "reserved": false
         },
         {
@@ -145,16 +115,6 @@
             "reserved": false
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-06:10",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T06:10:00+08:00",
-            "arrival": "2026-07-28T06:41:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "bus-1820-朝陽路口-台北-2026-07-28-06:13",
             "route": "bus",
             "service": "國光客運 1820",
@@ -192,26 +152,6 @@
             "destination": "新竹",
             "departure": "2026-07-28T06:28:00+08:00",
             "arrival": "2026-07-28T06:42:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-06:28",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T06:28:00+08:00",
-            "arrival": "2026-07-28T07:44:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-06:30",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T06:30:00+08:00",
-            "arrival": "2026-07-28T07:01:00+08:00",
             "reserved": false
         },
         {
@@ -295,16 +235,6 @@
             "reserved": false
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-06:50",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T06:50:00+08:00",
-            "arrival": "2026-07-28T07:25:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-2114-1210-1000-2026-07-28",
             "route": "tra",
             "service": "區間 2114",
@@ -312,16 +242,6 @@
             "destination": "台北",
             "departure": "2026-07-28T06:53:00+08:00",
             "arrival": "2026-07-28T08:46:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-06:53",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T06:53:00+08:00",
-            "arrival": "2026-07-28T08:09:00+08:00",
             "reserved": false
         },
         {
@@ -382,26 +302,6 @@
             "destination": "高鐵新竹",
             "departure": "2026-07-28T07:10:00+08:00",
             "arrival": "2026-07-27T23:20:00+00:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-07:12",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T07:12:00+08:00",
-            "arrival": "2026-07-28T07:49:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-07:18",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T07:18:00+08:00",
-            "arrival": "2026-07-28T08:40:00+08:00",
             "reserved": false
         },
         {
@@ -485,16 +385,6 @@
             "reserved": false
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-07:32",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T07:32:00+08:00",
-            "arrival": "2026-07-28T08:09:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-2008-1210-1000-2026-07-28",
             "route": "tra",
             "service": "區間快 2008",
@@ -512,16 +402,6 @@
             "destination": "新竹",
             "departure": "2026-07-28T07:41:00+08:00",
             "arrival": "2026-07-28T07:55:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-07:43",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T07:43:00+08:00",
-            "arrival": "2026-07-28T09:05:00+08:00",
             "reserved": false
         },
         {
@@ -585,16 +465,6 @@
             "reserved": false
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-07:52",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T07:52:00+08:00",
-            "arrival": "2026-07-28T08:29:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "thsr-0802-1030-1000-2026-07-28",
             "route": "thsr",
             "service": "高鐵 0802",
@@ -652,26 +522,6 @@
             "destination": "高鐵新竹",
             "departure": "2026-07-28T08:07:00+08:00",
             "arrival": "2026-07-28T00:17:00+00:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-08:09",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T08:09:00+08:00",
-            "arrival": "2026-07-28T09:28:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-08:11",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T08:11:00+08:00",
-            "arrival": "2026-07-28T08:48:00+08:00",
             "reserved": false
         },
         {
@@ -735,16 +585,6 @@
             "reserved": true
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-08:26",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T08:26:00+08:00",
-            "arrival": "2026-07-28T09:02:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "walk-tra-1790-1193-1194-2026-07-28",
             "route": "walk",
             "service": "步行轉乘",
@@ -762,16 +602,6 @@
             "destination": "台北",
             "departure": "2026-07-28T08:28:00+08:00",
             "arrival": "2026-07-28T10:20:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-08:34",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T08:34:00+08:00",
-            "arrival": "2026-07-28T09:53:00+08:00",
             "reserved": false
         },
         {
@@ -802,16 +632,6 @@
             "destination": "新竹",
             "departure": "2026-07-28T08:41:00+08:00",
             "arrival": "2026-07-28T08:55:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-08:41",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T08:41:00+08:00",
-            "arrival": "2026-07-28T09:15:00+08:00",
             "reserved": false
         },
         {
@@ -855,16 +675,6 @@
             "reserved": false
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-08:56",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T08:56:00+08:00",
-            "arrival": "2026-07-28T09:29:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "thsr-0610-1030-1000-2026-07-28",
             "route": "thsr",
             "service": "高鐵 0610",
@@ -873,16 +683,6 @@
             "departure": "2026-07-28T08:57:00+08:00",
             "arrival": "2026-07-28T09:33:00+08:00",
             "reserved": true
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-08:59",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T08:59:00+08:00",
-            "arrival": "2026-07-28T10:20:00+08:00",
-            "reserved": false
         },
         {
             "id": "tra-1716-1193-1194-2026-07-28",
@@ -935,16 +735,6 @@
             "reserved": true
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-09:11",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T09:11:00+08:00",
-            "arrival": "2026-07-28T09:44:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1807-1202-1193-2026-07-28",
             "route": "tra",
             "service": "區間 1807",
@@ -985,16 +775,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-09:23",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T09:23:00+08:00",
-            "arrival": "2026-07-28T10:44:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "thsr-0612-1030-1000-2026-07-28",
             "route": "thsr",
             "service": "高鐵 0612",
@@ -1003,16 +783,6 @@
             "departure": "2026-07-28T09:25:00+08:00",
             "arrival": "2026-07-28T09:59:00+08:00",
             "reserved": true
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-09:26",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T09:26:00+08:00",
-            "arrival": "2026-07-28T09:59:00+08:00",
-            "reserved": false
         },
         {
             "id": "walk-tra-1792-1193-1194-2026-07-28",
@@ -1033,16 +803,6 @@
             "departure": "2026-07-28T09:31:00+08:00",
             "arrival": "2026-07-28T10:36:00+08:00",
             "reserved": true
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-09:41",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T09:41:00+08:00",
-            "arrival": "2026-07-28T10:14:00+08:00",
-            "reserved": false
         },
         {
             "id": "tra-1718-1193-1194-2026-07-28",
@@ -1095,26 +855,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-09:48",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T09:48:00+08:00",
-            "arrival": "2026-07-28T11:09:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-09:56",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T09:56:00+08:00",
-            "arrival": "2026-07-28T10:29:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "thsr-0616-1030-1000-2026-07-28",
             "route": "thsr",
             "service": "高鐵 0616",
@@ -1152,26 +892,6 @@
             "destination": "六家",
             "departure": "2026-07-28T10:09:00+08:00",
             "arrival": "2026-07-28T10:14:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-10:11",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T10:11:00+08:00",
-            "arrival": "2026-07-28T10:43:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-10:13",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T10:13:00+08:00",
-            "arrival": "2026-07-28T11:33:00+08:00",
             "reserved": false
         },
         {
@@ -1215,16 +935,6 @@
             "reserved": true
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-10:26",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T10:26:00+08:00",
-            "arrival": "2026-07-28T10:58:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1172-1210-1000-2026-07-28",
             "route": "tra",
             "service": "區間 1172",
@@ -1242,26 +952,6 @@
             "destination": "新竹",
             "departure": "2026-07-28T10:34:00+08:00",
             "arrival": "2026-07-28T10:48:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-10:38",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T10:38:00+08:00",
-            "arrival": "2026-07-28T11:58:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-10:41",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T10:41:00+08:00",
-            "arrival": "2026-07-28T11:14:00+08:00",
             "reserved": false
         },
         {
@@ -1305,16 +995,6 @@
             "reserved": true
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-10:56",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T10:56:00+08:00",
-            "arrival": "2026-07-28T11:28:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "thsr-0622-1030-1000-2026-07-28",
             "route": "thsr",
             "service": "高鐵 0622",
@@ -1333,16 +1013,6 @@
             "departure": "2026-07-28T11:00:00+08:00",
             "arrival": "2026-07-28T11:59:00+08:00",
             "reserved": true
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-11:03",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T11:03:00+08:00",
-            "arrival": "2026-07-28T12:22:00+08:00",
-            "reserved": false
         },
         {
             "id": "tra-1178-1210-1000-2026-07-28",
@@ -1382,16 +1052,6 @@
             "destination": "六家",
             "departure": "2026-07-28T11:10:00+08:00",
             "arrival": "2026-07-28T11:15:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-11:11",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T11:11:00+08:00",
-            "arrival": "2026-07-28T11:44:00+08:00",
             "reserved": false
         },
         {
@@ -1443,26 +1103,6 @@
             "departure": "2026-07-28T11:25:00+08:00",
             "arrival": "2026-07-28T11:59:00+08:00",
             "reserved": true
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-11:29",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T11:29:00+08:00",
-            "arrival": "2026-07-28T12:47:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-11:31",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T11:31:00+08:00",
-            "arrival": "2026-07-28T12:04:00+08:00",
-            "reserved": false
         },
         {
             "id": "tra-1182-1210-1000-2026-07-28",
@@ -1525,16 +1165,6 @@
             "reserved": true
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-11:51",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T11:51:00+08:00",
-            "arrival": "2026-07-28T12:24:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1006-1210-1000-2026-07-28",
             "route": "tra",
             "service": "區間快 1006",
@@ -1553,16 +1183,6 @@
             "departure": "2026-07-28T11:57:00+08:00",
             "arrival": "2026-07-28T12:33:00+08:00",
             "reserved": true
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-11:59",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T11:59:00+08:00",
-            "arrival": "2026-07-28T13:13:00+08:00",
-            "reserved": false
         },
         {
             "id": "tra-1188-1210-1000-2026-07-28",
@@ -1602,16 +1222,6 @@
             "destination": "六家",
             "departure": "2026-07-28T12:10:00+08:00",
             "arrival": "2026-07-28T12:15:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-12:11",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T12:11:00+08:00",
-            "arrival": "2026-07-28T12:43:00+08:00",
             "reserved": false
         },
         {
@@ -1685,26 +1295,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-12:28",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T12:28:00+08:00",
-            "arrival": "2026-07-28T13:42:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-12:31",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T12:31:00+08:00",
-            "arrival": "2026-07-28T13:03:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1731-1193-1210-2026-07-28",
             "route": "tra",
             "service": "區間 1731",
@@ -1765,16 +1355,6 @@
             "reserved": true
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-12:51",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T12:51:00+08:00",
-            "arrival": "2026-07-28T13:22:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1198-1210-1000-2026-07-28",
             "route": "tra",
             "service": "區間 1198",
@@ -1782,16 +1362,6 @@
             "destination": "台北",
             "departure": "2026-07-28T12:54:00+08:00",
             "arrival": "2026-07-28T14:39:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-12:58",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T12:58:00+08:00",
-            "arrival": "2026-07-28T14:14:00+08:00",
             "reserved": false
         },
         {
@@ -1822,16 +1392,6 @@
             "destination": "六家",
             "departure": "2026-07-28T13:10:00+08:00",
             "arrival": "2026-07-28T13:15:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-13:10",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T13:10:00+08:00",
-            "arrival": "2026-07-28T13:41:00+08:00",
             "reserved": false
         },
         {
@@ -1885,26 +1445,6 @@
             "reserved": true
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-13:28",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T13:28:00+08:00",
-            "arrival": "2026-07-28T14:44:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-13:30",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T13:30:00+08:00",
-            "arrival": "2026-07-28T14:01:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1202-1210-1000-2026-07-28",
             "route": "tra",
             "service": "區間 1202",
@@ -1955,16 +1495,6 @@
             "reserved": true
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-13:50",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T13:50:00+08:00",
-            "arrival": "2026-07-28T14:21:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "bus-1820-朝陽路口-台北-2026-07-28-13:54",
             "route": "bus",
             "service": "國光客運 1820",
@@ -1995,16 +1525,6 @@
             "reserved": true
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-13:58",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T13:58:00+08:00",
-            "arrival": "2026-07-28T15:20:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1737-1193-1210-2026-07-28",
             "route": "tra",
             "service": "區間 1737",
@@ -2032,16 +1552,6 @@
             "destination": "六家",
             "departure": "2026-07-28T14:10:00+08:00",
             "arrival": "2026-07-28T14:15:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-14:10",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T14:10:00+08:00",
-            "arrival": "2026-07-28T14:40:00+08:00",
             "reserved": false
         },
         {
@@ -2075,16 +1585,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-14:23",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T14:23:00+08:00",
-            "arrival": "2026-07-28T15:46:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "bus-1820A-朝陽路口-台北-2026-07-28-14:24",
             "route": "bus",
             "service": "國光客運 1820A",
@@ -2112,16 +1612,6 @@
             "destination": "台北",
             "departure": "2026-07-28T14:27:00+08:00",
             "arrival": "2026-07-28T16:24:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-14:30",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T14:30:00+08:00",
-            "arrival": "2026-07-28T15:00:00+08:00",
             "reserved": false
         },
         {
@@ -2162,26 +1652,6 @@
             "destination": "高鐵新竹",
             "departure": "2026-07-28T14:48:00+08:00",
             "arrival": "2026-07-28T06:58:00+00:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-14:48",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T14:48:00+08:00",
-            "arrival": "2026-07-28T16:10:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-14:50",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T14:50:00+08:00",
-            "arrival": "2026-07-28T15:20:00+08:00",
             "reserved": false
         },
         {
@@ -2255,26 +1725,6 @@
             "reserved": false
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-15:10",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T15:10:00+08:00",
-            "arrival": "2026-07-28T15:41:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-15:13",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T15:13:00+08:00",
-            "arrival": "2026-07-28T16:37:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "bus-1820-朝陽路口-台北-2026-07-28-15:14",
             "route": "bus",
             "service": "國光客運 1820",
@@ -2335,16 +1785,6 @@
             "reserved": true
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-15:30",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T15:30:00+08:00",
-            "arrival": "2026-07-28T16:01:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1745-1193-1210-2026-07-28",
             "route": "tra",
             "service": "區間 1745",
@@ -2362,16 +1802,6 @@
             "destination": "台北",
             "departure": "2026-07-28T15:34:00+08:00",
             "arrival": "2026-07-28T17:30:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-15:38",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T15:38:00+08:00",
-            "arrival": "2026-07-28T17:02:00+08:00",
             "reserved": false
         },
         {
@@ -2415,16 +1845,6 @@
             "reserved": false
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-15:50",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T15:50:00+08:00",
-            "arrival": "2026-07-28T16:24:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-122-1210-1000-2026-07-28",
             "route": "tra",
             "service": "自強(推拉式自強號且無自行車車廂) 122",
@@ -2455,16 +1875,6 @@
             "reserved": true
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-16:03",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T16:03:00+08:00",
-            "arrival": "2026-07-28T17:31:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1747-1193-1210-2026-07-28",
             "route": "tra",
             "service": "區間 1747",
@@ -2492,16 +1902,6 @@
             "destination": "六家",
             "departure": "2026-07-28T16:10:00+08:00",
             "arrival": "2026-07-28T16:15:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-16:11",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T16:11:00+08:00",
-            "arrival": "2026-07-28T16:45:00+08:00",
             "reserved": false
         },
         {
@@ -2555,16 +1955,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-16:24",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T16:24:00+08:00",
-            "arrival": "2026-07-28T17:52:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "thsr-0654-1030-1000-2026-07-28",
             "route": "thsr",
             "service": "高鐵 0654",
@@ -2573,16 +1963,6 @@
             "departure": "2026-07-28T16:25:00+08:00",
             "arrival": "2026-07-28T16:59:00+08:00",
             "reserved": true
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-16:31",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T16:31:00+08:00",
-            "arrival": "2026-07-28T17:05:00+08:00",
-            "reserved": false
         },
         {
             "id": "tra-176-1210-1000-2026-07-28",
@@ -2625,16 +2005,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-16:44",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T16:44:00+08:00",
-            "arrival": "2026-07-28T18:11:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "walk-tra-1754-1193-1194-2026-07-28",
             "route": "walk",
             "service": "步行轉乘",
@@ -2642,16 +2012,6 @@
             "destination": "高鐵新竹",
             "departure": "2026-07-28T16:48:00+08:00",
             "arrival": "2026-07-28T08:58:00+00:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-16:51",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T16:51:00+08:00",
-            "arrival": "2026-07-28T17:28:00+08:00",
             "reserved": false
         },
         {
@@ -2705,16 +2065,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-17:04",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T17:04:00+08:00",
-            "arrival": "2026-07-28T18:32:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1753-1193-1210-2026-07-28",
             "route": "tra",
             "service": "區間 1753",
@@ -2743,16 +2093,6 @@
             "departure": "2026-07-28T17:09:00+08:00",
             "arrival": "2026-07-28T18:25:00+08:00",
             "reserved": true
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-17:11",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T17:11:00+08:00",
-            "arrival": "2026-07-28T17:48:00+08:00",
-            "reserved": false
         },
         {
             "id": "bus-1820-朝陽路口-台北-2026-07-28-17:15",
@@ -2825,16 +2165,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-17:24",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T17:24:00+08:00",
-            "arrival": "2026-07-28T18:52:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "thsr-0660-1030-1000-2026-07-28",
             "route": "thsr",
             "service": "高鐵 0660",
@@ -2862,16 +2192,6 @@
             "destination": "新竹",
             "departure": "2026-07-28T17:27:00+08:00",
             "arrival": "2026-07-28T17:43:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-17:31",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T17:31:00+08:00",
-            "arrival": "2026-07-28T18:09:00+08:00",
             "reserved": false
         },
         {
@@ -2925,16 +2245,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-17:44",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T17:44:00+08:00",
-            "arrival": "2026-07-28T19:12:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "walk-tra-1758-1193-1194-2026-07-28",
             "route": "walk",
             "service": "步行轉乘",
@@ -2942,16 +2252,6 @@
             "destination": "高鐵新竹",
             "departure": "2026-07-28T17:46:00+08:00",
             "arrival": "2026-07-28T09:56:00+00:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-17:51",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T17:51:00+08:00",
-            "arrival": "2026-07-28T18:29:00+08:00",
             "reserved": false
         },
         {
@@ -2983,16 +2283,6 @@
             "departure": "2026-07-28T17:57:00+08:00",
             "arrival": "2026-07-28T18:33:00+08:00",
             "reserved": true
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-17:59",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T17:59:00+08:00",
-            "arrival": "2026-07-28T19:22:00+08:00",
-            "reserved": false
         },
         {
             "id": "tra-1757-1193-1210-2026-07-28",
@@ -3035,16 +2325,6 @@
             "reserved": true
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-18:11",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T18:11:00+08:00",
-            "arrival": "2026-07-28T18:49:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1833-1202-1193-2026-07-28",
             "route": "tra",
             "service": "區間 1833",
@@ -3062,16 +2342,6 @@
             "destination": "六家",
             "departure": "2026-07-28T18:19:00+08:00",
             "arrival": "2026-07-28T18:24:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-18:19",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T18:19:00+08:00",
-            "arrival": "2026-07-28T19:42:00+08:00",
             "reserved": false
         },
         {
@@ -3135,16 +2405,6 @@
             "reserved": true
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-18:31",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T18:31:00+08:00",
-            "arrival": "2026-07-28T19:07:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1761-1193-1210-2026-07-28",
             "route": "tra",
             "service": "區間 1761",
@@ -3175,16 +2435,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-18:44",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T18:44:00+08:00",
-            "arrival": "2026-07-28T20:07:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "walk-tra-1764-1193-1194-2026-07-28",
             "route": "walk",
             "service": "步行轉乘",
@@ -3192,16 +2442,6 @@
             "destination": "高鐵新竹",
             "departure": "2026-07-28T18:46:00+08:00",
             "arrival": "2026-07-28T10:56:00+00:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-18:51",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T18:51:00+08:00",
-            "arrival": "2026-07-28T19:23:00+08:00",
             "reserved": false
         },
         {
@@ -3275,16 +2515,6 @@
             "reserved": true
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-19:10",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T19:10:00+08:00",
-            "arrival": "2026-07-28T19:42:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-2042-1210-1000-2026-07-28",
             "route": "tra",
             "service": "區間快 2042",
@@ -3292,16 +2522,6 @@
             "destination": "台北",
             "departure": "2026-07-28T19:11:00+08:00",
             "arrival": "2026-07-28T20:39:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-19:14",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T19:14:00+08:00",
-            "arrival": "2026-07-28T20:32:00+08:00",
             "reserved": false
         },
         {
@@ -3405,16 +2625,6 @@
             "reserved": false
         },
         {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-19:40",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T19:40:00+08:00",
-            "arrival": "2026-07-28T20:11:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1768-1193-1194-2026-07-28",
             "route": "tra",
             "service": "區間 1768",
@@ -3432,16 +2642,6 @@
             "destination": "台北",
             "departure": "2026-07-28T19:44:00+08:00",
             "arrival": "2026-07-28T21:23:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-19:44",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T19:44:00+08:00",
-            "arrival": "2026-07-28T21:02:00+08:00",
             "reserved": false
         },
         {
@@ -3505,16 +2705,6 @@
             "reserved": true
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-20:08",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T20:08:00+08:00",
-            "arrival": "2026-07-28T21:22:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1772-1193-1194-2026-07-28",
             "route": "tra",
             "service": "區間 1772",
@@ -3522,16 +2712,6 @@
             "destination": "六家",
             "departure": "2026-07-28T20:10:00+08:00",
             "arrival": "2026-07-28T20:15:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-20:10",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T20:10:00+08:00",
-            "arrival": "2026-07-28T20:38:00+08:00",
             "reserved": false
         },
         {
@@ -3585,16 +2765,6 @@
             "reserved": true
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-20:28",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T20:28:00+08:00",
-            "arrival": "2026-07-28T21:42:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1771-1193-1210-2026-07-28",
             "route": "tra",
             "service": "區間 1771",
@@ -3613,16 +2783,6 @@
             "departure": "2026-07-28T20:40:00+08:00",
             "arrival": "2026-07-28T21:47:00+08:00",
             "reserved": true
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-20:40",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T20:40:00+08:00",
-            "arrival": "2026-07-28T21:07:00+08:00",
-            "reserved": false
         },
         {
             "id": "tra-1272-1210-1000-2026-07-28",
@@ -3665,16 +2825,6 @@
             "reserved": false
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-20:53",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T20:53:00+08:00",
-            "arrival": "2026-07-28T22:07:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "tra-1773-1193-1210-2026-07-28",
             "route": "tra",
             "service": "區間 1773",
@@ -3693,16 +2843,6 @@
             "departure": "2026-07-28T21:08:00+08:00",
             "arrival": "2026-07-28T21:39:00+08:00",
             "reserved": true
-        },
-        {
-            "id": "bus-5608-新光大樓-馬偕醫院-2026-07-28-21:09",
-            "route": "bus",
-            "service": "新竹客運 5608",
-            "origin": "新光大樓",
-            "destination": "馬偕醫院",
-            "departure": "2026-07-28T21:09:00+08:00",
-            "arrival": "2026-07-28T21:35:00+08:00",
-            "reserved": false
         },
         {
             "id": "tra-1776-1193-1194-2026-07-28",
@@ -3775,16 +2915,6 @@
             "reserved": true
         },
         {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-21:18",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T21:18:00+08:00",
-            "arrival": "2026-07-28T22:29:00+08:00",
-            "reserved": false
-        },
-        {
             "id": "thsr-0684-1030-1000-2026-07-28",
             "route": "thsr",
             "service": "高鐵 0684",
@@ -3832,16 +2962,6 @@
             "destination": "新竹",
             "departure": "2026-07-28T21:34:00+08:00",
             "arrival": "2026-07-28T21:48:00+08:00",
-            "reserved": false
-        },
-        {
-            "id": "bus-9003-馬偕醫院-台北-2026-07-28-21:38",
-            "route": "bus",
-            "service": "公車 9003",
-            "origin": "馬偕醫院",
-            "destination": "台北",
-            "departure": "2026-07-28T21:38:00+08:00",
-            "arrival": "2026-07-28T22:49:00+08:00",
             "reserved": false
         },
         {
