@@ -116,8 +116,8 @@ async function main(): Promise<void> {
         }));
 
     const busDefinitions = [
-        { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820", subRouteNames: ["1820", "18200"], operatorName: "國光客運", originName: "朝陽路口", canonicalOrigin: "朝陽路", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
-        { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820A", subRouteNames: ["1820A"], operatorName: "國光客運", originName: "朝陽路口", canonicalOrigin: "朝陽路", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
+        { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820", subRouteNames: ["1820", "18200"], operatorName: "國光客運", originName: "朝陽路口", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
+        { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820A", subRouteNames: ["1820A"], operatorName: "國光客運", originName: "朝陽路口", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
     ];
     const busPaths = [...new Set(busDefinitions.map((definition) => definition.path))];
     const busResponses = await Promise.all(busPaths.map((path) =>

@@ -24,7 +24,7 @@ export function buildRouteJourneys(input: RouteJourneyInput): Journey[] {
     if (input.tab === "bus") {
         return buildJourneys({
             ...common,
-            origin: "朝陽路",
+            origin: "朝陽路口",
             departureLeadMinutes: input.fresh ? 15 : 0,
             transferMinutes: {},
         }).filter((journey) => journey.legs.every((leg) => leg.route === "bus"));

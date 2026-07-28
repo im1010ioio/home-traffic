@@ -33,7 +33,7 @@ test("過期資料仍顯示舊行程但不顯示即時倒數", async ({ page }) 
                 id: "bus-old-1820",
                 route: "bus",
                 service: "國光客運 1820",
-                origin: "朝陽路",
+                origin: "朝陽路口",
                 destination: "台北",
                 departure: "2026-07-27T08:00:00+08:00",
                 arrival: "2026-07-27T09:30:00+08:00",
@@ -42,6 +42,6 @@ test("過期資料仍顯示舊行程但不顯示即時倒數", async ({ page }) 
     }));
 
     await page.goto("/");
-    await expect(page.getByText("08:00 從 朝陽路 發車")).toBeVisible();
+    await expect(page.getByText("08:00 從 朝陽路口 發車")).toBeVisible();
     await expect(page.getByText(/還有 .*分鐘/)).toHaveCount(0);
 });

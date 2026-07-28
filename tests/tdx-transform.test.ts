@@ -81,7 +81,7 @@ describe("TDX 每日資料轉換", () => {
 });
 
 describe("公路客運今日營運班次", () => {
-    it("合併指定路線在朝陽路發車且前往台北的站別時刻", () => {
+    it("合併指定路線在朝陽路口發車且前往台北的站別時刻", () => {
         const legs = transformBusStopTimetables({
             response: {
                 DailyTimetables: [{
@@ -92,7 +92,7 @@ describe("公路客運今日營運班次", () => {
                         TripID: "trip-1",
                         StopTimes: [
                             {
-                                StopName: { Zh_tw: "朝陽路" },
+                                StopName: { Zh_tw: "朝陽路口" },
                                 ArrivalTime: "07:15",
                                 DepartureTime: "07:15",
                             },
@@ -108,7 +108,7 @@ describe("公路客運今日營運班次", () => {
             date: "2026-07-28",
             routeName: "1820A",
             subRouteNames: ["1820A"],
-            originName: "朝陽路",
+            originName: "朝陽路口",
             destinationNames: ["臺北轉運站"],
             canonicalDestination: "台北",
             operatorName: "國光客運",
@@ -116,10 +116,10 @@ describe("公路客運今日營運班次", () => {
 
         expect(legs).toEqual([
             {
-                id: "bus-1820A-朝陽路-台北-2026-07-28-07:15",
+                id: "bus-1820A-朝陽路口-台北-2026-07-28-07:15",
                 route: "bus",
                 service: "國光客運 1820A",
-                origin: "朝陽路",
+                origin: "朝陽路口",
                 destination: "台北",
                 departure: "2026-07-28T07:15:00+08:00",
                 arrival: "2026-07-28T08:40:00+08:00",
@@ -144,7 +144,6 @@ describe("公路客運今日營運班次", () => {
             routeName: "1820A",
             subRouteNames: ["1820A"],
             originName: "朝陽路口",
-            canonicalOrigin: "朝陽路",
             destinationNames: ["臺北轉運站"],
             canonicalDestination: "台北",
         });
@@ -167,7 +166,7 @@ describe("公路客運今日營運班次", () => {
         expect(mainLine[0]?.departure).toContain("07:00");
     });
 
-    it("使用正式站名查詢時可轉為看板慣用站名，並排除反向班次", () => {
+    it("使用官方站名並排除反向班次", () => {
         const response = {
             DailyTimetables: [
                 {
@@ -195,13 +194,12 @@ describe("公路客運今日營運班次", () => {
             date: "2026-07-28",
             routeName: "1820",
             originName: "朝陽路口",
-            canonicalOrigin: "朝陽路",
             destinationNames: ["臺北轉運站"],
             canonicalDestination: "台北",
         });
 
         expect(legs).toHaveLength(1);
-        expect(legs[0]?.origin).toBe("朝陽路");
+        expect(legs[0]?.origin).toBe("朝陽路口");
         expect(legs[0]?.departure).toContain("07:15");
     });
 
@@ -212,7 +210,7 @@ describe("公路客運今日營運班次", () => {
                     BusDate: "2026-07-27T00:00:00+08:00",
                     Stops: [
                         {
-                            StopName: { Zh_tw: "朝陽路" },
+                            StopName: { Zh_tw: "朝陽路口" },
                             TimeTables: [{ TripID: "trip-1", DepartureTime: "07:15" }],
                         },
                         {
@@ -224,7 +222,7 @@ describe("公路客運今日營運班次", () => {
             },
             date: "2026-07-28",
             routeName: "1820",
-            originName: "朝陽路",
+            originName: "朝陽路口",
             destinationNames: ["臺北轉運站"],
             canonicalDestination: "台北",
         });
