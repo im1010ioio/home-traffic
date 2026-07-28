@@ -4,7 +4,7 @@ playwright-report/
 test-results/
 .env
 .env.*
-!.env.example
+.env.example
 .DS_Store
 *.tsbuildinfo
 .playwright-cli/
