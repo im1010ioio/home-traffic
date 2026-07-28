@@ -101,16 +101,24 @@ interface BusStopTime {
 
 interface BusStopTimetable {
     BusDate?: string;
+    Date?: string;
     RouteName?: LocalizedName;
+    SubRouteName?: LocalizedName;
     StopTimes?: BusStopTime[];
     Stops?: BusStopTime[];
+    Timetables?: Array<{
+        TripID?: string;
+        StopTimes?: BusStopTime[];
+    }>;
 }
 
 interface TransformBusInput {
     response: unknown;
     date: string;
     routeName: string;
+    subRouteName?: string;
     originName: string;
+    canonicalOrigin?: string;
     destinationNames: string[];
     canonicalDestination: string;
     operatorName?: string;
@@ -122,7 +130,9 @@ function busTimetablesFrom(response: unknown): BusStopTimetable[] {
     }
     if (response && typeof response === "object") {
         const record = response as Record<string, unknown>;
-        const candidate = record.StopTimeTables ?? record.DailyStopTimeTables;
+        const candidate = record.DailyTimetables
+            ?? record.StopTimeTables
+            ?? record.DailyStopTimeTables;
         if (Array.isArray(candidate)) {
             return candidate as BusStopTimetable[];
         }
@@ -144,17 +154,35 @@ export function transformBusStopTimetables(input: TransformBusInput): TimetableL
     }
 
     return busTimetablesFrom(input.response).flatMap((timetable) => {
-        // DailyStopTimeTable normally returns only today's operated trips. Keep
-        // the service-date guard as a fail-safe when the provider includes it.
-        if (timetable.BusDate && timetable.BusDate !== input.date) {
+        if (
+            input.subRouteName
+            && timetable.SubRouteName?.Zh_tw !== input.subRouteName
+        ) {
             return [];
         }
 
+        // DailyTimeTable normally returns only today's operated trips. Keep
+        // the service-date guard as a fail-safe when the provider includes it.
+        const timetableDate = (timetable.BusDate ?? timetable.Date)?.slice(0, 10);
+        if (timetableDate && timetableDate !== input.date) {
+            return [];
+        }
+
+        if (timetable.Timetables) {
+            return timetable.Timetables.flatMap((trip) =>
+                busLegFromOrderedStops(input, trip.StopTimes ?? []));
+        }
+
         if (timetable.Stops) {
-            const originStop = timetable.Stops.find((stop) => stop.StopName?.Zh_tw === input.originName);
-            const destinationStop = timetable.Stops.find((stop) =>
+            const originIndex = timetable.Stops.findIndex((stop) => stop.StopName?.Zh_tw === input.originName);
+            const destinationIndex = timetable.Stops.findIndex((stop) =>
                 input.destinationNames.includes(stop.StopName?.Zh_tw ?? ""),
             );
+            if (originIndex < 0 || destinationIndex <= originIndex) {
+                return [];
+            }
+            const originStop = timetable.Stops[originIndex];
+            const destinationStop = timetable.Stops[destinationIndex];
             return (originStop?.TimeTables ?? []).flatMap((originTime) => {
                 const key = originTime.TripID ?? String(originTime.Sequence ?? "");
                 const destinationTime = (destinationStop?.TimeTables ?? []).find((candidate) =>
@@ -168,13 +196,23 @@ export function transformBusStopTimetables(input: TransformBusInput): TimetableL
             });
         }
 
-        const stops = timetable.StopTimes ?? [];
-        const origin = stops.find((stop) => stop.StopName?.Zh_tw === input.originName);
-        const destination = stops.find((stop) => input.destinationNames.includes(stop.StopName?.Zh_tw ?? ""));
-        const departureTime = origin?.DepartureTime ?? origin?.ArrivalTime;
-        const arrivalTime = destination?.ArrivalTime ?? destination?.DepartureTime;
-        return departureTime && arrivalTime ? [busLeg(input, departureTime, arrivalTime)] : [];
+        return busLegFromOrderedStops(input, timetable.StopTimes ?? []);
     });
+}
+
+function busLegFromOrderedStops(input: TransformBusInput, stops: BusStopTime[]): TimetableLeg[] {
+    const originIndex = stops.findIndex((stop) => stop.StopName?.Zh_tw === input.originName);
+    const destinationIndex = stops.findIndex((stop) =>
+        input.destinationNames.includes(stop.StopName?.Zh_tw ?? ""),
+    );
+    if (originIndex < 0 || destinationIndex <= originIndex) {
+        return [];
+    }
+    const origin = stops[originIndex];
+    const destination = stops[destinationIndex];
+    const departureTime = origin?.DepartureTime ?? origin?.ArrivalTime;
+    const arrivalTime = destination?.ArrivalTime ?? destination?.DepartureTime;
+    return departureTime && arrivalTime ? [busLeg(input, departureTime, arrivalTime)] : [];
 }
 
 function busLeg(input: TransformBusInput, departureTime: string, arrivalTime: string): TimetableLeg {
@@ -182,7 +220,7 @@ function busLeg(input: TransformBusInput, departureTime: string, arrivalTime: st
         id: `bus-${input.routeName}-${input.originName}-${input.canonicalDestination}-${input.date}-${departureTime}`,
         route: "bus",
         service: `${input.operatorName ?? "公車"} ${input.routeName}`,
-        origin: input.originName,
+        origin: input.canonicalOrigin ?? input.originName,
         destination: input.canonicalDestination,
         departure: atTaipei(input.date, departureTime),
         arrival: atTaipei(input.date, arrivalTime),

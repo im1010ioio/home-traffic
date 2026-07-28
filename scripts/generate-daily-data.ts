@@ -81,7 +81,7 @@ async function main(): Promise<void> {
 
     const railResponses = await Promise.all(railRequests.map(({ route, from, to }) => {
         const path = route === "tra"
-            ? `/v3/Rail/TRA/DailyTrainTimetable/OD/Inclusive/${from}/to/${to}/${serviceDate}`
+            ? `/v3/Rail/TRA/DailyTrainTimetable/OD/${from}/to/${to}/${serviceDate}`
             : `/v2/Rail/THSR/DailyTimetable/OD/${from}/to/${to}/${serviceDate}`;
         return client.getJson(`${path}${formatQuery}`);
     }));
@@ -116,18 +116,21 @@ async function main(): Promise<void> {
         }));
 
     const busDefinitions = [
-        { path: "/v2/Bus/DailyStopTimeTable/InterCity/1820", routeName: "1820", operatorName: "國光客運", originName: "朝陽路", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
-        { path: "/v2/Bus/DailyStopTimeTable/InterCity/1820A", routeName: "1820A", operatorName: "國光客運", originName: "朝陽路", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
-        { path: "/v2/Bus/DailyStopTimeTable/InterCity/9003", routeName: "9003", originName: "馬偕醫院", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
-        { path: "/v2/Bus/DailyStopTimeTable/City/HsinchuCounty/5608", routeName: "5608", operatorName: "新竹客運", originName: "新光大樓", destinationNames: ["馬偕醫院"], canonicalDestination: "馬偕醫院" },
+        { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820", subRouteName: "1820", operatorName: "國光客運", originName: "朝陽路口", canonicalOrigin: "朝陽路", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
+        { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820A", subRouteName: "1820A", operatorName: "國光客運", originName: "朝陽路口", canonicalOrigin: "朝陽路", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
+        { path: "/v2/Bus/DailyTimeTable/InterCity/9003", routeName: "9003", originName: "馬偕醫院", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
+        { path: "/v2/Bus/DailyTimeTable/InterCity/5608", routeName: "5608", operatorName: "新竹客運", originName: "新光大樓", destinationNames: ["馬偕醫院"], canonicalDestination: "馬偕醫院" },
     ];
-    const busResponses = await Promise.all(busDefinitions.map((definition) =>
-        client.getJson(`${definition.path}${formatQuery}`),
+    const busPaths = [...new Set(busDefinitions.map((definition) => definition.path))];
+    const busResponses = await Promise.all(busPaths.map((path) =>
+        client.getJson(`${path}${formatQuery}`),
     ));
-    const busLegs = busResponses.flatMap((response, index) => {
-        const definition = busDefinitions[index];
-        return definition ? transformBusStopTimetables({ response, date: serviceDate, ...definition }) : [];
-    });
+    const busResponseByPath = new Map(busPaths.map((path, index) => [path, busResponses[index]]));
+    const busLegs = busDefinitions.flatMap((definition) => transformBusStopTimetables({
+        response: busResponseByPath.get(definition.path),
+        date: serviceDate,
+        ...definition,
+    }));
 
     const data: DailyData = {
         schemaVersion: 1,

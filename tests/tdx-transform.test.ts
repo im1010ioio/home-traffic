@@ -54,30 +54,30 @@ describe("公路客運今日營運班次", () => {
     it("合併指定路線在朝陽路發車且前往台北的站別時刻", () => {
         const legs = transformBusStopTimetables({
             response: {
-                DailyStopTimeTables: [{
+                DailyTimetables: [{
+                    Date: "2026-07-28",
                     RouteName: { Zh_tw: "1820A" },
-                    Stops: [
-                        {
-                            StopName: { Zh_tw: "朝陽路" },
-                            TimeTables: [{
-                                TripID: "trip-1",
+                    SubRouteName: { Zh_tw: "1820A" },
+                    Timetables: [{
+                        TripID: "trip-1",
+                        StopTimes: [
+                            {
+                                StopName: { Zh_tw: "朝陽路" },
                                 ArrivalTime: "07:15",
                                 DepartureTime: "07:15",
-                            }],
-                        },
-                        {
-                            StopName: { Zh_tw: "臺北轉運站" },
-                            TimeTables: [{
-                                TripID: "trip-1",
+                            },
+                            {
+                                StopName: { Zh_tw: "臺北轉運站" },
                                 ArrivalTime: "08:40",
                                 DepartureTime: "08:40",
-                            }],
-                        },
-                    ],
+                            },
+                        ],
+                    }],
                 }],
             },
             date: "2026-07-28",
             routeName: "1820A",
+            subRouteName: "1820A",
             originName: "朝陽路",
             destinationNames: ["臺北轉運站"],
             canonicalDestination: "台北",
@@ -98,11 +98,75 @@ describe("公路客運今日營運班次", () => {
         ]);
     });
 
+    it("從 1820 主路線回應中只取指定的 1820A 附屬路線", () => {
+        const timetable = (subRouteName: string, departureTime: string) => ({
+            SubRouteName: { Zh_tw: subRouteName },
+            Timetables: [{
+                StopTimes: [
+                    { StopName: { Zh_tw: "朝陽路口" }, DepartureTime: departureTime },
+                    { StopName: { Zh_tw: "臺北轉運站" }, ArrivalTime: "09:00" },
+                ],
+            }],
+        });
+        const legs = transformBusStopTimetables({
+            response: [timetable("1820", "07:00"), timetable("1820A", "07:30")],
+            date: "2026-07-28",
+            routeName: "1820A",
+            subRouteName: "1820A",
+            originName: "朝陽路口",
+            canonicalOrigin: "朝陽路",
+            destinationNames: ["臺北轉運站"],
+            canonicalDestination: "台北",
+        });
+
+        expect(legs).toHaveLength(1);
+        expect(legs[0]?.service).toBe("公車 1820A");
+        expect(legs[0]?.departure).toContain("07:30");
+    });
+
+    it("使用正式站名查詢時可轉為看板慣用站名，並排除反向班次", () => {
+        const response = {
+            DailyTimetables: [
+                {
+                    Timetables: [{
+                        TripID: "outbound",
+                        StopTimes: [
+                            { StopName: { Zh_tw: "朝陽路口" }, DepartureTime: "07:15" },
+                            { StopName: { Zh_tw: "臺北轉運站" }, ArrivalTime: "08:40" },
+                        ],
+                    }],
+                },
+                {
+                    Timetables: [{
+                        TripID: "return",
+                        StopTimes: [
+                            { StopName: { Zh_tw: "臺北轉運站" }, DepartureTime: "10:00" },
+                            { StopName: { Zh_tw: "朝陽路口" }, ArrivalTime: "11:25" },
+                        ],
+                    }],
+                },
+            ],
+        };
+        const legs = transformBusStopTimetables({
+            response,
+            date: "2026-07-28",
+            routeName: "1820",
+            originName: "朝陽路口",
+            canonicalOrigin: "朝陽路",
+            destinationNames: ["臺北轉運站"],
+            canonicalDestination: "台北",
+        });
+
+        expect(legs).toHaveLength(1);
+        expect(legs[0]?.origin).toBe("朝陽路");
+        expect(legs[0]?.departure).toContain("07:15");
+    });
+
     it("排除 TDX 標示為其他營運日期的公車班表", () => {
         const legs = transformBusStopTimetables({
             response: {
-                DailyStopTimeTables: [{
-                    BusDate: "2026-07-27",
+                DailyTimetables: [{
+                    BusDate: "2026-07-27T00:00:00+08:00",
                     Stops: [
                         {
                             StopName: { Zh_tw: "朝陽路" },

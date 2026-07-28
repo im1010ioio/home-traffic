@@ -1,8 +1,3642 @@
 {
     "schemaVersion": 1,
-    "serviceDate": "",
-    "generatedAt": null,
-    "status": "unavailable",
-    "legs": [],
-    "sources": []
+    "serviceDate": "2026-07-28",
+    "generatedAt": "2026-07-28T09:31:57.455Z",
+    "status": "ready",
+    "legs": [
+        {
+            "id": "tra-1112-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1112",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T04:59:00+08:00",
+            "arrival": "2026-07-28T06:37:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-05:27",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T05:27:00+08:00",
+            "arrival": "2026-07-28T06:38:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1122-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1122",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T05:29:00+08:00",
+            "arrival": "2026-07-28T07:09:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-05:38",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T05:38:00+08:00",
+            "arrival": "2026-07-28T07:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1801-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1801",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T05:49:00+08:00",
+            "arrival": "2026-07-28T06:00:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1801-1202-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1801",
+            "origin": "榮華",
+            "destination": "新竹",
+            "departure": "2026-07-28T05:49:00+08:00",
+            "arrival": "2026-07-28T06:17:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-272-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 272",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T05:52:00+08:00",
+            "arrival": "2026-07-28T07:20:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1128-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1128",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T05:57:00+08:00",
+            "arrival": "2026-07-28T07:39:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-05:57",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T05:57:00+08:00",
+            "arrival": "2026-07-28T07:13:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1801-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1801",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T06:01:00+08:00",
+            "arrival": "2026-07-28T06:17:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-06:02",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T06:02:00+08:00",
+            "arrival": "2026-07-28T07:47:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1702-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1702",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T06:03:00+08:00",
+            "arrival": "2026-07-28T06:08:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1702-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T06:08:00+08:00",
+            "arrival": "2026-07-27T22:18:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-06:13",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T06:13:00+08:00",
+            "arrival": "2026-07-28T07:58:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1132-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1132",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T06:18:00+08:00",
+            "arrival": "2026-07-28T07:58:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-06:23",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T06:23:00+08:00",
+            "arrival": "2026-07-28T08:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1701-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1701",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T06:28:00+08:00",
+            "arrival": "2026-07-28T06:42:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-06:28",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T06:28:00+08:00",
+            "arrival": "2026-07-28T07:44:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1803-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1803",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T06:34:00+08:00",
+            "arrival": "2026-07-28T06:45:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1803-1202-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1803",
+            "origin": "榮華",
+            "destination": "新竹",
+            "departure": "2026-07-28T06:34:00+08:00",
+            "arrival": "2026-07-28T07:02:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0502-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0502",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T06:37:00+08:00",
+            "arrival": "2026-07-28T07:09:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-06:38",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T06:38:00+08:00",
+            "arrival": "2026-07-28T08:33:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1134-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1134",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T06:41:00+08:00",
+            "arrival": "2026-07-28T08:34:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1704-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1704",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T06:43:00+08:00",
+            "arrival": "2026-07-28T06:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1803-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1803",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T06:46:00+08:00",
+            "arrival": "2026-07-28T07:02:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1704-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T06:48:00+08:00",
+            "arrival": "2026-07-27T22:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-2114-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 2114",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T06:53:00+08:00",
+            "arrival": "2026-07-28T08:46:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-06:53",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T06:53:00+08:00",
+            "arrival": "2026-07-28T08:09:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-1504-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 1504",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T07:02:00+08:00",
+            "arrival": "2026-07-28T07:34:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1703-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1703",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T07:03:00+08:00",
+            "arrival": "2026-07-28T07:17:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-102-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且有自行車車廂) 102",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T07:03:00+08:00",
+            "arrival": "2026-07-28T08:16:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-07:04",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T07:04:00+08:00",
+            "arrival": "2026-07-28T09:06:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1706-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1706",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T07:05:00+08:00",
+            "arrival": "2026-07-28T07:10:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1706-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T07:10:00+08:00",
+            "arrival": "2026-07-27T23:20:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-07:18",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T07:18:00+08:00",
+            "arrival": "2026-07-28T08:40:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1788-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1788",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T07:22:00+08:00",
+            "arrival": "2026-07-28T07:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1138-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1138",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T07:22:00+08:00",
+            "arrival": "2026-07-28T09:14:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1705-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1705",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T07:23:00+08:00",
+            "arrival": "2026-07-28T07:37:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0508-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0508",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T07:25:00+08:00",
+            "arrival": "2026-07-28T07:58:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "walk-tra-1788-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T07:27:00+08:00",
+            "arrival": "2026-07-27T23:37:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-472-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 472",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T07:31:00+08:00",
+            "arrival": "2026-07-28T08:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1845-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1845",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T07:32:00+08:00",
+            "arrival": "2026-07-28T07:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1845-1202-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1845",
+            "origin": "榮華",
+            "destination": "新竹",
+            "departure": "2026-07-28T07:32:00+08:00",
+            "arrival": "2026-07-28T08:02:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-2008-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間快 2008",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T07:36:00+08:00",
+            "arrival": "2026-07-28T09:02:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1787-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1787",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T07:41:00+08:00",
+            "arrival": "2026-07-28T07:55:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-07:43",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T07:43:00+08:00",
+            "arrival": "2026-07-28T09:05:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1845-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1845",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T07:45:00+08:00",
+            "arrival": "2026-07-28T08:02:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1142-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1142",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T07:45:00+08:00",
+            "arrival": "2026-07-28T09:34:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-1510-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 1510",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T07:45:00+08:00",
+            "arrival": "2026-07-28T08:18:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-07:45",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T07:45:00+08:00",
+            "arrival": "2026-07-28T09:33:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1708-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1708",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T07:46:00+08:00",
+            "arrival": "2026-07-28T07:51:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1708-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T07:51:00+08:00",
+            "arrival": "2026-07-28T00:01:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0802-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0802",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T07:58:00+08:00",
+            "arrival": "2026-07-28T08:29:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1148-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1148",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T08:00:00+08:00",
+            "arrival": "2026-07-28T09:52:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1712-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1712",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T08:02:00+08:00",
+            "arrival": "2026-07-28T08:07:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-1602-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 1602",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T08:05:00+08:00",
+            "arrival": "2026-07-28T08:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1707-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1707",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T08:07:00+08:00",
+            "arrival": "2026-07-28T08:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1712-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T08:07:00+08:00",
+            "arrival": "2026-07-28T00:17:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-08:09",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T08:09:00+08:00",
+            "arrival": "2026-07-28T09:28:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-08:14",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T08:14:00+08:00",
+            "arrival": "2026-07-28T10:13:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-278-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 278",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T08:19:00+08:00",
+            "arrival": "2026-07-28T09:27:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1805-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1805",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T08:20:00+08:00",
+            "arrival": "2026-07-28T08:31:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1790-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1790",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T08:22:00+08:00",
+            "arrival": "2026-07-28T08:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1711-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1711",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T08:23:00+08:00",
+            "arrival": "2026-07-28T08:37:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0606-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0606",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T08:25:00+08:00",
+            "arrival": "2026-07-28T08:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "walk-tra-1790-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T08:27:00+08:00",
+            "arrival": "2026-07-28T00:37:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1152-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1152",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T08:28:00+08:00",
+            "arrival": "2026-07-28T10:20:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-08:34",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T08:34:00+08:00",
+            "arrival": "2026-07-28T09:53:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-270-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且有自行車車廂) 270",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T08:36:00+08:00",
+            "arrival": "2026-07-28T09:56:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "thsr-1514-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 1514",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T08:39:00+08:00",
+            "arrival": "2026-07-28T09:13:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1789-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1789",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T08:41:00+08:00",
+            "arrival": "2026-07-28T08:55:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-280-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 280",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T08:43:00+08:00",
+            "arrival": "2026-07-28T09:42:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1714-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1714",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T08:44:00+08:00",
+            "arrival": "2026-07-28T08:49:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1714-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T08:49:00+08:00",
+            "arrival": "2026-07-28T00:59:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1158-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1158",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T08:52:00+08:00",
+            "arrival": "2026-07-28T10:32:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0610-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0610",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T08:57:00+08:00",
+            "arrival": "2026-07-28T09:33:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-08:59",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T08:59:00+08:00",
+            "arrival": "2026-07-28T10:20:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1716-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1716",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T09:02:00+08:00",
+            "arrival": "2026-07-28T09:07:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1713-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1713",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T09:07:00+08:00",
+            "arrival": "2026-07-28T09:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1716-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T09:07:00+08:00",
+            "arrival": "2026-07-28T01:17:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-2134-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 2134",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T09:08:00+08:00",
+            "arrival": "2026-07-28T10:54:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0806-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0806",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T09:08:00+08:00",
+            "arrival": "2026-07-28T09:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1807-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1807",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T09:16:00+08:00",
+            "arrival": "2026-07-28T09:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1162-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1162",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T09:16:00+08:00",
+            "arrival": "2026-07-28T11:13:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1715-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1715",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T09:22:00+08:00",
+            "arrival": "2026-07-28T09:36:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1792-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1792",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T09:23:00+08:00",
+            "arrival": "2026-07-28T09:28:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-09:23",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T09:23:00+08:00",
+            "arrival": "2026-07-28T10:44:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0612-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0612",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T09:25:00+08:00",
+            "arrival": "2026-07-28T09:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "walk-tra-1792-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T09:28:00+08:00",
+            "arrival": "2026-07-28T01:38:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-108-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 108",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T09:31:00+08:00",
+            "arrival": "2026-07-28T10:36:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1718-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1718",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T09:43:00+08:00",
+            "arrival": "2026-07-28T09:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-09:44",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T09:44:00+08:00",
+            "arrival": "2026-07-28T11:25:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1168-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1168",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T09:45:00+08:00",
+            "arrival": "2026-07-28T11:38:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1791-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1791",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T09:46:00+08:00",
+            "arrival": "2026-07-28T10:02:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1718-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T09:48:00+08:00",
+            "arrival": "2026-07-28T01:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-09:48",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T09:48:00+08:00",
+            "arrival": "2026-07-28T11:09:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0616-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0616",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T09:57:00+08:00",
+            "arrival": "2026-07-28T10:33:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1717-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1717",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T10:07:00+08:00",
+            "arrival": "2026-07-28T10:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0810-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0810",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T10:08:00+08:00",
+            "arrival": "2026-07-28T10:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1722-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1722",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T10:09:00+08:00",
+            "arrival": "2026-07-28T10:14:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-10:13",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T10:13:00+08:00",
+            "arrival": "2026-07-28T11:33:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1722-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T10:14:00+08:00",
+            "arrival": "2026-07-28T02:24:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1811-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1811",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T10:16:00+08:00",
+            "arrival": "2026-07-28T10:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-10:19",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T10:19:00+08:00",
+            "arrival": "2026-07-28T12:06:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0618-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0618",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T10:25:00+08:00",
+            "arrival": "2026-07-28T10:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1172-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1172",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T10:33:00+08:00",
+            "arrival": "2026-07-28T12:25:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1721-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1721",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T10:34:00+08:00",
+            "arrival": "2026-07-28T10:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-10:38",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T10:38:00+08:00",
+            "arrival": "2026-07-28T11:58:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1724-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1724",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T10:43:00+08:00",
+            "arrival": "2026-07-28T10:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1724-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T10:48:00+08:00",
+            "arrival": "2026-07-28T02:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-10:48",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T10:48:00+08:00",
+            "arrival": "2026-07-28T12:29:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-112-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 112",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T10:52:00+08:00",
+            "arrival": "2026-07-28T12:09:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "thsr-0622-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0622",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T10:57:00+08:00",
+            "arrival": "2026-07-28T11:33:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-162-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 162",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T11:00:00+08:00",
+            "arrival": "2026-07-28T11:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-11:03",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T11:03:00+08:00",
+            "arrival": "2026-07-28T12:22:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1178-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1178",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T11:05:00+08:00",
+            "arrival": "2026-07-28T12:44:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1723-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1723",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T11:07:00+08:00",
+            "arrival": "2026-07-28T11:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0814-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0814",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T11:08:00+08:00",
+            "arrival": "2026-07-28T11:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1726-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1726",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T11:10:00+08:00",
+            "arrival": "2026-07-28T11:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1726-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T11:15:00+08:00",
+            "arrival": "2026-07-28T03:25:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-11:15",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T11:15:00+08:00",
+            "arrival": "2026-07-28T13:04:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1813-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1813",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T11:16:00+08:00",
+            "arrival": "2026-07-28T11:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-2154-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 2154",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T11:20:00+08:00",
+            "arrival": "2026-07-28T12:57:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0624-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0624",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T11:25:00+08:00",
+            "arrival": "2026-07-28T11:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-11:29",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T11:29:00+08:00",
+            "arrival": "2026-07-28T12:47:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1182-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1182",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T11:33:00+08:00",
+            "arrival": "2026-07-28T13:25:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1725-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1725",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T11:34:00+08:00",
+            "arrival": "2026-07-28T11:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1728-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1728",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T11:43:00+08:00",
+            "arrival": "2026-07-28T11:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-11:45",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T11:45:00+08:00",
+            "arrival": "2026-07-28T13:29:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1728-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T11:48:00+08:00",
+            "arrival": "2026-07-28T03:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-114-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 114",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T11:51:00+08:00",
+            "arrival": "2026-07-28T13:01:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1006-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間快 1006",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T11:56:00+08:00",
+            "arrival": "2026-07-28T13:16:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0628-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0628",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T11:57:00+08:00",
+            "arrival": "2026-07-28T12:33:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-11:59",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T11:59:00+08:00",
+            "arrival": "2026-07-28T13:13:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1188-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1188",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T12:01:00+08:00",
+            "arrival": "2026-07-28T13:39:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1727-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1727",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T12:07:00+08:00",
+            "arrival": "2026-07-28T12:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0818-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0818",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T12:08:00+08:00",
+            "arrival": "2026-07-28T12:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1732-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1732",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T12:10:00+08:00",
+            "arrival": "2026-07-28T12:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-12:14",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T12:14:00+08:00",
+            "arrival": "2026-07-28T14:04:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1732-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T12:15:00+08:00",
+            "arrival": "2026-07-28T04:25:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1817-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1817",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T12:16:00+08:00",
+            "arrival": "2026-07-28T12:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1817-1202-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1817",
+            "origin": "榮華",
+            "destination": "新竹",
+            "departure": "2026-07-28T12:16:00+08:00",
+            "arrival": "2026-07-28T12:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1192-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1192",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T12:22:00+08:00",
+            "arrival": "2026-07-28T14:22:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0630-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0630",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T12:25:00+08:00",
+            "arrival": "2026-07-28T12:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1817-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1817",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T12:27:00+08:00",
+            "arrival": "2026-07-28T12:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-12:28",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T12:28:00+08:00",
+            "arrival": "2026-07-28T13:42:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1731-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1731",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T12:34:00+08:00",
+            "arrival": "2026-07-28T12:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-178-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "普悠瑪(普悠瑪) 178",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T12:40:00+08:00",
+            "arrival": "2026-07-28T13:45:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1734-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1734",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T12:43:00+08:00",
+            "arrival": "2026-07-28T12:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-12:45",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T12:45:00+08:00",
+            "arrival": "2026-07-28T14:28:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1734-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T12:48:00+08:00",
+            "arrival": "2026-07-28T04:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-116-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 116",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T12:49:00+08:00",
+            "arrival": "2026-07-28T13:54:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1198-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1198",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T12:54:00+08:00",
+            "arrival": "2026-07-28T14:39:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-12:58",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T12:58:00+08:00",
+            "arrival": "2026-07-28T14:14:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1733-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1733",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T13:07:00+08:00",
+            "arrival": "2026-07-28T13:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0822-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0822",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T13:08:00+08:00",
+            "arrival": "2026-07-28T13:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1736-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1736",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T13:10:00+08:00",
+            "arrival": "2026-07-28T13:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-13:14",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T13:14:00+08:00",
+            "arrival": "2026-07-28T15:04:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1736-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T13:15:00+08:00",
+            "arrival": "2026-07-28T05:25:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1819-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1819",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T13:16:00+08:00",
+            "arrival": "2026-07-28T13:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-2174-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 2174",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T13:24:00+08:00",
+            "arrival": "2026-07-28T15:08:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0636-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0636",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T13:25:00+08:00",
+            "arrival": "2026-07-28T13:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-13:28",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T13:28:00+08:00",
+            "arrival": "2026-07-28T14:44:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1202-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1202",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T13:31:00+08:00",
+            "arrival": "2026-07-28T15:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1735-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1735",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T13:34:00+08:00",
+            "arrival": "2026-07-28T13:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1738-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1738",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T13:43:00+08:00",
+            "arrival": "2026-07-28T13:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1738-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T13:48:00+08:00",
+            "arrival": "2026-07-28T05:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-118-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 118",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T13:50:00+08:00",
+            "arrival": "2026-07-28T15:01:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-13:54",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T13:54:00+08:00",
+            "arrival": "2026-07-28T15:38:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1208-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1208",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T13:55:00+08:00",
+            "arrival": "2026-07-28T15:36:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0640-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0640",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T13:57:00+08:00",
+            "arrival": "2026-07-28T14:33:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-13:58",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T13:58:00+08:00",
+            "arrival": "2026-07-28T15:20:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1737-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1737",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T14:07:00+08:00",
+            "arrival": "2026-07-28T14:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0826-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0826",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T14:08:00+08:00",
+            "arrival": "2026-07-28T14:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1742-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1742",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T14:10:00+08:00",
+            "arrival": "2026-07-28T14:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-120-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 120",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T14:14:00+08:00",
+            "arrival": "2026-07-28T15:19:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "walk-tra-1742-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T14:15:00+08:00",
+            "arrival": "2026-07-28T06:25:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1821-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1821",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T14:16:00+08:00",
+            "arrival": "2026-07-28T14:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-14:23",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T14:23:00+08:00",
+            "arrival": "2026-07-28T15:46:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-14:24",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T14:24:00+08:00",
+            "arrival": "2026-07-28T16:17:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0642-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0642",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T14:25:00+08:00",
+            "arrival": "2026-07-28T14:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1212-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1212",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T14:27:00+08:00",
+            "arrival": "2026-07-28T16:24:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1741-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1741",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T14:34:00+08:00",
+            "arrival": "2026-07-28T14:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-172-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 172",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T14:41:00+08:00",
+            "arrival": "2026-07-28T15:46:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1744-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1744",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T14:43:00+08:00",
+            "arrival": "2026-07-28T14:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1744-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T14:48:00+08:00",
+            "arrival": "2026-07-28T06:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-14:48",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T14:48:00+08:00",
+            "arrival": "2026-07-28T16:10:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1218-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1218",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T14:53:00+08:00",
+            "arrival": "2026-07-28T16:42:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-14:54",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T14:54:00+08:00",
+            "arrival": "2026-07-28T16:47:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0646-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0646",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T14:57:00+08:00",
+            "arrival": "2026-07-28T15:33:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-2194-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 2194",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T15:06:00+08:00",
+            "arrival": "2026-07-28T16:59:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1743-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1743",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T15:07:00+08:00",
+            "arrival": "2026-07-28T15:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0830-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0830",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T15:08:00+08:00",
+            "arrival": "2026-07-28T15:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1746-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1746",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T15:10:00+08:00",
+            "arrival": "2026-07-28T15:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-15:13",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T15:13:00+08:00",
+            "arrival": "2026-07-28T16:37:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-15:14",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T15:14:00+08:00",
+            "arrival": "2026-07-28T17:03:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1746-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T15:15:00+08:00",
+            "arrival": "2026-07-28T07:25:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1823-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1823",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T15:16:00+08:00",
+            "arrival": "2026-07-28T15:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-124-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "普悠瑪(普悠瑪) 124",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T15:20:00+08:00",
+            "arrival": "2026-07-28T16:14:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1222-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1222",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T15:24:00+08:00",
+            "arrival": "2026-07-28T17:18:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0648-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0648",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T15:25:00+08:00",
+            "arrival": "2026-07-28T15:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1745-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1745",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T15:34:00+08:00",
+            "arrival": "2026-07-28T15:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-15:34",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T15:34:00+08:00",
+            "arrival": "2026-07-28T17:30:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-15:38",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T15:38:00+08:00",
+            "arrival": "2026-07-28T17:02:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1748-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1748",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T15:43:00+08:00",
+            "arrival": "2026-07-28T15:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-180-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 180",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T15:43:00+08:00",
+            "arrival": "2026-07-28T16:52:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1228-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1228",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T15:47:00+08:00",
+            "arrival": "2026-07-28T17:33:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1748-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T15:48:00+08:00",
+            "arrival": "2026-07-28T07:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-122-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 122",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T15:54:00+08:00",
+            "arrival": "2026-07-28T17:07:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-15:54",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T15:54:00+08:00",
+            "arrival": "2026-07-28T17:51:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0652-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0652",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T15:57:00+08:00",
+            "arrival": "2026-07-28T16:33:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-16:03",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T16:03:00+08:00",
+            "arrival": "2026-07-28T17:31:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1747-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1747",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T16:07:00+08:00",
+            "arrival": "2026-07-28T16:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0834-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0834",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T16:08:00+08:00",
+            "arrival": "2026-07-28T16:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1752-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1752",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T16:10:00+08:00",
+            "arrival": "2026-07-28T16:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1234-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1234",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T16:12:00+08:00",
+            "arrival": "2026-07-28T18:04:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1752-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T16:15:00+08:00",
+            "arrival": "2026-07-28T08:25:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-16:15",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T16:15:00+08:00",
+            "arrival": "2026-07-28T18:10:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1825-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1825",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T16:16:00+08:00",
+            "arrival": "2026-07-28T16:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1232-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1232",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T16:24:00+08:00",
+            "arrival": "2026-07-28T18:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-16:24",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T16:24:00+08:00",
+            "arrival": "2026-07-28T17:52:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0654-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0654",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T16:25:00+08:00",
+            "arrival": "2026-07-28T16:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-176-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 176",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T16:33:00+08:00",
+            "arrival": "2026-07-28T17:51:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-16:35",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T16:35:00+08:00",
+            "arrival": "2026-07-28T18:33:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1751-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1751",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T16:40:00+08:00",
+            "arrival": "2026-07-28T16:54:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1754-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1754",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T16:43:00+08:00",
+            "arrival": "2026-07-28T16:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-16:44",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T16:44:00+08:00",
+            "arrival": "2026-07-28T18:11:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1754-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T16:48:00+08:00",
+            "arrival": "2026-07-28T08:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1238-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1238",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T16:52:00+08:00",
+            "arrival": "2026-07-28T18:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-16:55",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T16:55:00+08:00",
+            "arrival": "2026-07-28T18:56:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0658-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0658",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T16:57:00+08:00",
+            "arrival": "2026-07-28T17:33:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1794-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1794",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T16:59:00+08:00",
+            "arrival": "2026-07-28T17:04:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1794-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T17:04:00+08:00",
+            "arrival": "2026-07-28T09:14:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-17:04",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T17:04:00+08:00",
+            "arrival": "2026-07-28T18:32:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1753-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1753",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T17:05:00+08:00",
+            "arrival": "2026-07-28T17:19:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0838-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0838",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T17:08:00+08:00",
+            "arrival": "2026-07-28T17:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-128-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 128",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T17:09:00+08:00",
+            "arrival": "2026-07-28T18:25:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-17:15",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T17:15:00+08:00",
+            "arrival": "2026-07-28T19:14:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1831-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1831",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T17:16:00+08:00",
+            "arrival": "2026-07-28T17:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1831-1202-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1831",
+            "origin": "榮華",
+            "destination": "新竹",
+            "departure": "2026-07-28T17:16:00+08:00",
+            "arrival": "2026-07-28T17:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-132-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 132",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T17:16:00+08:00",
+            "arrival": "2026-07-28T18:15:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1793-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1793",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T17:20:00+08:00",
+            "arrival": "2026-07-28T17:34:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1756-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1756",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T17:21:00+08:00",
+            "arrival": "2026-07-28T17:26:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-2214-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 2214",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T17:23:00+08:00",
+            "arrival": "2026-07-28T19:08:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-17:24",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T17:24:00+08:00",
+            "arrival": "2026-07-28T18:52:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0660-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0660",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T17:25:00+08:00",
+            "arrival": "2026-07-28T17:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "walk-tra-1756-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T17:26:00+08:00",
+            "arrival": "2026-07-28T09:36:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1831-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1831",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T17:27:00+08:00",
+            "arrival": "2026-07-28T17:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-130-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 130",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T17:39:00+08:00",
+            "arrival": "2026-07-28T18:51:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "thsr-1550-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 1550",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T17:39:00+08:00",
+            "arrival": "2026-07-28T18:13:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1755-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1755",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T17:40:00+08:00",
+            "arrival": "2026-07-28T17:54:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1758-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1758",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T17:41:00+08:00",
+            "arrival": "2026-07-28T17:46:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1242-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1242",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T17:42:00+08:00",
+            "arrival": "2026-07-28T19:33:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-17:44",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T17:44:00+08:00",
+            "arrival": "2026-07-28T19:12:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1758-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T17:46:00+08:00",
+            "arrival": "2026-07-28T09:56:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1248-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1248",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T17:53:00+08:00",
+            "arrival": "2026-07-28T19:52:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-17:55",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T17:55:00+08:00",
+            "arrival": "2026-07-28T19:49:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0664-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0664",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T17:57:00+08:00",
+            "arrival": "2026-07-28T18:33:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-17:59",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T17:59:00+08:00",
+            "arrival": "2026-07-28T19:22:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1757-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1757",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T18:00:00+08:00",
+            "arrival": "2026-07-28T18:14:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1796-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1796",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T18:01:00+08:00",
+            "arrival": "2026-07-28T18:06:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1796-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T18:06:00+08:00",
+            "arrival": "2026-07-28T10:16:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0842-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0842",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T18:08:00+08:00",
+            "arrival": "2026-07-28T18:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1833-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1833",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T18:16:00+08:00",
+            "arrival": "2026-07-28T18:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1762-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1762",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T18:19:00+08:00",
+            "arrival": "2026-07-28T18:24:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-18:19",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T18:19:00+08:00",
+            "arrival": "2026-07-28T19:42:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1795-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1795",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T18:20:00+08:00",
+            "arrival": "2026-07-28T18:34:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1252-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1252",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T18:24:00+08:00",
+            "arrival": "2026-07-28T20:17:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1762-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T18:24:00+08:00",
+            "arrival": "2026-07-28T10:34:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0666-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0666",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T18:25:00+08:00",
+            "arrival": "2026-07-28T18:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-18:25",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T18:25:00+08:00",
+            "arrival": "2026-07-28T20:07:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-134-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 134",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T18:31:00+08:00",
+            "arrival": "2026-07-28T19:42:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1761-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1761",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T18:38:00+08:00",
+            "arrival": "2026-07-28T18:52:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1764-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1764",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T18:41:00+08:00",
+            "arrival": "2026-07-28T18:46:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1258-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1258",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T18:43:00+08:00",
+            "arrival": "2026-07-28T20:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-18:44",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T18:44:00+08:00",
+            "arrival": "2026-07-28T20:07:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1764-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T18:46:00+08:00",
+            "arrival": "2026-07-28T10:56:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0670-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0670",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T18:57:00+08:00",
+            "arrival": "2026-07-28T19:33:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1798-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1798",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T18:59:00+08:00",
+            "arrival": "2026-07-28T19:04:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1763-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1763",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T19:00:00+08:00",
+            "arrival": "2026-07-28T19:14:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1262-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1262",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T19:01:00+08:00",
+            "arrival": "2026-07-28T20:51:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1798-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T19:04:00+08:00",
+            "arrival": "2026-07-28T11:14:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-19:05",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T19:05:00+08:00",
+            "arrival": "2026-07-28T20:47:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0846-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0846",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T19:08:00+08:00",
+            "arrival": "2026-07-28T19:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-2042-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間快 2042",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T19:11:00+08:00",
+            "arrival": "2026-07-28T20:39:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-19:14",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T19:14:00+08:00",
+            "arrival": "2026-07-28T20:32:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1835-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1835",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T19:16:00+08:00",
+            "arrival": "2026-07-28T19:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1766-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1766",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T19:16:00+08:00",
+            "arrival": "2026-07-28T19:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-138-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且有自行車車廂) 138",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T19:16:00+08:00",
+            "arrival": "2026-07-28T20:31:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1797-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1797",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T19:20:00+08:00",
+            "arrival": "2026-07-28T19:34:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1766-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T19:21:00+08:00",
+            "arrival": "2026-07-28T11:31:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-554-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "莒光(無身障座位) 554",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T19:22:00+08:00",
+            "arrival": "2026-07-28T21:02:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "thsr-0672-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0672",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T19:25:00+08:00",
+            "arrival": "2026-07-28T19:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-2234-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 2234",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T19:27:00+08:00",
+            "arrival": "2026-07-28T21:23:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1765-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1765",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T19:34:00+08:00",
+            "arrival": "2026-07-28T19:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1268-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1268",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T19:35:00+08:00",
+            "arrival": "2026-07-28T21:37:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1768-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1768",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T19:41:00+08:00",
+            "arrival": "2026-07-28T19:46:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-19:44",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T19:44:00+08:00",
+            "arrival": "2026-07-28T21:23:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-19:44",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T19:44:00+08:00",
+            "arrival": "2026-07-28T21:02:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1768-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T19:46:00+08:00",
+            "arrival": "2026-07-28T11:56:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0676-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0676",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T19:57:00+08:00",
+            "arrival": "2026-07-28T20:33:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-142-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 142",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T19:58:00+08:00",
+            "arrival": "2026-07-28T21:10:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1038-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間快 1038",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T20:03:00+08:00",
+            "arrival": "2026-07-28T21:32:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1767-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1767",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T20:07:00+08:00",
+            "arrival": "2026-07-28T20:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0850-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0850",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T20:08:00+08:00",
+            "arrival": "2026-07-28T20:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-20:08",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T20:08:00+08:00",
+            "arrival": "2026-07-28T21:22:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1772-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1772",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T20:10:00+08:00",
+            "arrival": "2026-07-28T20:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-20:13",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T20:13:00+08:00",
+            "arrival": "2026-07-28T21:51:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1772-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T20:15:00+08:00",
+            "arrival": "2026-07-28T12:25:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1837-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1837",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T20:16:00+08:00",
+            "arrival": "2026-07-28T20:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-288-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "普悠瑪(普悠瑪) 288",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T20:18:00+08:00",
+            "arrival": "2026-07-28T21:17:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "thsr-0678-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0678",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T20:25:00+08:00",
+            "arrival": "2026-07-28T20:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-20:28",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T20:28:00+08:00",
+            "arrival": "2026-07-28T21:42:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1771-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1771",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T20:37:00+08:00",
+            "arrival": "2026-07-28T20:51:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-144-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 144",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T20:40:00+08:00",
+            "arrival": "2026-07-28T21:47:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1272-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1272",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T20:42:00+08:00",
+            "arrival": "2026-07-28T22:34:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1774-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1774",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T20:43:00+08:00",
+            "arrival": "2026-07-28T20:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1774-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T20:48:00+08:00",
+            "arrival": "2026-07-28T12:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1278-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1278",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T20:53:00+08:00",
+            "arrival": "2026-07-28T22:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-20:53",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T20:53:00+08:00",
+            "arrival": "2026-07-28T22:07:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1773-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1773",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T21:07:00+08:00",
+            "arrival": "2026-07-28T21:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0854-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0854",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T21:08:00+08:00",
+            "arrival": "2026-07-28T21:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1776-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1776",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T21:10:00+08:00",
+            "arrival": "2026-07-28T21:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-21:11",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T21:11:00+08:00",
+            "arrival": "2026-07-28T22:42:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-146-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 146",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T21:13:00+08:00",
+            "arrival": "2026-07-28T22:18:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "walk-tra-1776-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T21:15:00+08:00",
+            "arrival": "2026-07-28T13:25:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1841-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1841",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T21:16:00+08:00",
+            "arrival": "2026-07-28T21:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1841-1202-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1841",
+            "origin": "榮華",
+            "destination": "新竹",
+            "departure": "2026-07-28T21:16:00+08:00",
+            "arrival": "2026-07-28T21:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-168-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(3000)(EMU3000 型電車) 168",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T21:18:00+08:00",
+            "arrival": "2026-07-28T22:23:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-21:18",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T21:18:00+08:00",
+            "arrival": "2026-07-28T22:29:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0684-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0684",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T21:25:00+08:00",
+            "arrival": "2026-07-28T21:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-2254-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 2254",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T21:26:00+08:00",
+            "arrival": "2026-07-28T23:10:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1841-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1841",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T21:27:00+08:00",
+            "arrival": "2026-07-28T21:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1282-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1282",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T21:33:00+08:00",
+            "arrival": "2026-07-28T23:34:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1775-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1775",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T21:34:00+08:00",
+            "arrival": "2026-07-28T21:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-9003-馬偕醫院-台北-2026-07-28-21:38",
+            "route": "bus",
+            "service": "公車 9003",
+            "origin": "馬偕醫院",
+            "destination": "台北",
+            "departure": "2026-07-28T21:38:00+08:00",
+            "arrival": "2026-07-28T22:49:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1778-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1778",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T21:43:00+08:00",
+            "arrival": "2026-07-28T21:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1778-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T21:48:00+08:00",
+            "arrival": "2026-07-28T13:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-2046-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間快 2046",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T21:52:00+08:00",
+            "arrival": "2026-07-28T23:14:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "bus-1820-朝陽路口-台北-2026-07-28-22:02",
+            "route": "bus",
+            "service": "國光客運 1820",
+            "origin": "朝陽路",
+            "destination": "台北",
+            "departure": "2026-07-28T22:02:00+08:00",
+            "arrival": "2026-07-28T23:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1288-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "區間 1288",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T22:03:00+08:00",
+            "arrival": "2026-07-28T23:46:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1777-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1777",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T22:07:00+08:00",
+            "arrival": "2026-07-28T22:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0858-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0858",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T22:08:00+08:00",
+            "arrival": "2026-07-28T22:39:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-150-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 150",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T22:09:00+08:00",
+            "arrival": "2026-07-28T23:19:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1782-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1782",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T22:10:00+08:00",
+            "arrival": "2026-07-28T22:15:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1782-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T22:15:00+08:00",
+            "arrival": "2026-07-28T14:25:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1847-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1847",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T22:16:00+08:00",
+            "arrival": "2026-07-28T22:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1847-1202-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1847",
+            "origin": "榮華",
+            "destination": "新竹",
+            "departure": "2026-07-28T22:16:00+08:00",
+            "arrival": "2026-07-28T22:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1847-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1847",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T22:27:00+08:00",
+            "arrival": "2026-07-28T22:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0690-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0690",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T22:30:00+08:00",
+            "arrival": "2026-07-28T23:04:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1781-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1781",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T22:40:00+08:00",
+            "arrival": "2026-07-28T22:54:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1784-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1784",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T22:43:00+08:00",
+            "arrival": "2026-07-28T22:48:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-152-1210-1000-2026-07-28",
+            "route": "tra",
+            "service": "自強(推拉式自強號且無自行車車廂) 152",
+            "origin": "新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T22:48:00+08:00",
+            "arrival": "2026-07-28T00:02:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "walk-tra-1784-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T22:48:00+08:00",
+            "arrival": "2026-07-28T14:58:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1783-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1783",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T23:11:00+08:00",
+            "arrival": "2026-07-28T23:25:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0862-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0862",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T23:12:00+08:00",
+            "arrival": "2026-07-28T23:44:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1843-1202-1193-2026-07-28",
+            "route": "tra",
+            "service": "區間 1843",
+            "origin": "榮華",
+            "destination": "竹中",
+            "departure": "2026-07-28T23:16:00+08:00",
+            "arrival": "2026-07-28T23:27:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1843-1202-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1843",
+            "origin": "榮華",
+            "destination": "新竹",
+            "departure": "2026-07-28T23:16:00+08:00",
+            "arrival": "2026-07-28T23:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1786-1193-1194-2026-07-28",
+            "route": "tra",
+            "service": "區間 1786",
+            "origin": "竹中",
+            "destination": "六家",
+            "departure": "2026-07-28T23:16:00+08:00",
+            "arrival": "2026-07-28T23:21:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "walk-tra-1786-1193-1194-2026-07-28",
+            "route": "walk",
+            "service": "步行轉乘",
+            "origin": "六家",
+            "destination": "高鐵新竹",
+            "departure": "2026-07-28T23:21:00+08:00",
+            "arrival": "2026-07-28T15:31:00+00:00",
+            "reserved": false
+        },
+        {
+            "id": "tra-1843-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1843",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T23:27:00+08:00",
+            "arrival": "2026-07-28T23:43:00+08:00",
+            "reserved": false
+        },
+        {
+            "id": "thsr-0696-1030-1000-2026-07-28",
+            "route": "thsr",
+            "service": "高鐵 0696",
+            "origin": "高鐵新竹",
+            "destination": "台北",
+            "departure": "2026-07-28T23:27:00+08:00",
+            "arrival": "2026-07-28T23:59:00+08:00",
+            "reserved": true
+        },
+        {
+            "id": "tra-1785-1193-1210-2026-07-28",
+            "route": "tra",
+            "service": "區間 1785",
+            "origin": "竹中",
+            "destination": "新竹",
+            "departure": "2026-07-28T23:45:00+08:00",
+            "arrival": "2026-07-28T23:59:00+08:00",
+            "reserved": false
+        }
+    ],
+    "sources": [
+        "TDX 公共運輸-軌道",
+        "TDX 公共運輸-公車"
+    ]
 }

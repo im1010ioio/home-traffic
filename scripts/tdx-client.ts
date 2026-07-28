@@ -5,6 +5,9 @@ interface TdxClientOptions {
     clientId: string;
     clientSecret: string;
     fetchImpl?: typeof fetch;
+    requestIntervalMs?: number;
+    now?: () => number;
+    sleep?: (milliseconds: number) => Promise<void>;
 }
 
 interface TokenResponse {
@@ -18,10 +21,16 @@ export interface TdxClient {
 
 export function createTdxClient(options: TdxClientOptions): TdxClient {
     const fetchImpl = options.fetchImpl ?? fetch;
+    const requestIntervalMs = options.requestIntervalMs ?? 13_000;
+    const now = options.now ?? Date.now;
+    const sleep = options.sleep ?? ((milliseconds) =>
+        new Promise<void>((resolve) => setTimeout(resolve, milliseconds)));
     let token: { value: string; expiresAt: number } | null = null;
+    let lastRequestAt: number | null = null;
+    let requestQueue = Promise.resolve();
 
     const accessToken = async (): Promise<string> => {
-        if (token && token.expiresAt > Date.now() + 60_000) {
+        if (token && token.expiresAt > now() + 60_000) {
             return token.value;
         }
         const body = new URLSearchParams({
@@ -43,13 +52,20 @@ export function createTdxClient(options: TdxClientOptions): TdxClient {
         }
         token = {
             value: payload.access_token,
-            expiresAt: Date.now() + (payload.expires_in ?? 3600) * 1000,
+            expiresAt: now() + (payload.expires_in ?? 3600) * 1000,
         };
         return token.value;
     };
 
-    return {
-        async getJson(path: string): Promise<unknown> {
+    const queuedGet = (path: string): Promise<unknown> => {
+        const task = requestQueue.then(async () => {
+            if (lastRequestAt !== null) {
+                const remaining = requestIntervalMs - (now() - lastRequestAt);
+                if (remaining > 0) {
+                    await sleep(remaining);
+                }
+            }
+            lastRequestAt = now();
             const response = await fetchImpl(`${API_ROOT}${path}`, {
                 headers: {
                     authorization: `Bearer ${await accessToken()}`,
@@ -60,6 +76,12 @@ export function createTdxClient(options: TdxClientOptions): TdxClient {
                 throw new Error(`TDX 資料取得失敗（HTTP ${response.status}，${path.split("?")[0]}）`);
             }
             return response.json() as Promise<unknown>;
-        },
+        });
+        requestQueue = task.then(() => undefined, () => undefined);
+        return task;
+    };
+
+    return {
+        getJson: queuedGet,
     };
 }
