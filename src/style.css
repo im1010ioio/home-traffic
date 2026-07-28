@@ -145,7 +145,10 @@ input:focus-visible {
 }
 
 .status__icon {
+    display: block;
     flex: 0 0 auto;
+    inline-size: 1em;
+    block-size: 1em;
     font-size: 1em;
 }
 

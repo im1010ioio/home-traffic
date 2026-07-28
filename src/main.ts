@@ -83,7 +83,7 @@ function statusBanner(): string {
     const stale = dailyData.status !== "ready" || dailyData.serviceDate !== taipeiDate();
     if (!stale && !offline) {
         return `<div class="status status--ok">
-            <iconify-icon class="status__icon" icon="local:status-ready" aria-hidden="true"></iconify-icon>
+            <iconify-icon class="status__icon" icon="local:status-ready" width="1em" height="1em" aria-hidden="true"></iconify-icon>
             <span>今日班表已更新 · ${time(dailyData.generatedAt!)}</span>
         </div>`;
     }
@@ -92,7 +92,7 @@ function statusBanner(): string {
         ? `最後更新：${dailyData.serviceDate} ${time(dailyData.generatedAt)}`
         : "尚無成功更新紀錄";
     return `<div class="status status--warning" role="alert">
-        <iconify-icon class="status__icon" icon="local:status-warning" aria-hidden="true"></iconify-icon>
+        <iconify-icon class="status__icon" icon="local:status-warning" width="1em" height="1em" aria-hidden="true"></iconify-icon>
         <div class="status__copy">
             <strong>${offline ? "離線資料 · " : ""}${title}</strong>
             <span>${detail}，請以官方資訊為準。</span>
