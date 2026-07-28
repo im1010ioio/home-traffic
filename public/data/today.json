@@ -1,7 +1,7 @@
 {
     "schemaVersion": 1,
     "serviceDate": "2026-07-28",
-    "generatedAt": "2026-07-28T09:58:43.204Z",
+    "generatedAt": "2026-07-28T10:38:48.158Z",
     "status": "ready",
     "legs": [
         {
@@ -3131,7 +3131,7 @@
             "origin": "新竹",
             "destination": "台北",
             "departure": "2026-07-28T22:48:00+08:00",
-            "arrival": "2026-07-28T00:02:00+08:00",
+            "arrival": "2026-07-29T00:02:00+08:00",
             "reserved": true
         },
         {

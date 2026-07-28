@@ -36,6 +36,24 @@ const canonicalStationName = (name: string): string =>
 
 const atTaipei = (date: string, time: string): string => `${date}T${time}:00+08:00`;
 
+const nextDate = (date: string): string => {
+    const value = new Date(`${date}T00:00:00Z`);
+    value.setUTCDate(value.getUTCDate() + 1);
+    return value.toISOString().slice(0, 10);
+};
+
+function datedRange(date: string, departureTime: string, arrivalTime: string): {
+    departure: string;
+    arrival: string;
+} {
+    const departure = atTaipei(date, departureTime);
+    let arrival = atTaipei(date, arrivalTime);
+    if (Date.parse(arrival) < Date.parse(departure)) {
+        arrival = atTaipei(nextDate(date), arrivalTime);
+    }
+    return { departure, arrival };
+}
+
 function timetablesFrom(response: unknown): RailTimetable[] {
     if (Array.isArray(response)) {
         return response as RailTimetable[];
@@ -77,14 +95,15 @@ export function transformRailOd(input: TransformRailInput): TimetableLeg[] {
             return [];
         }
 
+        const range = datedRange(input.date, departureTime, arrivalTime);
         return [{
             id: `${input.route}-${trainNo}-${input.originId}-${input.destinationId}-${input.date}`,
             route: input.route,
             service: `${trainType} ${trainNo}`,
             origin: canonicalStationName(originName),
             destination: canonicalStationName(destinationName),
-            departure: atTaipei(input.date, departureTime),
-            arrival: atTaipei(input.date, arrivalTime),
+            departure: range.departure,
+            arrival: range.arrival,
             reserved: input.route === "thsr" || !trainType.includes("區間"),
         } satisfies TimetableLeg];
     });
@@ -216,14 +235,15 @@ function busLegFromOrderedStops(input: TransformBusInput, stops: BusStopTime[]):
 }
 
 function busLeg(input: TransformBusInput, departureTime: string, arrivalTime: string): TimetableLeg {
+    const range = datedRange(input.date, departureTime, arrivalTime);
     return {
         id: `bus-${input.routeName}-${input.originName}-${input.canonicalDestination}-${input.date}-${departureTime}`,
         route: "bus",
         service: `${input.operatorName ?? "公車"} ${input.routeName}`,
         origin: input.canonicalOrigin ?? input.originName,
         destination: input.canonicalDestination,
-        departure: atTaipei(input.date, departureTime),
-        arrival: atTaipei(input.date, arrivalTime),
+        departure: range.departure,
+        arrival: range.arrival,
         reserved: false,
     };
 }

@@ -48,6 +48,36 @@ describe("TDX 每日資料轉換", () => {
             },
         ]);
     });
+
+    it("把午夜後抵達的台鐵班次標示為隔日，避免負數總時數", () => {
+        const legs = transformRailOd({
+            response: [{
+                TrainInfo: {
+                    TrainNo: "152",
+                    TrainTypeName: { Zh_tw: "自強號" },
+                },
+                StopTimes: [
+                    {
+                        StationID: "1210",
+                        StationName: { Zh_tw: "新竹" },
+                        DepartureTime: "22:48",
+                    },
+                    {
+                        StationID: "1000",
+                        StationName: { Zh_tw: "臺北" },
+                        ArrivalTime: "00:02",
+                    },
+                ],
+            }],
+            date: "2026-07-28",
+            originId: "1210",
+            destinationId: "1000",
+            route: "tra",
+        });
+
+        expect(legs[0]?.departure).toBe("2026-07-28T22:48:00+08:00");
+        expect(legs[0]?.arrival).toBe("2026-07-29T00:02:00+08:00");
+    });
 });
 
 describe("公路客運今日營運班次", () => {
