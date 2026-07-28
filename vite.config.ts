@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [
         VitePWA({
             registerType: "autoUpdate",
-            includeAssets: ["icon.svg", "favicon.svg", "apple-touch-icon.png", "icon-192.png", "icon-512.png"],
+            includeAssets: ["icon.svg", "apple-touch-icon.png", "icon-192.png", "icon-512.png"],
             manifest: {
                 name: "竹東往台北轉乘攻略",
                 short_name: "竹東轉乘",
