@@ -14,6 +14,7 @@ const OFFICIAL_LINKS = {
 
 const RESERVED_FILTER_KEY = "home-traffic:reserved-only";
 const DIRECT_FILTER_KEY = "home-traffic:direct-to-hsinchu-only";
+const TO_HSINCHU_FILTER_KEY = "home-traffic:to-hsinchu";
 const app = document.querySelector<HTMLDivElement>("#app");
 if (!app) {
     throw new Error("找不到應用程式容器");
@@ -23,6 +24,7 @@ const appElement = app;
 let activeTab: TabId = "bus";
 let reservedOnly = localStorage.getItem(RESERVED_FILTER_KEY) !== "false";
 let directToHsinchuOnly = localStorage.getItem(DIRECT_FILTER_KEY) === "true";
+let toHsinchu = localStorage.getItem(TO_HSINCHU_FILTER_KEY) === "true";
 let dailyData: DailyData;
 let offline = false;
 let showingAll = false;
@@ -69,6 +71,7 @@ function journeysFor(tab: TabId): Journey[] {
         now: new Date().toISOString(),
         reservedOnly,
         directToHsinchuOnly,
+        toHsinchu,
         fresh: dailyData.status === "ready" && dailyData.serviceDate === taipeiDate() && !offline,
     });
 }
@@ -100,6 +103,7 @@ function statusBanner(): string {
 function journeyCard(journey: Journey, fresh: boolean): string {
     const vehicleLegs = journey.legs.filter((leg) => leg.route !== "walk");
     const transferCount = Math.max(0, vehicleLegs.length - 1);
+    const destination = vehicleLegs.at(-1)?.destination ?? "目的地";
     return `<article class="journey-card">
         <header class="journey-card__header">
             <div>
@@ -143,7 +147,7 @@ function journeyCard(journey: Journey, fresh: boolean): string {
                 </li>`;
     }).join("")}
         </ol>
-        <footer class="arrival">${time(journey.arrival)} 抵達台北 · ${transferCount} 次轉乘</footer>
+        <footer class="arrival">${time(journey.arrival)} 抵達${destination} · ${transferCount} 次轉乘</footer>
     </article>`;
 }
 
@@ -152,13 +156,17 @@ function tabPanel(): string {
     const journeys = journeysFor(activeTab);
     const visible = showingAll ? journeys : journeys.slice(0, 3);
     const traFilters = activeTab === "tra" ? `<div class="filter-group">
-        <label class="filter">
+        ${toHsinchu ? "" : `<label class="filter">
             <input id="reserved-filter" type="checkbox" ${reservedOnly ? "checked" : ""}>
             <span>對號列車</span>
         </label>
         <label class="filter">
             <input id="direct-filter" type="checkbox" ${directToHsinchuOnly ? "checked" : ""}>
             <span>直達新竹</span>
+        </label>`}
+        <label class="filter">
+            <input id="to-hsinchu-filter" type="checkbox" ${toHsinchu ? "checked" : ""}>
+            <span>僅前往新竹</span>
         </label>
     </div>` : "";
     const busLinks = activeTab === "bus" ? `<div class="realtime-links" aria-label="官方即時資訊">
@@ -262,6 +270,7 @@ function guidePage(): string {
                     <li>竹中轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>新竹轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>榮華直達新竹的班次不需在竹中轉乘，仍依新竹轉乘條件銜接台北。</li>
+                    <li>開啟「僅前往新竹」後，會列出榮華直達新竹及在竹中轉乘的全部組合，不再銜接台北班次。</li>
                 </ul>
             </section>
             <section class="guide-card">
@@ -322,6 +331,12 @@ function bindEvents(): void {
     document.querySelector<HTMLInputElement>("#direct-filter")?.addEventListener("change", (event) => {
         directToHsinchuOnly = (event.currentTarget as HTMLInputElement).checked;
         localStorage.setItem(DIRECT_FILTER_KEY, String(directToHsinchuOnly));
+        showingAll = false;
+        render();
+    });
+    document.querySelector<HTMLInputElement>("#to-hsinchu-filter")?.addEventListener("change", (event) => {
+        toHsinchu = (event.currentTarget as HTMLInputElement).checked;
+        localStorage.setItem(TO_HSINCHU_FILTER_KEY, String(toHsinchu));
         showingAll = false;
         render();
     });

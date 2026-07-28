@@ -23,6 +23,7 @@ describe("台鐵直達新竹組合", () => {
             data,
             now: "2026-07-29T00:00:00+08:00",
             reservedOnly: true,
+            toHsinchu: false,
             fresh: false,
         };
         const all = buildRouteJourneys({ ...common, directToHsinchuOnly: false });
@@ -31,5 +32,23 @@ describe("台鐵直達新竹組合", () => {
         expect(all.map((journey) => journey.legs[0]?.id)).toEqual(["direct", "to-zhuzhong"]);
         expect(direct).toHaveLength(1);
         expect(direct[0]?.legs[0]?.id).toBe("direct");
+    });
+
+    it("僅前往新竹時列出直達與竹中轉乘組合，不接續台北車班", () => {
+        const journeys = buildRouteJourneys({
+            tab: "tra",
+            data,
+            now: "2026-07-29T00:00:00+08:00",
+            reservedOnly: true,
+            directToHsinchuOnly: true,
+            toHsinchu: true,
+            fresh: false,
+        });
+
+        expect(journeys.map((journey) => journey.legs.map((leg) => leg.id))).toEqual([
+            ["direct"],
+            ["to-zhuzhong", "to-hsinchu"],
+        ]);
+        expect(journeys.every((journey) => journey.legs.at(-1)?.destination === "新竹")).toBe(true);
     });
 });

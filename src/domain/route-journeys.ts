@@ -9,6 +9,7 @@ interface RouteJourneyInput {
     now: string;
     reservedOnly: boolean;
     directToHsinchuOnly: boolean;
+    toHsinchu: boolean;
     fresh: boolean;
 }
 
@@ -32,13 +33,14 @@ export function buildRouteJourneys(input: RouteJourneyInput): Journey[] {
     if (input.tab === "tra") {
         const journeys = buildJourneys({
             ...common,
+            destination: input.toHsinchu ? "新竹" : "台北",
             origin: "榮華",
             departureLeadMinutes: input.fresh ? 25 : 0,
             transferMinutes: { 竹中: 5, 新竹: 5 },
             maximumTransferMinutes: 20,
-            reservedOnlyFrom: input.reservedOnly ? "新竹" : undefined,
+            reservedOnlyFrom: !input.toHsinchu && input.reservedOnly ? "新竹" : undefined,
         }).filter((journey) => journey.legs.every((leg) => leg.route === "tra"));
-        return input.directToHsinchuOnly
+        return !input.toHsinchu && input.directToHsinchuOnly
             ? journeys.filter((journey) =>
                 journey.legs[0]?.origin === "榮華"
                 && journey.legs[0]?.destination === "新竹")
