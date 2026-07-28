@@ -112,6 +112,14 @@ input:focus-visible {
     text-decoration: none;
 }
 
+.hero__actions {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
 .schedule-link:active,
 .back-link:active {
     transform: scale(0.98);
@@ -564,6 +572,10 @@ input:focus-visible {
     .schedule-link,
     .back-link {
         padding: 9px 14px;
+    }
+
+    .hero__actions {
+        justify-content: flex-start;
     }
 
     .schedule-sticky {

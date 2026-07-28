@@ -4,6 +4,7 @@ test("家人可以在手機上切換三種台北行程與台鐵、高鐵固定�
     await page.goto("/");
 
     await expect(page.getByRole("heading", { name: "竹東往台北轉乘攻略" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "往新竹 5608 即時動態 ↗" })).toHaveAttribute("href", /rno=56080/);
     await expect(page.getByRole("tab").allTextContents()).resolves.toEqual([
         "🚌國光客運",
         "🚃台鐵",

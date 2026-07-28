@@ -220,7 +220,7 @@ function homePage(): string {
     const labels: Record<TabId, string> = { bus: "國光客運", tra: "台鐵", thsr: "高鐵" };
     const emojis: Record<TabId, string> = { bus: "🚌", tra: "🚃", thsr: "🚄" };
     return `<main class="shell">
-        <header class="hero"><div><p class="eyebrow">今天怎麼去台北？</p><h1>竹東往台北轉乘攻略</h1><p>把轉乘算好，從容選下一班。</p></div><a class="schedule-link" href="#schedules">台鐵、高鐵固定班表</a></header>
+        <header class="hero"><div><p class="eyebrow">今天怎麼去台北？</p><h1>竹東往台北轉乘攻略</h1><p>把轉乘算好，從容選下一班。</p></div><div class="hero__actions"><a class="schedule-link" href="#schedules">台鐵、高鐵固定班表</a><a class="schedule-link" href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rn=1611494980221&rno=56080&lan=C" target="_blank" rel="noreferrer">往新竹 5608 即時動態 ↗</a></div></header>
         ${statusBanner()}
         <nav class="tabs" role="tablist" aria-label="交通方式">
             ${(Object.keys(labels) as TabId[]).map((id) => `<button role="tab" aria-selected="${activeTab === id}" data-tab="${id}"><span class="tab__emoji" aria-hidden="true">${emojis[id]}</span><span>${labels[id]}</span></button>`).join("")}
