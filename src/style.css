@@ -24,6 +24,8 @@
     --warning-line: #edc77a;
     --reserved: #744000;
     --reserved-bg: #fff0cf;
+    --danger: #b42318;
+    --danger-bg: #fee4e2;
     --transfer-bg: #fff0f3;
     --transfer-text: #861337;
     --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
@@ -399,6 +401,11 @@ input:focus-visible {
     background: var(--reserved-bg);
 }
 
+.badge--danger {
+    color: var(--danger);
+    background: var(--danger-bg);
+}
+
 .arrival {
     padding: 15px 22px;
     color: var(--primary-ink);
@@ -694,6 +701,8 @@ input:focus-visible {
         --warning-line: #765a26;
         --reserved: #ffe0a3;
         --reserved-bg: #493713;
+        --danger: #ffb4ab;
+        --danger-bg: #4c1d1d;
         --transfer-bg: #4a2430;
         --transfer-text: #ffe3e9;
         --shadow: 0 6px 24px rgba(0, 0, 0, 0.32);
