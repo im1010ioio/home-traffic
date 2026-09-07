@@ -25,6 +25,7 @@ let activeTab: TabId = "bus";
 let reservedOnly = localStorage.getItem(RESERVED_FILTER_KEY) !== "false";
 let directToHsinchuOnly = localStorage.getItem(DIRECT_FILTER_KEY) === "true";
 let toHsinchu = localStorage.getItem(TO_HSINCHU_FILTER_KEY) === "true";
+let showPastJourneys = false;
 let dailyData: DailyData;
 let offline = false;
 let showingAll = false;
@@ -72,6 +73,7 @@ function journeysFor(tab: TabId): Journey[] {
         reservedOnly,
         directToHsinchuOnly,
         toHsinchu,
+        showPastJourneys,
         fresh: dailyData.status === "ready" && dailyData.serviceDate === taipeiDate() && !offline,
     });
 }
@@ -100,14 +102,27 @@ function statusBanner(): string {
     </div>`;
 }
 
-function journeyCard(journey: Journey, fresh: boolean): string {
+function journeyCard(journey: Journey, tab: TabId): string {
     const vehicleLegs = journey.legs.filter((leg) => leg.route !== "walk");
     const transferCount = Math.max(0, vehicleLegs.length - 1);
     const destination = vehicleLegs.at(-1)?.destination ?? "目的地";
+    const departureAt = Date.parse(journey.departure);
+    const now = Date.now();
+    const isPast = departureAt < now;
+    const preparationMinutes = tab === "bus" ? 15 : 25;
+    const isUrgent = !isPast && departureAt < now + preparationMinutes * 60_000;
+    const stateClass = isPast
+        ? "journey-state__label--past"
+        : isUrgent
+            ? "journey-state__label--warning"
+            : "journey-state__label--upcoming";
     return `<article class="journey-card">
         <header class="journey-card__header">
             <div>
-                ${fresh ? `<p class="countdown">${countdown(journey.departure)}</p>` : ""}
+                <div class="journey-state">
+                    <span class="journey-state__label ${stateClass}">${isPast ? "已過" : "即將到來"}</span>
+                    ${isPast ? "" : `<p class="countdown">${countdown(journey.departure)}</p>`}
+                </div>
                 <p class="departure">${time(journey.departure)} 從 ${journey.legs[0]?.origin} 發車</p>
             </div>
             <div class="duration"><span>總時數</span><strong>${duration(journey.durationMinutes)}</strong></div>
@@ -152,10 +167,9 @@ function journeyCard(journey: Journey, fresh: boolean): string {
 }
 
 function tabPanel(): string {
-    const fresh = dailyData.status === "ready" && dailyData.serviceDate === taipeiDate() && !offline;
     const journeys = journeysFor(activeTab);
     const visible = showingAll ? journeys : journeys.slice(0, 3);
-    const traFilters = activeTab === "tra" ? `<div class="filter-group">
+    const traFilters = activeTab === "tra" ? `<div class="filter-group filter-group--tra">
         ${toHsinchu ? "" : `<label class="filter">
             <input id="reserved-filter" type="checkbox" ${reservedOnly ? "checked" : ""}>
             <span>對號列車</span>
@@ -169,13 +183,17 @@ function tabPanel(): string {
             <span>僅前往新竹</span>
         </label>
     </div>` : "";
+    const pastFilter = `<div class="filter-group filter-group--past"><label class="filter">
+        <input id="past-journeys-filter" type="checkbox" ${showPastJourneys ? "checked" : ""}>
+        <span>顯示已過組合</span>
+    </label></div>`;
     const busLinks = activeTab === "bus" ? `<div class="realtime-links" aria-label="官方即時資訊">
         ${(["1820", "1820A"] as const).map((route) => `<a href="${OFFICIAL_LINKS[route]}" target="_blank" rel="noreferrer">${route} 即時動態 ↗</a>`).join("")}
     </div>` : "";
     return `<section class="panel" role="tabpanel">
-        <div class="panel__toolbar"><div class="journey-summary"><span>${journeys.length} 組可搭行程</span><a class="help-link" href="#guide" aria-label="查看行程顯示規則">?</a></div>${traFilters}${busLinks}</div>
+        <div class="panel__toolbar"><div class="journey-summary"><span>${journeys.length} 組可搭行程</span><a class="help-link" href="#guide" aria-label="查看行程顯示規則">?</a></div>${traFilters}${pastFilter}${busLinks}</div>
         <div class="journeys">
-            ${visible.length ? visible.map((journey) => journeyCard(journey, fresh)).join("") : `<div class="empty-state">
+            ${visible.length ? visible.map((journey) => journeyCard(journey, activeTab)).join("") : `<div class="empty-state">
                 <strong>${dailyData.status === "unavailable" ? "等待今日班表" : "今日已無符合條件的行程"}</strong>
             </div>`}
         </div>
@@ -259,14 +277,20 @@ function guidePage(): string {
             <section class="guide-card">
                 <h2><span aria-hidden="true">🚌</span> 國光客運</h2>
                 <ul>
-                    <li>顯示最早在現在 15 分鐘後發車的今日組合，預留前往朝陽路口的時間。</li>
+                    <li>顯示今日尚未發車的組合；距離發車少於 15 分鐘時，「即將到來」會改為黃色，提醒前往朝陽路口的準備時間不足。</li>
                     <li>朝陽路口直達台北，沒有轉乘間隔條件。</li>
+                </ul>
+            </section>
+            <section class="guide-card">
+                <h2><span aria-hidden="true">🕘</span> 已過組合</h2>
+                <ul>
+                    <li>首頁預設隱藏已無法搭乘的組合；開啟「顯示已過組合」後，會展開今天所有符合轉乘規則的行程。行程卡會分別標示「即將到來」或「已過」。</li>
                 </ul>
             </section>
             <section class="guide-card">
                 <h2><span aria-hidden="true">🚃</span> 台鐵</h2>
                 <ul>
-                    <li>顯示最早在現在 25 分鐘後從榮華發車的今日組合。</li>
+                    <li>顯示今日尚未發車的組合；距離榮華發車少於 25 分鐘時，「即將到來」會改為黃色，提醒準備時間不足。</li>
                     <li>竹中轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>新竹轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>榮華直達新竹的班次不需在竹中轉乘，仍依新竹轉乘條件銜接台北。</li>
@@ -276,7 +300,7 @@ function guidePage(): string {
             <section class="guide-card">
                 <h2><span aria-hidden="true">🚄</span> 高鐵</h2>
                 <ul>
-                    <li>顯示最早在現在 25 分鐘後從榮華發車的今日組合。</li>
+                    <li>顯示今日尚未發車的組合；距離榮華發車少於 25 分鐘時，「即將到來」會改為黃色，提醒準備時間不足。</li>
                     <li>竹中轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>六家抵達至高鐵新竹發車：至少 10 分鐘、未滿 40 分鐘，間隔包含步行時間。</li>
                 </ul>
@@ -338,6 +362,11 @@ function bindEvents(): void {
         toHsinchu = (event.currentTarget as HTMLInputElement).checked;
         localStorage.setItem(TO_HSINCHU_FILTER_KEY, String(toHsinchu));
         showingAll = false;
+        render();
+    });
+    document.querySelector<HTMLInputElement>("#past-journeys-filter")?.addEventListener("change", (event) => {
+        showPastJourneys = (event.currentTarget as HTMLInputElement).checked;
+        showingAll = showPastJourneys;
         render();
     });
     document.querySelectorAll<HTMLButtonElement>("[data-schedule-tab]").forEach((button) => {

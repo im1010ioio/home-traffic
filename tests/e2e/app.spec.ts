@@ -4,6 +4,16 @@ test("家人可以在手機上切換三種台北行程與台鐵、高鐵固定�
     await page.goto("/");
 
     await expect(page.getByRole("heading", { name: "竹東往台北轉乘攻略" })).toBeVisible();
+    await expect(page.getByLabel("顯示已過組合")).not.toBeChecked();
+    const journeySummary = page.locator(".journey-summary");
+    const pastJourneysFilter = page.getByLabel("顯示已過組合").locator("..");
+    const [summaryBox, filterBox] = await Promise.all([
+        journeySummary.boundingBox(),
+        pastJourneysFilter.boundingBox(),
+    ]);
+    const summaryCenter = (summaryBox?.y ?? 0) + (summaryBox?.height ?? 0) / 2;
+    const filterCenter = (filterBox?.y ?? 0) + (filterBox?.height ?? 0) / 2;
+    expect(summaryCenter).toBeCloseTo(filterCenter, 0);
     await expect(page.getByRole("link", { name: "往新竹 5608 即時動態 ↗" })).toHaveAttribute("href", /rno=56080/);
     await page.getByRole("link", { name: "查看行程顯示規則" }).click();
     await expect(page.getByRole("heading", { name: "行程顯示規則" })).toBeVisible();

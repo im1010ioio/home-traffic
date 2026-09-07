@@ -24,6 +24,7 @@ describe("台鐵直達新竹組合", () => {
             now: "2026-07-29T00:00:00+08:00",
             reservedOnly: true,
             toHsinchu: false,
+            showPastJourneys: false,
             fresh: false,
         };
         const all = buildRouteJourneys({ ...common, directToHsinchuOnly: false });
@@ -42,6 +43,7 @@ describe("台鐵直達新竹組合", () => {
             reservedOnly: true,
             directToHsinchuOnly: false,
             toHsinchu: true,
+            showPastJourneys: false,
             fresh: false,
         });
 
@@ -60,9 +62,40 @@ describe("台鐵直達新竹組合", () => {
             reservedOnly: true,
             directToHsinchuOnly: true,
             toHsinchu: true,
+            showPastJourneys: false,
             fresh: false,
         });
 
         expect(journeys.map((journey) => journey.legs.map((leg) => leg.id))).toEqual([["direct"]]);
+    });
+
+    it("顯示已過組合時保留今日已發車的行程", () => {
+        const common = {
+            tab: "tra" as const,
+            data,
+            now: "2026-07-29T10:00:00+08:00",
+            reservedOnly: true,
+            directToHsinchuOnly: false,
+            toHsinchu: false,
+            fresh: true,
+        };
+
+        expect(buildRouteJourneys({ ...common, showPastJourneys: false })).toHaveLength(0);
+        expect(buildRouteJourneys({ ...common, showPastJourneys: true })).toHaveLength(2);
+    });
+
+    it("準備時間不足但尚未發車的行程仍會保留", () => {
+        const journeys = buildRouteJourneys({
+            tab: "tra",
+            data,
+            now: "2026-07-29T07:40:00+08:00",
+            reservedOnly: true,
+            directToHsinchuOnly: false,
+            toHsinchu: false,
+            showPastJourneys: false,
+            fresh: true,
+        });
+
+        expect(journeys.map((journey) => journey.legs[0]?.id)).toEqual(["direct", "to-zhuzhong"]);
     });
 });

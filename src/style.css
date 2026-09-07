@@ -315,8 +315,43 @@ input:focus-visible {
     border-bottom: 1px solid var(--line-soft);
 }
 
+.journey-state {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 7px;
+}
+
+.journey-state__label {
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.journey-state__label--past {
+    color: var(--muted);
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+}
+
+.journey-state__label--upcoming {
+    color: var(--success);
+    background: var(--success-bg);
+    border: 1px solid color-mix(in srgb, var(--success) 28%, transparent);
+}
+
+.journey-state__label--warning {
+    color: var(--warning);
+    background: var(--warning-bg);
+    border: 1px solid var(--warning-line);
+}
+
 .countdown {
-    margin: 0 0 5px;
+    margin: 0;
     color: var(--primary);
     font-size: 1.35rem;
     font-weight: 650;
@@ -751,11 +786,39 @@ input:focus-visible {
     }
 
     .panel__toolbar {
-        align-items: flex-start;
-        flex-direction: column;
+        display: grid;
+        grid-template-areas:
+            "summary past"
+            "filters filters"
+            "links links";
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 10px 8px;
+    }
+
+    .journey-summary {
+        grid-area: summary;
+    }
+
+    .filter-group--past {
+        grid-area: past;
+        justify-self: end;
+    }
+
+    .filter-group--past .filter {
+        gap: 7px;
+        min-height: 40px;
+        padding-inline: 11px;
+        font-size: 0.82rem;
+        white-space: nowrap;
+    }
+
+    .filter-group--tra {
+        grid-area: filters;
     }
 
     .realtime-links {
+        grid-area: links;
         margin-left: 0;
     }
 

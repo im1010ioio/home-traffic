@@ -10,11 +10,12 @@ interface RouteJourneyInput {
     reservedOnly: boolean;
     directToHsinchuOnly: boolean;
     toHsinchu: boolean;
+    showPastJourneys: boolean;
     fresh: boolean;
 }
 
 export function buildRouteJourneys(input: RouteJourneyInput): Journey[] {
-    const plannerNow = input.fresh
+    const plannerNow = input.fresh && !input.showPastJourneys
         ? input.now
         : `${input.data.serviceDate || "1970-01-01"}T00:00:00+08:00`;
     const common = {
@@ -26,7 +27,7 @@ export function buildRouteJourneys(input: RouteJourneyInput): Journey[] {
         return buildJourneys({
             ...common,
             origin: "朝陽路口",
-            departureLeadMinutes: input.fresh ? 15 : 0,
+            departureLeadMinutes: 0,
             transferMinutes: {},
         }).filter((journey) => journey.legs.every((leg) => leg.route === "bus"));
     }
@@ -35,7 +36,7 @@ export function buildRouteJourneys(input: RouteJourneyInput): Journey[] {
             ...common,
             destination: input.toHsinchu ? "新竹" : "台北",
             origin: "榮華",
-            departureLeadMinutes: input.fresh ? 25 : 0,
+            departureLeadMinutes: 0,
             transferMinutes: { 竹中: 5, 新竹: 5 },
             maximumTransferMinutes: 20,
             reservedOnlyFrom: !input.toHsinchu && input.reservedOnly ? "新竹" : undefined,
@@ -49,7 +50,7 @@ export function buildRouteJourneys(input: RouteJourneyInput): Journey[] {
     return buildJourneys({
         ...common,
         origin: "榮華",
-        departureLeadMinutes: input.fresh ? 25 : 0,
+        departureLeadMinutes: 0,
         transferMinutes: { 竹中: 5, 六家: 0, 高鐵新竹: 10 },
         maximumTransferMinutesByStop: { 竹中: 20, 高鐵新竹: 40 },
     }).filter((journey) => journey.legs.some((leg) => leg.route === "thsr"));
