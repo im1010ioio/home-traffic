@@ -28,6 +28,14 @@ test("家人可以在手機上切換三種台北行程與台鐵、高鐵固定�
     await expect(page.getByLabel("對號列車")).toBeChecked();
     await expect(page.getByLabel("直達新竹")).not.toBeChecked();
     await expect(page.getByLabel("僅前往新竹")).not.toBeChecked();
+    const traFilterBoxes = await Promise.all([
+        page.getByLabel("對號列車").locator("..").boundingBox(),
+        page.getByLabel("直達新竹").locator("..").boundingBox(),
+        page.getByLabel("僅前往新竹").locator("..").boundingBox(),
+    ]);
+    expect(traFilterBoxes.every((box) => box !== null)).toBe(true);
+    expect(traFilterBoxes[0]?.width).toBeCloseTo(traFilterBoxes[1]?.width ?? 0, 0);
+    expect(traFilterBoxes[1]?.width).toBeCloseTo(traFilterBoxes[2]?.width ?? 0, 0);
     await page.getByLabel("僅前往新竹").check();
     await expect(page.getByLabel("直達新竹")).toBeVisible();
     await expect(page.getByLabel("對號列車")).toHaveCount(0);

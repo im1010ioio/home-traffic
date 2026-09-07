@@ -814,7 +814,26 @@ input:focus-visible {
     }
 
     .filter-group--tra {
+        display: grid;
         grid-area: filters;
+        grid-auto-columns: minmax(0, 1fr);
+        grid-auto-flow: column;
+        width: 100%;
+    }
+
+    .filter-group--tra .filter {
+        justify-content: center;
+        min-width: 0;
+        padding-inline: 6px;
+        gap: 5px;
+        font-size: clamp(0.7rem, 3.2vw, 0.82rem);
+        white-space: nowrap;
+    }
+
+    .filter-group--tra .filter input {
+        flex: 0 0 auto;
+        inline-size: 16px;
+        block-size: 16px;
     }
 
     .realtime-links {
