@@ -89,9 +89,14 @@ function journeysFor(tab: TabId): Journey[] {
     });
 }
 
+function hasReturnTimetable(): boolean {
+    return dailyData.legs.some((leg) => leg.origin === "台北");
+}
+
 function statusBanner(): string {
+    const missingReturnData = isReturning() && !hasReturnTimetable();
     const stale = dailyData.status !== "ready" || dailyData.serviceDate !== taipeiDate();
-    if (!stale && !offline) {
+    if (!stale && !offline && !missingReturnData) {
         const generatedAt = new Date(dailyData.generatedAt!);
         const generatedDate = taipeiDate(generatedAt).replaceAll("-", "/");
         return `<div class="status status--ok">
@@ -99,7 +104,9 @@ function statusBanner(): string {
             <span>今日班表已更新 · ${generatedDate} ${time(dailyData.generatedAt!)}</span>
         </div>`;
     }
-    const title = dailyData.status === "unavailable" ? "今日資料尚未更新" : "目前顯示舊班表";
+    const title = dailyData.status === "unavailable"
+        ? "今日資料尚未更新"
+        : missingReturnData ? "尚未取得台北往竹東班表" : "目前顯示舊班表";
     const detail = dailyData.generatedAt
         ? `最後更新：${taipeiDate(new Date(dailyData.generatedAt)).replaceAll("-", "/")} ${time(dailyData.generatedAt)}`
         : "尚無成功更新紀錄";
@@ -107,7 +114,7 @@ function statusBanner(): string {
         ${STATUS_WARNING_ICON}
         <div class="status__copy">
             <strong>${offline ? "離線資料 · " : ""}${title}</strong>
-            <span>${detail}，請以官方資訊為準。</span>
+            <span>${detail}。${missingReturnData ? "更新時間不代表已包含反向班次；請等待班表重新更新。" : "請以官方資訊為準。"}</span>
         </div>
         <a href="https://github.com/im1010ioio/home-traffic/actions/workflows/daily-data.yml" target="_blank" rel="noreferrer">手動更新</a>
     </div>`;
@@ -183,17 +190,17 @@ function tabPanel(): string {
     const journeys = journeysFor(activeTab);
     const visible = showingAll ? journeys : journeys.slice(0, 3);
     const traFilters = activeTab === "tra" ? `<div class="filter-group filter-group--tra">
-        ${toHsinchu ? "" : `<label class="filter">
+        ${toHsinchu && !isReturning() ? "" : `<label class="filter">
             <input id="reserved-filter" type="checkbox" ${reservedOnly ? "checked" : ""}>
             <span>對號列車</span>
         </label>`}
-        <label class="filter">
+        ${isReturning() && toHsinchu ? "" : `<label class="filter">
             <input id="direct-filter" type="checkbox" ${directToHsinchuOnly ? "checked" : ""}>
             <span>${isReturning() ? "直達榮華" : "直達新竹"}</span>
-        </label>
+        </label>`}
         <label class="filter">
             <input id="to-hsinchu-filter" type="checkbox" ${toHsinchu ? "checked" : ""}>
-            <span>${isReturning() ? "僅從新竹出發" : "僅前往新竹"}</span>
+            <span>${isReturning() ? "僅抵達新竹" : "僅前往新竹"}</span>
         </label>
     </div>` : "";
     const pastFilter = `<div class="filter-group filter-group--past"><label class="filter">
@@ -207,11 +214,15 @@ function tabPanel(): string {
         <div class="panel__toolbar"><div class="journey-summary"><span>${journeys.length} 組可搭行程</span><a class="help-link" href="#guide" aria-label="查看行程顯示規則">?</a></div>${traFilters}${pastFilter}${busLinks}</div>
         <div class="journeys">
             ${visible.length ? visible.map((journey) => journeyCard(journey, activeTab)).join("") : `<div class="empty-state">
-                <strong>${dailyData.status === "unavailable" ? "等待今日班表" : isReturning() && !dailyData.legs.some((leg) => leg.origin === "台北") ? "尚無反向班表，請等待資料更新" : "今日已無符合條件的行程"}</strong>
+                <strong>${dailyData.status === "unavailable" ? "等待今日班表" : isReturning() && !hasReturnTimetable() ? "尚無反向班表，請等待資料更新" : "今日已無符合條件的行程"}</strong>
             </div>`}
         </div>
         ${journeys.length > 3 ? `<button class="secondary-button" id="show-all">${showingAll ? "只顯示最近 3 組" : "顯示今日全部"}</button>` : ""}
     </section>`;
+}
+
+function directionToggle(title: string): string {
+    return `<button id="direction-toggle" type="button" title="切換行程方向"><span>${title}</span><span class="direction-toggle__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16m-4-4 4 4-4 4M20 16H4m4-4-4 4 4 4"/></svg></span></button>`;
 }
 
 function schedulesPage(): string {
@@ -219,7 +230,7 @@ function schedulesPage(): string {
     const routeTitle = `今日${isTra ? "台鐵" : "高鐵"}・${isReturning() ? "台北 → 新竹" : "新竹 → 台北"}`;
     return `<main class="shell">
         <a class="back-link" href="#">← 返回可搭組合</a>
-        <header class="page-heading"><div><p class="eyebrow">今日固定班表</p><h1>台鐵、高鐵固定班表</h1><p>查詢${isReturning() ? "台北至新竹" : "新竹至台北"}的台鐵與高鐵班次。</p></div></header>
+        <header class="page-heading"><div><p class="eyebrow">今日固定班表</p><h1>台鐵、高鐵固定班表</h1><h2 class="schedule-direction">${directionToggle(isReturning() ? "台北 → 新竹" : "新竹 → 台北")}</h2></div></header>
         ${statusBanner()}
         <div class="schedule-sticky">
             <nav class="schedule-tabs" role="tablist" aria-label="班表類型">
@@ -308,7 +319,7 @@ function guidePage(): string {
                     <li>竹中轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>新竹轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>${isReturning() ? "台北抵達新竹後，可銜接新竹直達榮華的班次，不需在竹中轉乘。" : "榮華直達新竹的班次不需在竹中轉乘，仍依新竹轉乘條件銜接台北。"}</li>
-                    <li>${isReturning() ? "開啟「僅從新竹出發」後，列出新竹至榮華的組合；可再開啟「直達榮華」只看免於竹中換車的組合。" : "開啟「僅前往新竹」後，會列出榮華直達新竹及在竹中轉乘的全部組合，不再銜接台北班次；可再開啟「直達新竹」只看免於竹中換車的組合。"}</li>
+                    <li>${isReturning() ? "開啟「僅抵達新竹」後，列出台北至新竹的班次，不再接續榮華；保留「對號列車」篩選，暫停套用「直達榮華」。" : "開啟「僅前往新竹」後，會列出榮華直達新竹及在竹中轉乘的全部組合，不再銜接台北班次；可再開啟「直達新竹」只看免於竹中換車的組合。"}</li>
                 </ul>
             </section>
             <section class="guide-card">
@@ -335,7 +346,7 @@ function homePage(): string {
     const labels: Record<TabId, string> = { bus: "國光客運", tra: "台鐵", thsr: "高鐵" };
     const emojis: Record<TabId, string> = { bus: "🚌", tra: "🚃", thsr: "🚄" };
     return `<main class="shell">
-        <header class="hero"><div><p class="eyebrow">今天怎麼去${isReturning() ? "竹東" : "台北"}？</p><h1><button id="direction-toggle" type="button" title="切換行程方向"><span>${isReturning() ? "台北 → 竹東" : "竹東 → 台北"}轉乘攻略</span><span class="direction-toggle__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16m-4-4 4 4-4 4M20 16H4m4-4-4 4 4 4"/></svg></span></button></h1><p>${isReturning() ? "台北車站／轉運站出發，把轉乘算好。" : "把轉乘算好，從容選下一班。"}</p></div><div class="hero__actions"><a class="schedule-link" href="#schedules">台鐵、高鐵固定班表</a><a class="schedule-link" href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rn=1611494980221&rno=56080&lan=C" target="_blank" rel="noreferrer">往新竹 5608 即時動態 ↗</a></div></header>
+        <header class="hero"><div><p class="eyebrow">今天怎麼去${isReturning() ? "竹東" : "台北"}？</p><h1>${directionToggle(`${isReturning() ? "台北 → 竹東" : "竹東 → 台北"}轉乘攻略`)}</h1><p>${isReturning() ? "台北車站／轉運站出發，把轉乘算好。" : "把轉乘算好，從容選下一班。"}</p></div><div class="hero__actions"><a class="schedule-link" href="#schedules">台鐵、高鐵固定班表</a><a class="schedule-link" href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rn=1611494980221&rno=56080&lan=C" target="_blank" rel="noreferrer">往新竹 5608 即時動態 ↗</a></div></header>
         ${statusBanner()}
         <nav class="tabs" role="tablist" aria-label="交通方式">
             ${(Object.keys(labels) as TabId[]).map((id) => `<button role="tab" aria-selected="${activeTab === id}" data-tab="${id}"><span class="tab__emoji" aria-hidden="true">${emojis[id]}</span><span>${labels[id]}</span></button>`).join("")}

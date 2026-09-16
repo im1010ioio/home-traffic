@@ -976,3 +976,26 @@ input:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 6px;
 }
+
+.schedule-direction {
+    margin: 16px 0 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.schedule-direction #direction-toggle {
+    min-height: 44px;
+    gap: 8px;
+}
+
+.schedule-direction .direction-toggle__icon {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+}
+
+.schedule-direction .direction-toggle__icon svg {
+    width: 20px;
+    height: 20px;
+}

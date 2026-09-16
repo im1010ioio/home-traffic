@@ -112,10 +112,27 @@ test("從標題切換台北往竹東並保留方向與班表操作", async ({ pa
     await expect(page.getByText("台北車站／轉運站出發，把轉乘算好。")).toBeVisible();
     await page.getByRole("tab", { name: "台鐵", exact: true }).click();
     await expect(page.getByLabel("直達榮華")).toBeVisible();
-    await expect(page.getByLabel("僅從新竹出發")).not.toBeChecked();
+    await expect(page.getByLabel("僅抵達新竹")).not.toBeChecked();
+    await page.getByLabel("直達榮華").check();
+    await page.getByLabel("僅抵達新竹").check();
+    await expect(page.getByLabel("對號列車")).toBeVisible();
+    await expect(page.getByLabel("直達榮華")).toHaveCount(0);
+    await page.getByLabel("僅抵達新竹").uncheck();
+    await expect(page.getByLabel("直達榮華")).toBeChecked();
     await page.getByRole("link", { name: "台鐵、高鐵固定班表", exact: true }).click();
     await expect(page.getByRole("heading", { name: "今日台鐵・台北 → 新竹" })).toBeVisible();
     await page.getByRole("tab", { name: "高鐵", exact: true }).click();
+    await expect(page.getByRole("heading", { name: "今日高鐵・台北 → 新竹" })).toBeVisible();
+    await page.getByLabel("顯示已過班次").check();
+    await expect(page.getByRole("heading", { name: "台鐵、高鐵固定班表", level: 1 })).toBeVisible();
+    await expect(page.getByRole("button", { name: "台鐵、高鐵固定班表" })).toHaveCount(0);
+    await expect(page.getByRole("heading", { name: "台北 → 新竹", level: 2, exact: true })).toBeVisible();
+    await page.getByRole("button", { name: "台北 → 新竹", exact: true }).click();
+    await expect(page.getByRole("heading", { name: "新竹 → 台北", level: 2, exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "今日高鐵・新竹 → 台北" })).toBeVisible();
+    await expect(page.getByLabel("顯示已過班次")).toBeChecked();
+    await expect(page.getByRole("tab", { name: "高鐵", exact: true })).toHaveAttribute("aria-selected", "true");
+    await page.locator(".direction-toggle__icon").click();
     await expect(page.getByRole("heading", { name: "今日高鐵・台北 → 新竹" })).toBeVisible();
     await page.goto("/");
     await expect(page.getByRole("heading", { name: "台北 → 竹東轉乘攻略" })).toBeVisible();
@@ -124,4 +141,28 @@ test("從標題切換台北往竹東並保留方向與班表操作", async ({ pa
     await expect(page.getByRole("button", { name: "竹東 → 台北轉乘攻略" })).toBeFocused();
     await page.keyboard.press("Enter");
     await expect(page.getByRole("heading", { name: "台北 → 竹東轉乘攻略" })).toBeVisible();
+});
+
+
+test("今日資料只有去程時，反向不顯示已更新且不虛構已過組合", async ({ page }) => {
+    const serviceDate = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Taipei" }).format(new Date());
+    await page.route("**/data/today.json", (route) => route.fulfill({
+        contentType: "application/json",
+        body: JSON.stringify({
+            schemaVersion: 1, serviceDate, generatedAt: `${serviceDate}T07:01:00+08:00`,
+            status: "ready", sources: ["TDX"],
+            legs: [{
+                id: "outbound-only", route: "bus", service: "測試班次", origin: "朝陽路口", destination: "台北",
+                departure: `${serviceDate}T08:00:00+08:00`, arrival: `${serviceDate}T09:30:00+08:00`,
+            }],
+        }),
+    }));
+    await page.goto("/");
+    await expect(page.getByText(/今日班表已更新/)).toBeVisible();
+    await page.getByRole("button", { name: "竹東 → 台北轉乘攻略" }).click();
+    await expect(page.getByText(/今日班表已更新/)).toHaveCount(0);
+    await expect(page.getByRole("alert")).toContainText("尚未取得台北往竹東班表");
+    await page.getByLabel("顯示已過組合").check();
+    await expect(page.getByText("尚無反向班表，請等待資料更新")).toBeVisible();
+    await expect(page.locator(".journey-card")).toHaveCount(0);
 });

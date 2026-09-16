@@ -47,14 +47,14 @@ export function buildRouteJourneys(input: RouteJourneyInput): Journey[] {
     if (input.tab === "tra") {
         const journeys = buildJourneys({
             ...common,
-            destination: returning ? "榮華" : input.toHsinchu ? "新竹" : "台北",
-            origin: returning ? input.toHsinchu ? "新竹" : "台北" : "榮華",
+            destination: input.toHsinchu ? "新竹" : returning ? "榮華" : "台北",
+            origin: returning ? "台北" : "榮華",
             departureLeadMinutes: 0,
             transferMinutes: { 竹中: 5, 新竹: 5 },
             maximumTransferMinutes: 20,
-            reservedOnlyFrom: !input.toHsinchu && input.reservedOnly ? returning ? "台北" : "新竹" : undefined,
+            reservedOnlyFrom: (returning || !input.toHsinchu) && input.reservedOnly ? returning ? "台北" : "新竹" : undefined,
         }).filter((journey) => journey.legs.every((leg) => leg.route === "tra"));
-        return input.directToHsinchuOnly
+        return input.directToHsinchuOnly && !(returning && input.toHsinchu)
             ? journeys.filter((journey) =>
                 journey.legs.some((leg) => returning
                     ? leg.origin === "新竹" && leg.destination === "榮華"

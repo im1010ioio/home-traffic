@@ -135,10 +135,13 @@ describe("台北往竹東", () => {
         expect(buildRouteJourneys({ ...common, tab: "tra", reservedOnly: false })).toHaveLength(4);
     });
 
-    it("僅從新竹出發不套用幹線對號條件", () => {
+    it("僅抵達新竹仍從台北出發並套用對號條件，忽略直達榮華偏好", () => {
         const journeys = buildRouteJourneys({ ...common, tab: "tra", toHsinchu: true });
-        expect(journeys).toHaveLength(2);
-        expect(journeys.every((journey) => journey.legs[0]?.origin === "新竹")).toBe(true);
+        expect(journeys.map((journey) => journey.legs.map((leg) => leg.id))).toEqual([["south"]]);
+        expect(journeys[0]?.legs.at(-1)?.destination).toBe("新竹");
+        expect(buildRouteJourneys({ ...common, tab: "tra", toHsinchu: true, directToHsinchuOnly: true })).toEqual(journeys);
+        expect(buildRouteJourneys({ ...common, tab: "tra", toHsinchu: true, reservedOnly: false })
+            .map((journey) => journey.legs.map((leg) => leg.id))).toEqual([["south"], ["local"]]);
     });
 
     it("高鐵反向步行含在至少 10 分鐘、未滿 40 分鐘的轉乘間隔", () => {
