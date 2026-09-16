@@ -38,11 +38,6 @@ let scheduleTab: "tra" | "thsr" = "tra";
 let showPastSchedules = false;
 let schedulePageActive = false;
 
-const stationLabel = (station: string, route: string): string =>
-    isReturning() && station === "台北"
-        ? route === "bus" ? "台北轉運站" : "台北車站"
-        : station;
-
 const taipeiDate = (date = new Date()): string =>
     new Intl.DateTimeFormat("sv-SE", {
         timeZone: "Asia/Taipei",
@@ -141,7 +136,7 @@ function journeyCard(journey: Journey, tab: TabId): string {
                     <span class="journey-state__label ${stateClass}">${isPast ? "已過" : "即將到來"}</span>
                     ${isPast ? "" : `<p class="countdown">${countdown(journey.departure)}</p>`}
                 </div>
-                <p class="departure">${time(journey.departure)} 從 ${stationLabel(journey.legs[0]?.origin ?? "", tab)} 發車</p>
+                <p class="departure">${time(journey.departure)} 從 ${journey.legs[0]?.origin ?? ""} 發車</p>
             </div>
             <div class="duration"><span>總時數</span><strong>${duration(journey.durationMinutes)}</strong></div>
         </header>
@@ -172,7 +167,7 @@ function journeyCard(journey: Journey, tab: TabId): string {
         return `<li>
                     <div class="timeline__dot" aria-hidden="true"></div>
                     <div class="timeline__content">
-                        <div class="timeline__row"><strong>${stationLabel(leg.origin, leg.route)} → ${stationLabel(leg.destination, leg.route)}</strong><span>${service}</span></div>
+                        <div class="timeline__row"><strong>${leg.origin} → ${leg.destination}</strong><span>${service}</span></div>
                         <div class="timeline__row"><span>${time(leg.departure)} 發車</span><span>${time(leg.arrival)} 抵達</span></div>
                         ${direct ? `<span class="badge">${isReturning() ? "直達榮華" : "直達新竹"}</span>` : ""}
                         ${leg.reserved && leg.route === "tra" ? '<span class="badge badge--amber">對號列車</span>' : ""}
@@ -346,7 +341,7 @@ function homePage(): string {
     const labels: Record<TabId, string> = { bus: "國光客運", tra: "台鐵", thsr: "高鐵" };
     const emojis: Record<TabId, string> = { bus: "🚌", tra: "🚃", thsr: "🚄" };
     return `<main class="shell">
-        <header class="hero"><div><p class="eyebrow">今天怎麼去${isReturning() ? "竹東" : "台北"}？</p><h1>${directionToggle(`${isReturning() ? "台北 → 竹東" : "竹東 → 台北"}轉乘攻略`)}</h1><p>${isReturning() ? "台北車站／轉運站出發，把轉乘算好。" : "把轉乘算好，從容選下一班。"}</p></div><div class="hero__actions"><a class="schedule-link" href="#schedules">台鐵、高鐵固定班表</a><a class="schedule-link" href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rn=1611494980221&rno=56080&lan=C" target="_blank" rel="noreferrer">往新竹 5608 即時動態 ↗</a></div></header>
+        <header class="hero"><div><p class="eyebrow">今天怎麼去${isReturning() ? "竹東" : "台北"}？</p><h1>${directionToggle(`${isReturning() ? "台北 → 竹東" : "竹東 → 台北"}轉乘攻略`)}</h1><p>把轉乘算好，從容選下一班。</p></div><div class="hero__actions"><a class="schedule-link" href="#schedules">台鐵、高鐵固定班表</a><a class="schedule-link" href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rn=1611494980221&rno=56080&lan=C" target="_blank" rel="noreferrer">往新竹 5608 即時動態 ↗</a></div></header>
         ${statusBanner()}
         <nav class="tabs" role="tablist" aria-label="交通方式">
             ${(Object.keys(labels) as TabId[]).map((id) => `<button role="tab" aria-selected="${activeTab === id}" data-tab="${id}"><span class="tab__emoji" aria-hidden="true">${emojis[id]}</span><span>${labels[id]}</span></button>`).join("")}

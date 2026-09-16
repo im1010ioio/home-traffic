@@ -109,7 +109,7 @@ test("從標題切換台北往竹東並保留方向與班表操作", async ({ pa
     await page.goto("/");
     await page.getByRole("button", { name: "竹東 → 台北轉乘攻略" }).click();
     await expect(page.getByRole("heading", { name: "台北 → 竹東轉乘攻略" })).toBeVisible();
-    await expect(page.getByText("台北車站／轉運站出發，把轉乘算好。")).toBeVisible();
+    await expect(page.getByText("把轉乘算好，從容選下一班。")).toBeVisible();
     await page.getByRole("tab", { name: "台鐵", exact: true }).click();
     await expect(page.getByLabel("直達榮華")).toBeVisible();
     await expect(page.getByLabel("僅抵達新竹")).not.toBeChecked();
