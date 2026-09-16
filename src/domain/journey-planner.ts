@@ -58,7 +58,9 @@ export function buildJourneys(input: BuildJourneysInput): Journey[] {
 
         const previous = path.at(-1);
         for (const leg of input.legs) {
-            if (leg.origin !== currentStop || path.some((item) => item.id === leg.id)) {
+            if (leg.origin !== currentStop
+                || leg.destination === input.origin
+                || path.some((item) => item.id === leg.id || item.origin === leg.destination)) {
                 continue;
             }
             if (!previous && Date.parse(leg.departure) < earliestDeparture) {

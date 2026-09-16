@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test("家人可以在手機上切換三種台北行程與台鐵、高鐵固定班表", async ({ page }) => {
     await page.goto("/");
 
-    await expect(page.getByRole("heading", { name: "竹東往台北轉乘攻略" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "竹東 → 台北轉乘攻略" })).toBeVisible();
     await expect(page.getByLabel("顯示已過組合")).not.toBeChecked();
     const journeySummary = page.locator(".journey-summary");
     const pastJourneysFilter = page.getByLabel("顯示已過組合").locator("..");
@@ -103,4 +103,25 @@ test("高鐵步行段合併為轉乘間隔且不增加轉乘次數", async ({ pa
     await expect(page.getByText("六家 → 高鐵新竹")).toHaveCount(0);
     await expect(page.getByText("20:33 抵達台北 · 2 次轉乘")).toBeVisible();
     await expect(page.getByText(/轉乘 · 等待/)).toHaveCount(0);
+});
+
+test("從標題切換台北往竹東並保留方向與班表操作", async ({ page }) => {
+    await page.goto("/");
+    await page.getByRole("button", { name: "竹東 → 台北轉乘攻略" }).click();
+    await expect(page.getByRole("heading", { name: "台北 → 竹東轉乘攻略" })).toBeVisible();
+    await expect(page.getByText("台北車站／轉運站出發，把轉乘算好。")).toBeVisible();
+    await page.getByRole("tab", { name: "台鐵", exact: true }).click();
+    await expect(page.getByLabel("直達榮華")).toBeVisible();
+    await expect(page.getByLabel("僅從新竹出發")).not.toBeChecked();
+    await page.getByRole("link", { name: "台鐵、高鐵固定班表", exact: true }).click();
+    await expect(page.getByRole("heading", { name: "今日台鐵・台北 → 新竹" })).toBeVisible();
+    await page.getByRole("tab", { name: "高鐵", exact: true }).click();
+    await expect(page.getByRole("heading", { name: "今日高鐵・台北 → 新竹" })).toBeVisible();
+    await page.goto("/");
+    await expect(page.getByRole("heading", { name: "台北 → 竹東轉乘攻略" })).toBeVisible();
+    await page.locator(".direction-toggle__icon").click();
+    await expect(page.getByRole("heading", { name: "竹東 → 台北轉乘攻略" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "竹東 → 台北轉乘攻略" })).toBeFocused();
+    await page.keyboard.press("Enter");
+    await expect(page.getByRole("heading", { name: "台北 → 竹東轉乘攻略" })).toBeVisible();
 });

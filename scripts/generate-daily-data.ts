@@ -79,6 +79,10 @@ async function main(): Promise<void> {
         { route: "thsr" as const, from: thsr.新竹, to: thsr.台北 },
     ];
 
+    railRequests.push(...railRequests.map((request) => ({
+        ...request, from: request.to, to: request.from,
+    })));
+
     const railResponses = await Promise.all(railRequests.map(({ route, from, to }) => {
         const path = route === "tra"
             ? `/v3/Rail/TRA/DailyTrainTimetable/OD/${from}/to/${to}/${serviceDate}`
@@ -98,18 +102,19 @@ async function main(): Promise<void> {
             destinationId: request.to,
             route: request.route,
         }).map((leg) => request.route === "thsr"
-            ? { ...leg, origin: "高鐵新竹", destination: "台北", service: leg.service.replace(/^台鐵/, "高鐵") }
+            ? { ...leg, origin: request.from === thsr.新竹 ? "高鐵新竹" : "台北", destination: request.to === thsr.新竹 ? "高鐵新竹" : "台北", service: leg.service.replace(/^台鐵/, "高鐵") }
             : leg);
     });
 
     const walkingLegs: TimetableLeg[] = railLegs
-        .filter((leg) => leg.route === "tra" && leg.destination === "六家")
+        .filter((leg) => (leg.route === "tra" && leg.destination === "六家")
+            || (leg.route === "thsr" && leg.destination === "高鐵新竹"))
         .map((leg) => ({
             id: `walk-${leg.id}`,
             route: "walk",
             service: "步行轉乘",
-            origin: "六家",
-            destination: "高鐵新竹",
+            origin: leg.destination,
+            destination: leg.destination === "六家" ? "高鐵新竹" : "六家",
             departure: leg.arrival,
             arrival: new Date(Date.parse(leg.arrival) + 10 * 60_000).toISOString().replace(".000Z", "+00:00"),
             reserved: false,
@@ -119,12 +124,20 @@ async function main(): Promise<void> {
         { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820", subRouteNames: ["1820", "18200"], operatorName: "國光客運", originName: "朝陽路口", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
         { path: "/v2/Bus/DailyTimeTable/InterCity/1820", routeName: "1820A", subRouteNames: ["1820A"], operatorName: "國光客運", serviceNote: "繞駛關西市區", originName: "朝陽路口", destinationNames: ["臺北轉運站", "台北轉運站"], canonicalDestination: "台北" },
     ];
+    const returnBusDefinitions = busDefinitions.flatMap((definition) =>
+        ["臺北轉運站", "台北轉運站"].map((originName) => ({
+            ...definition,
+            originName,
+            canonicalOrigin: "台北",
+            destinationNames: ["朝陽路口"],
+            canonicalDestination: "朝陽路口",
+        })));
     const busPaths = [...new Set(busDefinitions.map((definition) => definition.path))];
     const busResponses = await Promise.all(busPaths.map((path) =>
         client.getJson(`${path}${formatQuery}`),
     ));
     const busResponseByPath = new Map(busPaths.map((path, index) => [path, busResponses[index]]));
-    const busLegs = busDefinitions.flatMap((definition) => transformBusStopTimetables({
+    const busLegs = [...busDefinitions, ...returnBusDefinitions].flatMap((definition) => transformBusStopTimetables({
         response: busResponseByPath.get(definition.path),
         date: serviceDate,
         ...definition,

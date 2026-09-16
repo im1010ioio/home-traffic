@@ -3,7 +3,7 @@ import "./style.css";
 import { loadDailyData } from "./data-loader.ts";
 import type { Journey } from "./domain/journey-planner.ts";
 import type { DailyData } from "./domain/daily-data.ts";
-import { buildRouteJourneys, type TabId } from "./domain/route-journeys.ts";
+import { buildRouteJourneys, type TabId, type Direction } from "./domain/route-journeys.ts";
 
 const STATUS_READY_ICON = '<svg class="status__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg>';
 const STATUS_WARNING_ICON = '<svg class="status__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13 13h-2V7h2m0 10h-2v-2h2M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>';
@@ -21,10 +21,15 @@ if (!app) {
 }
 const appElement = app;
 
+const DIRECTION_KEY = "home-traffic:direction";
+let direction: Direction = localStorage.getItem(DIRECTION_KEY) === "return" ? "return" : "outbound";
+const isReturning = (): boolean => direction === "return";
+const directionFilterKey = (key: string): string => isReturning() ? `${key}:return` : key;
+
 let activeTab: TabId = "bus";
 let reservedOnly = localStorage.getItem(RESERVED_FILTER_KEY) !== "false";
-let directToHsinchuOnly = localStorage.getItem(DIRECT_FILTER_KEY) === "true";
-let toHsinchu = localStorage.getItem(TO_HSINCHU_FILTER_KEY) === "true";
+let directToHsinchuOnly = localStorage.getItem(directionFilterKey(DIRECT_FILTER_KEY)) === "true";
+let toHsinchu = localStorage.getItem(directionFilterKey(TO_HSINCHU_FILTER_KEY)) === "true";
 let showPastJourneys = false;
 let dailyData: DailyData;
 let offline = false;
@@ -32,6 +37,11 @@ let showingAll = false;
 let scheduleTab: "tra" | "thsr" = "tra";
 let showPastSchedules = false;
 let schedulePageActive = false;
+
+const stationLabel = (station: string, route: string): string =>
+    isReturning() && station === "台北"
+        ? route === "bus" ? "台北轉運站" : "台北車站"
+        : station;
 
 const taipeiDate = (date = new Date()): string =>
     new Intl.DateTimeFormat("sv-SE", {
@@ -68,6 +78,7 @@ const countdown = (iso: string): string => {
 function journeysFor(tab: TabId): Journey[] {
     return buildRouteJourneys({
         tab,
+        direction,
         data: dailyData,
         now: new Date().toISOString(),
         reservedOnly,
@@ -123,7 +134,7 @@ function journeyCard(journey: Journey, tab: TabId): string {
                     <span class="journey-state__label ${stateClass}">${isPast ? "已過" : "即將到來"}</span>
                     ${isPast ? "" : `<p class="countdown">${countdown(journey.departure)}</p>`}
                 </div>
-                <p class="departure">${time(journey.departure)} 從 ${journey.legs[0]?.origin} 發車</p>
+                <p class="departure">${time(journey.departure)} 從 ${stationLabel(journey.legs[0]?.origin ?? "", tab)} 發車</p>
             </div>
             <div class="duration"><span>總時數</span><strong>${duration(journey.durationMinutes)}</strong></div>
         </header>
@@ -142,7 +153,9 @@ function journeyCard(journey: Journey, tab: TabId): string {
             : walkingLeg
                 ? `步行至 ${walkingLeg.destination} 轉乘 · 間隔 ${interval} 分鐘`
                 : `於 ${leg.destination} 轉乘 · 間隔 ${interval} 分鐘`;
-        const direct = index === 0 && leg.origin === "榮華" && leg.destination === "新竹";
+        const direct = isReturning()
+            ? leg.origin === "新竹" && leg.destination === "榮華"
+            : leg.origin === "榮華" && leg.destination === "新竹";
         const noStandingTickets = leg.route === "tra"
             && leg.reserved
             && hasNoStandingTickets(leg.service);
@@ -152,9 +165,9 @@ function journeyCard(journey: Journey, tab: TabId): string {
         return `<li>
                     <div class="timeline__dot" aria-hidden="true"></div>
                     <div class="timeline__content">
-                        <div class="timeline__row"><strong>${leg.origin} → ${leg.destination}</strong><span>${service}</span></div>
+                        <div class="timeline__row"><strong>${stationLabel(leg.origin, leg.route)} → ${stationLabel(leg.destination, leg.route)}</strong><span>${service}</span></div>
                         <div class="timeline__row"><span>${time(leg.departure)} 發車</span><span>${time(leg.arrival)} 抵達</span></div>
-                        ${direct ? '<span class="badge">直達新竹</span>' : ""}
+                        ${direct ? `<span class="badge">${isReturning() ? "直達榮華" : "直達新竹"}</span>` : ""}
                         ${leg.reserved && leg.route === "tra" ? '<span class="badge badge--amber">對號列車</span>' : ""}
                         ${noStandingTickets ? '<span class="badge badge--danger">無售站票</span>' : ""}
                         ${transfer ? `<p class="transfer">${transfer}</p>` : ""}
@@ -176,11 +189,11 @@ function tabPanel(): string {
         </label>`}
         <label class="filter">
             <input id="direct-filter" type="checkbox" ${directToHsinchuOnly ? "checked" : ""}>
-            <span>直達新竹</span>
+            <span>${isReturning() ? "直達榮華" : "直達新竹"}</span>
         </label>
         <label class="filter">
             <input id="to-hsinchu-filter" type="checkbox" ${toHsinchu ? "checked" : ""}>
-            <span>僅前往新竹</span>
+            <span>${isReturning() ? "僅從新竹出發" : "僅前往新竹"}</span>
         </label>
     </div>` : "";
     const pastFilter = `<div class="filter-group filter-group--past"><label class="filter">
@@ -194,7 +207,7 @@ function tabPanel(): string {
         <div class="panel__toolbar"><div class="journey-summary"><span>${journeys.length} 組可搭行程</span><a class="help-link" href="#guide" aria-label="查看行程顯示規則">?</a></div>${traFilters}${pastFilter}${busLinks}</div>
         <div class="journeys">
             ${visible.length ? visible.map((journey) => journeyCard(journey, activeTab)).join("") : `<div class="empty-state">
-                <strong>${dailyData.status === "unavailable" ? "等待今日班表" : "今日已無符合條件的行程"}</strong>
+                <strong>${dailyData.status === "unavailable" ? "等待今日班表" : isReturning() && !dailyData.legs.some((leg) => leg.origin === "台北") ? "尚無反向班表，請等待資料更新" : "今日已無符合條件的行程"}</strong>
             </div>`}
         </div>
         ${journeys.length > 3 ? `<button class="secondary-button" id="show-all">${showingAll ? "只顯示最近 3 組" : "顯示今日全部"}</button>` : ""}
@@ -203,10 +216,10 @@ function tabPanel(): string {
 
 function schedulesPage(): string {
     const isTra = scheduleTab === "tra";
-    const routeTitle = isTra ? "今日台鐵・新竹 → 台北" : "今日高鐵・新竹 → 台北";
+    const routeTitle = `今日${isTra ? "台鐵" : "高鐵"}・${isReturning() ? "台北 → 新竹" : "新竹 → 台北"}`;
     return `<main class="shell">
         <a class="back-link" href="#">← 返回可搭組合</a>
-        <header class="page-heading"><div><p class="eyebrow">今日固定班表</p><h1>台鐵、高鐵固定班表</h1><p>查詢新竹至台北的台鐵與高鐵班次。</p></div></header>
+        <header class="page-heading"><div><p class="eyebrow">今日固定班表</p><h1>台鐵、高鐵固定班表</h1><p>查詢${isReturning() ? "台北至新竹" : "新竹至台北"}的台鐵與高鐵班次。</p></div></header>
         ${statusBanner()}
         <div class="schedule-sticky">
             <nav class="schedule-tabs" role="tablist" aria-label="班表類型">
@@ -230,8 +243,9 @@ function simpleTimetable(route: "tra" | "thsr"): string {
     const currentTime = Date.now();
     const legs = dailyData.legs.filter((leg) =>
         leg.route === route
-        && (leg.origin === "新竹" || leg.origin === "高鐵新竹")
-        && leg.destination === "台北"
+        && (isReturning()
+            ? leg.origin === "台北" && (leg.destination === "新竹" || leg.destination === "高鐵新竹")
+            : (leg.origin === "新竹" || leg.origin === "高鐵新竹") && leg.destination === "台北")
         && (showPastSchedules || Date.parse(leg.departure) >= currentTime)
         && (route === "thsr" || !reservedOnly || leg.reserved),
     );
@@ -277,8 +291,8 @@ function guidePage(): string {
             <section class="guide-card">
                 <h2><span aria-hidden="true">🚌</span> 國光客運</h2>
                 <ul>
-                    <li>顯示今日尚未發車的組合；距離發車少於 15 分鐘時，「即將到來」會改為黃色，提醒前往朝陽路口的準備時間不足。</li>
-                    <li>朝陽路口直達台北，沒有轉乘間隔條件。</li>
+                    <li>顯示今日尚未發車的組合；距離發車少於 15 分鐘時，「即將到來」會改為黃色，提醒前往${isReturning() ? "台北轉運站" : "朝陽路口"}的準備時間不足。</li>
+                    <li>${isReturning() ? "台北直達朝陽路口" : "朝陽路口直達台北"}，沒有轉乘間隔條件。</li>
                 </ul>
             </section>
             <section class="guide-card">
@@ -290,19 +304,19 @@ function guidePage(): string {
             <section class="guide-card">
                 <h2><span aria-hidden="true">🚃</span> 台鐵</h2>
                 <ul>
-                    <li>顯示今日尚未發車的組合；距離榮華發車少於 25 分鐘時，「即將到來」會改為黃色，提醒準備時間不足。</li>
+                    <li>顯示今日尚未發車的組合；距離${isReturning() ? "台北" : "榮華"}發車少於 25 分鐘時，「即將到來」會改為黃色，提醒準備時間不足。</li>
                     <li>竹中轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>新竹轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
-                    <li>榮華直達新竹的班次不需在竹中轉乘，仍依新竹轉乘條件銜接台北。</li>
-                    <li>開啟「僅前往新竹」後，會列出榮華直達新竹及在竹中轉乘的全部組合，不再銜接台北班次；可再開啟「直達新竹」只看免於竹中換車的組合。</li>
+                    <li>${isReturning() ? "台北抵達新竹後，可銜接新竹直達榮華的班次，不需在竹中轉乘。" : "榮華直達新竹的班次不需在竹中轉乘，仍依新竹轉乘條件銜接台北。"}</li>
+                    <li>${isReturning() ? "開啟「僅從新竹出發」後，列出新竹至榮華的組合；可再開啟「直達榮華」只看免於竹中換車的組合。" : "開啟「僅前往新竹」後，會列出榮華直達新竹及在竹中轉乘的全部組合，不再銜接台北班次；可再開啟「直達新竹」只看免於竹中換車的組合。"}</li>
                 </ul>
             </section>
             <section class="guide-card">
                 <h2><span aria-hidden="true">🚄</span> 高鐵</h2>
                 <ul>
-                    <li>顯示今日尚未發車的組合；距離榮華發車少於 25 分鐘時，「即將到來」會改為黃色，提醒準備時間不足。</li>
+                    <li>顯示今日尚未發車的組合；距離${isReturning() ? "台北" : "榮華"}發車少於 25 分鐘時，「即將到來」會改為黃色，提醒準備時間不足。</li>
                     <li>竹中轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
-                    <li>六家抵達至高鐵新竹發車：至少 10 分鐘、未滿 40 分鐘，間隔包含步行時間。</li>
+                    <li>${isReturning() ? "高鐵新竹抵達至六家發車" : "六家抵達至高鐵新竹發車"}：至少 10 分鐘、未滿 40 分鐘，間隔包含步行時間。</li>
                 </ul>
             </section>
             <section class="guide-card">
@@ -321,7 +335,7 @@ function homePage(): string {
     const labels: Record<TabId, string> = { bus: "國光客運", tra: "台鐵", thsr: "高鐵" };
     const emojis: Record<TabId, string> = { bus: "🚌", tra: "🚃", thsr: "🚄" };
     return `<main class="shell">
-        <header class="hero"><div><p class="eyebrow">今天怎麼去台北？</p><h1>竹東往台北轉乘攻略</h1><p>把轉乘算好，從容選下一班。</p></div><div class="hero__actions"><a class="schedule-link" href="#schedules">台鐵、高鐵固定班表</a><a class="schedule-link" href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rn=1611494980221&rno=56080&lan=C" target="_blank" rel="noreferrer">往新竹 5608 即時動態 ↗</a></div></header>
+        <header class="hero"><div><p class="eyebrow">今天怎麼去${isReturning() ? "竹東" : "台北"}？</p><h1><button id="direction-toggle" type="button" title="切換行程方向"><span>${isReturning() ? "台北 → 竹東" : "竹東 → 台北"}轉乘攻略</span><span class="direction-toggle__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16m-4-4 4 4-4 4M20 16H4m4-4-4 4 4 4"/></svg></span></button></h1><p>${isReturning() ? "台北車站／轉運站出發，把轉乘算好。" : "把轉乘算好，從容選下一班。"}</p></div><div class="hero__actions"><a class="schedule-link" href="#schedules">台鐵、高鐵固定班表</a><a class="schedule-link" href="https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rn=1611494980221&rno=56080&lan=C" target="_blank" rel="noreferrer">往新竹 5608 即時動態 ↗</a></div></header>
         ${statusBanner()}
         <nav class="tabs" role="tablist" aria-label="交通方式">
             ${(Object.keys(labels) as TabId[]).map((id) => `<button role="tab" aria-selected="${activeTab === id}" data-tab="${id}"><span class="tab__emoji" aria-hidden="true">${emojis[id]}</span><span>${labels[id]}</span></button>`).join("")}
@@ -332,6 +346,15 @@ function homePage(): string {
 }
 
 function bindEvents(): void {
+    document.querySelector<HTMLButtonElement>("#direction-toggle")?.addEventListener("click", () => {
+        direction = isReturning() ? "outbound" : "return";
+        directToHsinchuOnly = localStorage.getItem(directionFilterKey(DIRECT_FILTER_KEY)) === "true";
+        toHsinchu = localStorage.getItem(directionFilterKey(TO_HSINCHU_FILTER_KEY)) === "true";
+        localStorage.setItem(DIRECTION_KEY, direction);
+        showingAll = showPastJourneys;
+        render();
+        document.querySelector<HTMLButtonElement>("#direction-toggle")?.focus();
+    });
     document.querySelector<HTMLAnchorElement>("[data-guide-back]")?.addEventListener("click", (event) => {
         event.preventDefault();
         if (window.history.length > 1) {
@@ -354,13 +377,13 @@ function bindEvents(): void {
     });
     document.querySelector<HTMLInputElement>("#direct-filter")?.addEventListener("change", (event) => {
         directToHsinchuOnly = (event.currentTarget as HTMLInputElement).checked;
-        localStorage.setItem(DIRECT_FILTER_KEY, String(directToHsinchuOnly));
+        localStorage.setItem(directionFilterKey(DIRECT_FILTER_KEY), String(directToHsinchuOnly));
         showingAll = false;
         render();
     });
     document.querySelector<HTMLInputElement>("#to-hsinchu-filter")?.addEventListener("change", (event) => {
         toHsinchu = (event.currentTarget as HTMLInputElement).checked;
-        localStorage.setItem(TO_HSINCHU_FILTER_KEY, String(toHsinchu));
+        localStorage.setItem(directionFilterKey(TO_HSINCHU_FILTER_KEY), String(toHsinchu));
         showingAll = false;
         render();
     });

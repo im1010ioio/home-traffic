@@ -929,3 +929,50 @@ input:focus-visible {
         transition-duration: 0.01ms !important;
     }
 }
+
+#direction-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.direction-toggle__icon {
+    display: inline-flex;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--primary);
+    transition: background 150ms, transform 150ms;
+}
+
+.direction-toggle__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+#direction-toggle:hover .direction-toggle__icon {
+    background: var(--line);
+}
+
+#direction-toggle:active .direction-toggle__icon {
+    transform: scale(0.92);
+}
+
+#direction-toggle:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 6px;
+}
