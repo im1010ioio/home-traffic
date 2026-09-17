@@ -42,7 +42,7 @@ test("家人可以在手機上切換三種台北行程與台鐵、高鐵固定�
 
     await page.getByRole("link", { name: "台鐵、高鐵固定班表" }).click();
     await expect(page.getByRole("heading", { name: "台鐵、高鐵固定班表" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "新竹 → 台北" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "新竹 → 台北", exact: true })).toBeVisible();
     await expect(page.getByRole("link", { name: "查看行程顯示規則" })).toBeVisible();
     await expect(page.getByLabel("對號列車")).toBeChecked();
     await expect(page.getByLabel("顯示已過班次")).not.toBeChecked();
@@ -112,13 +112,10 @@ test("從標題切換台北往竹東並保留方向與班表操作", async ({ pa
     await expect(page.getByText("把轉乘算好，從容選下一班。")).toBeVisible();
     await page.getByRole("tab", { name: "台鐵", exact: true }).click();
     await expect(page.getByLabel("直達榮華")).toBeVisible();
-    await expect(page.getByLabel("僅抵達新竹")).not.toBeChecked();
-    await page.getByLabel("直達榮華").check();
-    await page.getByLabel("僅抵達新竹").check();
+    await expect(page.getByLabel("僅抵達新竹")).toHaveCount(0);
+    await expect(page.getByLabel("僅前往新竹")).toHaveCount(0);
     await expect(page.getByLabel("對號列車")).toBeVisible();
-    await expect(page.getByLabel("直達榮華")).toHaveCount(0);
-    await page.getByLabel("僅抵達新竹").uncheck();
-    await expect(page.getByLabel("直達榮華")).toBeChecked();
+    await page.getByLabel("直達榮華").check();
     await page.getByRole("link", { name: "台鐵、高鐵固定班表", exact: true }).click();
     await expect(page.getByRole("heading", { name: "今日台鐵・台北 → 新竹" })).toBeVisible();
     await page.getByRole("tab", { name: "高鐵", exact: true }).click();

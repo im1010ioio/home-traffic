@@ -29,7 +29,7 @@ const directionFilterKey = (key: string): string => isReturning() ? `${key}:retu
 let activeTab: TabId = "bus";
 let reservedOnly = localStorage.getItem(RESERVED_FILTER_KEY) !== "false";
 let directToHsinchuOnly = localStorage.getItem(directionFilterKey(DIRECT_FILTER_KEY)) === "true";
-let toHsinchu = localStorage.getItem(directionFilterKey(TO_HSINCHU_FILTER_KEY)) === "true";
+let toHsinchu = !isReturning() && localStorage.getItem(TO_HSINCHU_FILTER_KEY) === "true";
 let showPastJourneys = false;
 let dailyData: DailyData;
 let offline = false;
@@ -189,14 +189,14 @@ function tabPanel(): string {
             <input id="reserved-filter" type="checkbox" ${reservedOnly ? "checked" : ""}>
             <span>對號列車</span>
         </label>`}
-        ${isReturning() && toHsinchu ? "" : `<label class="filter">
+        <label class="filter">
             <input id="direct-filter" type="checkbox" ${directToHsinchuOnly ? "checked" : ""}>
             <span>${isReturning() ? "直達榮華" : "直達新竹"}</span>
-        </label>`}
-        <label class="filter">
-            <input id="to-hsinchu-filter" type="checkbox" ${toHsinchu ? "checked" : ""}>
-            <span>${isReturning() ? "僅抵達新竹" : "僅前往新竹"}</span>
         </label>
+        ${isReturning() ? "" : `<label class="filter">
+            <input id="to-hsinchu-filter" type="checkbox" ${toHsinchu ? "checked" : ""}>
+            <span>僅前往新竹</span>
+        </label>`}
     </div>` : "";
     const pastFilter = `<div class="filter-group filter-group--past"><label class="filter">
         <input id="past-journeys-filter" type="checkbox" ${showPastJourneys ? "checked" : ""}>
@@ -314,7 +314,7 @@ function guidePage(): string {
                     <li>竹中轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>新竹轉乘：至少 5 分鐘、未滿 20 分鐘。</li>
                     <li>${isReturning() ? "台北抵達新竹後，可銜接新竹直達榮華的班次，不需在竹中轉乘。" : "榮華直達新竹的班次不需在竹中轉乘，仍依新竹轉乘條件銜接台北。"}</li>
-                    <li>${isReturning() ? "開啟「僅抵達新竹」後，列出台北至新竹的班次，不再接續榮華；保留「對號列車」篩選，暫停套用「直達榮華」。" : "開啟「僅前往新竹」後，會列出榮華直達新竹及在竹中轉乘的全部組合，不再銜接台北班次；可再開啟「直達新竹」只看免於竹中換車的組合。"}</li>
+                    <li>${isReturning() ? "只查台北至新竹的班次，請使用「台鐵、高鐵固定班表」。" : "開啟「僅前往新竹」後，會列出榮華直達新竹及在竹中轉乘的全部組合，不再銜接台北班次；可再開啟「直達新竹」只看免於竹中換車的組合。"}</li>
                 </ul>
             </section>
             <section class="guide-card">
@@ -355,7 +355,7 @@ function bindEvents(): void {
     document.querySelector<HTMLButtonElement>("#direction-toggle")?.addEventListener("click", () => {
         direction = isReturning() ? "outbound" : "return";
         directToHsinchuOnly = localStorage.getItem(directionFilterKey(DIRECT_FILTER_KEY)) === "true";
-        toHsinchu = localStorage.getItem(directionFilterKey(TO_HSINCHU_FILTER_KEY)) === "true";
+        toHsinchu = !isReturning() && localStorage.getItem(TO_HSINCHU_FILTER_KEY) === "true";
         localStorage.setItem(DIRECTION_KEY, direction);
         showingAll = showPastJourneys;
         render();
@@ -389,7 +389,7 @@ function bindEvents(): void {
     });
     document.querySelector<HTMLInputElement>("#to-hsinchu-filter")?.addEventListener("change", (event) => {
         toHsinchu = (event.currentTarget as HTMLInputElement).checked;
-        localStorage.setItem(directionFilterKey(TO_HSINCHU_FILTER_KEY), String(toHsinchu));
+        localStorage.setItem(TO_HSINCHU_FILTER_KEY, String(toHsinchu));
         showingAll = false;
         render();
     });
